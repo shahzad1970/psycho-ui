@@ -1,0 +1,48 @@
+
+@import "color-scheme.scss";
+
+.ui-fg-primary-light {
+    color: #0047BB;
+}
+
+.ui-fg-primary-dark {
+    color: #001E60;
+}
+
+.ui-fg-secondary-light {
+    color: #48D597;
+}
+
+.ui-fg-secondary-dark {
+    color: #097A49;
+}
+
+.ui-fg-success {
+    color: #097A49;
+}
+
+.ui-fg-info {
+    color: #0047BB;
+}
+
+.ui-fg-danger {
+    color: #B50D12;
+}
+
+.ui-fg-warning {
+    color: #A66102;
+}
+
+.ui-fg-base {
+    color: #000000;
+}
+
+@each $name, $color in $colorscheme {
+    @each $depth, $val in $color {
+        .ui-fg-#{"" + $name}-#{$depth} {
+            color: $val;
+        }
+    }
+
+}
+

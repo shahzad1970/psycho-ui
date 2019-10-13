@@ -1,0 +1,7 @@
+
+:host {
+    display: inline-flex;
+    flex: 1;
+    padding: 1em 1.5em;
+    height: 1200px;
+}

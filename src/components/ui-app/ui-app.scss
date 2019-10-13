@@ -1,0 +1,28 @@
+
+:root {
+    font-size: 16px;
+    line-height: 1.5em;
+    font-family: "Open Sans",Helvetica,Arial,sans-serif;
+    text-shadow: 1px 1px 1px rgba(0,0,0,.004);
+}
+
+html, body {
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+@import '../../css/background.scss';
+@import '../../css/color.scss';
+
+ui-app {
+    display: flex;
+    flex-direction: row;
+    padding-top: 3.5em;
+    position: relative;
+    width: 100%;
+}
