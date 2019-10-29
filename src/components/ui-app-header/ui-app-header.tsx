@@ -1,5 +1,6 @@
-import { h, Component, Host, Prop } from '@stencil/core';
-import { UiColor } from "../../utils/ui-types"
+import { h, Component, Host, Prop, Element } from '@stencil/core';
+import { UiColor, UiSize } from "../../utils/ui-types";
+import { UiCommon } from "../../utils/ui-common";
 
 @Component({
     tag: 'ui-app-header',
@@ -7,26 +8,41 @@ import { UiColor } from "../../utils/ui-types"
     shadow: true
 })
 export class UiAppHeader {
+    @Element() el: HTMLElement;
 
     /**
-     * Set forground color
+     * Forground color from the UI Color Palette
      */
     @Prop() color: UiColor;
 
     /**
-     * Set background color
+     * Background color from the UI Color Palette
      */
     @Prop() background: UiColor;
 
+    /**
+     * Absolute font size 
+     */
+    @Prop() size: UiSize;
+
+    @Prop() src: string;
+
+    navigation() {
+        const navElm = this.el.parentElement.querySelector("ui-app-navigation") as HTMLUiAppNavigationElement;
+        if ( navElm ) navElm.toggle();
+    }
 
     render() {
         return (
-            <Host class={{
-                [`ui-fg-${this.color}`]: this.color != undefined,
-                [`ui-bg-${this.background}`]: this.background != undefined,
-            }}>
-
+            <Host>
+                <ui-button type="fab" onClick={() => this.navigation()} size="x-large">
+                    <ui-icon>menu</ui-icon>
+                </ui-button>
+                <img src={this.src}></img>
                 <slot />
+                <style id="ui-style">
+                    {UiCommon.getCss(this.size, this.color, this.background)}
+                </style>
             </Host>
         );
     }

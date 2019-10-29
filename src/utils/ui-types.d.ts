@@ -14,4 +14,5 @@ export type UiColor = 'base' | 'primary-light' | 'primary-dark' | 'secondary-lig
     | 'yellow-100' | 'yellow-90' | 'yellow-80' | 'yellow-70' | 'yellow-60' | 'yellow-50' | 'yellow-40' | 'yellow-30' | 'yellow-20' | 'yellow-10'
     | 'orange-100' | 'orange-90' | 'orange-80' | 'orange-70' | 'orange-60' | 'orange-50' | 'orange-40' | 'orange-30' | 'orange-20' | 'orange-10';
 
- 
+ export type UiSize = 'xx-small'| 'x-small'| 'small'| 'medium'| 'large'| 'x-large'| 'xx-large' | 'larger' | 'smaller';
+

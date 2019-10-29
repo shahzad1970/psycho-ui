@@ -1,13 +1,26 @@
 
 :host {
-    background-color: white;
-    display: block;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
     box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
-    line-height: 3.5em;
-    padding-right: 1.5em;
-    padding-left: 1.5em;
+    height: 3.5em;
     position: fixed;
     width: 100%;
     top:0px;
     left: 0px;
+    flex-wrap: nowrap;
+    z-index: 100;
+}
+
+:host(*) {
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+    display: inline-flex;
+}
+
+img {
+    height: 35px;
+    align-self: center;
 }

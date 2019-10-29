@@ -8,39 +8,86 @@
 import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 import {
   UiColor,
+  UiSize,
 } from './utils/ui-types';
 
 export namespace Components {
   interface UiApp {
     /**
-    * Set background color
+    * Background color from the UI Color Palette
     */
     'background': UiColor;
     /**
-    * Set forground color
+    * Forground color from the UI Color Palette
     */
     'color': UiColor;
+    /**
+    * Absolute font size
+    */
+    'size': UiSize;
   }
-  interface UiAppBody {}
+  interface UiAppBody {
+    /**
+    * Background color from the UI Color Palette
+    */
+    'background': UiColor;
+    /**
+    * Forground color from the UI Color Palette
+    */
+    'color': UiColor;
+    /**
+    * Absolute font size
+    */
+    'size': UiSize;
+  }
   interface UiAppHeader {
     /**
-    * Set background color
+    * Background color from the UI Color Palette
     */
     'background': UiColor;
     /**
-    * Set forground color
+    * Forground color from the UI Color Palette
     */
     'color': UiColor;
+    /**
+    * Absolute font size
+    */
+    'size': UiSize;
+    'src': string;
   }
   interface UiAppNavigation {
     /**
-    * Set background color
+    * Background color from the UI Color Palette
     */
     'background': UiColor;
     /**
-    * Set forground color
+    * Forground color from the UI Color Palette
     */
     'color': UiColor;
+    /**
+    * Absolute font size
+    */
+    'size': UiSize;
+    'toggle': () => Promise<void>;
+  }
+  interface UiButton {
+    /**
+    * Background color from the UI Color Palette
+    */
+    'background': UiColor;
+    /**
+    * Forground color from the UI Color Palette
+    */
+    'color': UiColor;
+    /**
+    * Absolute font size
+    */
+    'size': UiSize;
+    'type': string;
+  }
+  interface UiIcon {}
+  interface UiRipple {
+    'toggle': (e: CustomEvent<any>) => Promise<void>;
   }
 }
 
@@ -70,52 +117,120 @@ declare global {
     prototype: HTMLUiAppNavigationElement;
     new (): HTMLUiAppNavigationElement;
   };
+
+  interface HTMLUiButtonElement extends Components.UiButton, HTMLStencilElement {}
+  var HTMLUiButtonElement: {
+    prototype: HTMLUiButtonElement;
+    new (): HTMLUiButtonElement;
+  };
+
+  interface HTMLUiIconElement extends Components.UiIcon, HTMLStencilElement {}
+  var HTMLUiIconElement: {
+    prototype: HTMLUiIconElement;
+    new (): HTMLUiIconElement;
+  };
+
+  interface HTMLUiRippleElement extends Components.UiRipple, HTMLStencilElement {}
+  var HTMLUiRippleElement: {
+    prototype: HTMLUiRippleElement;
+    new (): HTMLUiRippleElement;
+  };
   interface HTMLElementTagNameMap {
     'ui-app': HTMLUiAppElement;
     'ui-app-body': HTMLUiAppBodyElement;
     'ui-app-header': HTMLUiAppHeaderElement;
     'ui-app-navigation': HTMLUiAppNavigationElement;
+    'ui-button': HTMLUiButtonElement;
+    'ui-icon': HTMLUiIconElement;
+    'ui-ripple': HTMLUiRippleElement;
   }
 }
 
 declare namespace LocalJSX {
   interface UiApp {
     /**
-    * Set background color
+    * Background color from the UI Color Palette
     */
     'background'?: UiColor;
     /**
-    * Set forground color
+    * Forground color from the UI Color Palette
     */
     'color'?: UiColor;
+    /**
+    * Absolute font size
+    */
+    'size'?: UiSize;
   }
-  interface UiAppBody {}
+  interface UiAppBody {
+    /**
+    * Background color from the UI Color Palette
+    */
+    'background'?: UiColor;
+    /**
+    * Forground color from the UI Color Palette
+    */
+    'color'?: UiColor;
+    /**
+    * Absolute font size
+    */
+    'size'?: UiSize;
+  }
   interface UiAppHeader {
     /**
-    * Set background color
+    * Background color from the UI Color Palette
     */
     'background'?: UiColor;
     /**
-    * Set forground color
+    * Forground color from the UI Color Palette
     */
     'color'?: UiColor;
+    /**
+    * Absolute font size
+    */
+    'size'?: UiSize;
+    'src'?: string;
   }
   interface UiAppNavigation {
     /**
-    * Set background color
+    * Background color from the UI Color Palette
     */
     'background'?: UiColor;
     /**
-    * Set forground color
+    * Forground color from the UI Color Palette
     */
     'color'?: UiColor;
+    /**
+    * Absolute font size
+    */
+    'size'?: UiSize;
   }
+  interface UiButton {
+    /**
+    * Background color from the UI Color Palette
+    */
+    'background'?: UiColor;
+    /**
+    * Forground color from the UI Color Palette
+    */
+    'color'?: UiColor;
+    'onUiClick'?: (event: CustomEvent<any>) => void;
+    /**
+    * Absolute font size
+    */
+    'size'?: UiSize;
+    'type'?: string;
+  }
+  interface UiIcon {}
+  interface UiRipple {}
 
   interface IntrinsicElements {
     'ui-app': UiApp;
     'ui-app-body': UiAppBody;
     'ui-app-header': UiAppHeader;
     'ui-app-navigation': UiAppNavigation;
+    'ui-button': UiButton;
+    'ui-icon': UiIcon;
+    'ui-ripple': UiRipple;
   }
 }
 
@@ -129,6 +244,9 @@ declare module "@stencil/core" {
       'ui-app-body': LocalJSX.UiAppBody & JSXBase.HTMLAttributes<HTMLUiAppBodyElement>;
       'ui-app-header': LocalJSX.UiAppHeader & JSXBase.HTMLAttributes<HTMLUiAppHeaderElement>;
       'ui-app-navigation': LocalJSX.UiAppNavigation & JSXBase.HTMLAttributes<HTMLUiAppNavigationElement>;
+      'ui-button': LocalJSX.UiButton & JSXBase.HTMLAttributes<HTMLUiButtonElement>;
+      'ui-icon': LocalJSX.UiIcon & JSXBase.HTMLAttributes<HTMLUiIconElement>;
+      'ui-ripple': LocalJSX.UiRipple & JSXBase.HTMLAttributes<HTMLUiRippleElement>;
     }
   }
 }

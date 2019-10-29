@@ -1,19 +1,19 @@
 import { TestWindow } from '@stencil/core/testing';
-import { UiApp } from './ui-app';
+import { UiButton } from './ui-button';
 
-describe('ui-app', () => {
+describe('ui-button', () => {
   it('should build', () => {
-    expect(new UiApp()).toBeTruthy();
+    expect(new UiButton()).toBeTruthy();
   });
 
   describe('rendering', () => {
-    let element: HTMLUiAppElement;
+    let element: HTMLUiButtonElement;
     let testWindow: TestWindow;
     beforeEach(async () => {
       testWindow = new TestWindow();
       element = await testWindow.load({
-        components: [UiApp],
-        html: '<ui-app></ui-app>'
+        components: [UiButton],
+        html: '<ui-button></ui-button>'
       });
     });
 

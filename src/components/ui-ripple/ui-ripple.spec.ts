@@ -1,19 +1,19 @@
 import { TestWindow } from '@stencil/core/testing';
-import { UiAppHeader } from './ui-app-header';
+import { UiRipple } from './ui-ripple';
 
-describe('ui-app-header', () => {
+describe('ui-ripple', () => {
   it('should build', () => {
-    expect(new UiAppHeader()).toBeTruthy();
+    expect(new UiRipple()).toBeTruthy();
   });
 
   describe('rendering', () => {
-    let element: HTMLUiAppHeaderElement;
+    let element: HTMLUiRippleElement;
     let testWindow: TestWindow;
     beforeEach(async () => {
       testWindow = new TestWindow();
       element = await testWindow.load({
-        components: [UiAppHeader],
-        html: '<ui-app-header></ui-app-header>'
+        components: [UiRipple],
+        html: '<ui-ripple></ui-ripple>'
       });
     });
 

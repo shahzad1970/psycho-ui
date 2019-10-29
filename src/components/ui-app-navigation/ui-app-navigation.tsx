@@ -1,5 +1,6 @@
-import { h, Component, Host, Prop } from '@stencil/core';
-import { UiColor } from "../../utils/ui-types";
+import { h, Component, Host, Prop, Method, Element } from '@stencil/core';
+import { UiColor, UiSize } from "../../utils/ui-types";
+import { UiCommon } from "../../utils/ui-common";
 
 @Component({
     tag: 'ui-app-navigation',
@@ -7,25 +8,46 @@ import { UiColor } from "../../utils/ui-types";
     shadow: true
 })
 export class UiNavigation {
+    @Element() el: HTMLElement;
 
     /**
-     * Set forground color
+     * Forground color from the UI Color Palette
      */
     @Prop() color: UiColor;
 
     /**
-     * Set background color
+     * Background color from the UI Color Palette
      */
     @Prop() background: UiColor;
 
+    /**
+     * Absolute font size 
+     */
+    @Prop() size: UiSize;
+
+
+    @Method()
+    async toggle() {
+        
+        const bodyElm = this.el.parentElement.querySelector("ui-app-body") as HTMLUiAppNavigationElement;
+        console.log("Toggle Body", bodyElm, this.el.style.visibility)
+
+        if (this.el.style.visibility != 'visible') {
+            this.el.style.visibility = 'visible';
+            bodyElm.style.marginLeft = this.el.clientWidth + "px";
+        } else {
+            this.el.style.visibility = 'hidden';
+            bodyElm.style.marginLeft = null;
+        }
+    }
 
     render() {
         return (
-            <Host class={{
-                [`ui-fg-${this.color}`]: this.color != undefined,
-                [`ui-bg-${this.background}`]: this.background != undefined,
-            }}>
+            <Host>
                 <slot />
+                <style id="ui-style">
+                    {UiCommon.getCss(this.size, this.color, this.background)}
+                </style>
             </Host>
         );
     }

@@ -2,8 +2,10 @@
 :host {
     display: inline-flex;
     overflow: auto;
-    padding: 1em 1.5em;
+    padding: 1em 2em;
     position: fixed;
     height: calc(100vh - 3.5em);
     overflow: auto;
+    min-width: 300px;
+    visibility: hidden;
 }

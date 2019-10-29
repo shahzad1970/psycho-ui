@@ -1,0 +1,37 @@
+:host {
+    display: inline-flex;
+    flex-direction: row;
+    overflow: hidden;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+    position: relative;
+    box-sizing: content-box;
+    cursor: pointer;
+
+}
+
+:host([type="fab"]) {
+    border-radius: 50%;
+    padding: 0.35em;
+    line-height: 1em;
+}
+
+:host([type="base"]) {
+    padding: 0.5em 1em;
+    border-radius: 0.2em;
+    line-height: 1em;
+    
+}
+
+:host(:hover) ::before {
+    content:'';
+    position:absolute;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+    background-color: currentColor;
+    opacity: 0.15;
+}
