@@ -1,15 +1,15 @@
-import { h, Component, Prop, Host } from '@stencil/core';
-import { UiColor, UiSize } from "../../utils/ui-types";
-import { UiCommon } from "../../utils/ui-common";
+import {h, Host, Component, Prop } from '@stencil/core';
+import { UiColor, UiSize} from "../../utils/ui-types";
+import { UiCommon } from "../../utils/ui-common"
+
 
 @Component({
-    tag: 'ui-icon',
-    styleUrl: 'ui-icon.css',
+    tag: 'ui-paragraph',
+    styleUrl: 'ui-paragraph.css',
     shadow: true
 })
-export class UiIcon {
-
-    /**
+export class UiParagraph {
+   /**
      * Forground color from the UI Color Palette
      */
     @Prop() color: UiColor;
@@ -23,12 +23,12 @@ export class UiIcon {
      * Absolute font size 
      */
     @Prop() size: UiSize;
-
+    
 
     render() {
         return (
             <Host>
-                <slot />
+                <slot></slot>
                 <style id="ui-style">
                     {UiCommon.getCss(this.size, this.color, this.background)}
                 </style>

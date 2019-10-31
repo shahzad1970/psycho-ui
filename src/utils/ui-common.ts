@@ -46,7 +46,7 @@ class UiCommonUtils {
     
         return {
             bg: this.colorPalette[c1][c2],
-            fg: (c2 as any < 4 ? "#ffffff" : '#000000')
+            fg: (c2 as any < 5 ? "#ffffff" : '#000000')
         };
 
     }
@@ -72,6 +72,10 @@ class UiCommonUtils {
         }
         css += "}"
         return css;
+    }
+
+    getStyle(size: string, color: string, background: string) {
+        return [{['font-size']: size}, {['color']: color}, {['background']: background}]
     }
 
 }

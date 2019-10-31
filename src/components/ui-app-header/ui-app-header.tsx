@@ -13,12 +13,12 @@ export class UiAppHeader {
     /**
      * Forground color from the UI Color Palette
      */
-    @Prop() color: UiColor;
+    @Prop({reflect: false}) color: UiColor;
 
     /**
      * Background color from the UI Color Palette
      */
-    @Prop() background: UiColor;
+    @Prop({reflect: false}) background: UiColor;
 
     /**
      * Absolute font size 
@@ -35,7 +35,7 @@ export class UiAppHeader {
     render() {
         return (
             <Host>
-                <ui-button type="fab" onClick={() => this.navigation()} size="x-large">
+                <ui-button round="fab" type="base" onClick={() => this.navigation()} size="x-large">
                     <ui-icon>menu</ui-icon>
                 </ui-button>
                 <img src={this.src}></img>

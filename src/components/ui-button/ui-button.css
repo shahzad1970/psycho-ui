@@ -9,23 +9,39 @@
     position: relative;
     box-sizing: content-box;
     cursor: pointer;
-
-}
-
-:host([type="fab"]) {
-    border-radius: 50%;
-    padding: 0.35em;
-    line-height: 1em;
+    border: 0.15em solid transparent;
+    font-weight: 600;
+    flex-wrap: nowrap;
+    white-space: nowrap;
 }
 
 :host([type="base"]) {
     padding: 0.5em 1em;
-    border-radius: 0.2em;
     line-height: 1em;
     
 }
 
-:host(:hover) ::before {
+:host([type="outline"]) {
+    padding: 0.5em 1.25em;
+    line-height: 1em;
+    border-color: currentColor;
+}
+
+:host([type="flat"]) {
+    padding: 0.5em 1em;
+    line-height: 1em;
+}
+
+:host([type="flat"]:hover) {
+    border-color: currentColor;
+}
+
+
+:host(:hover:not([disabled]):not([type="flat"]):not([type="link"])) {
+    box-shadow: 0 0.09em 0.25em 0 rgba(0,0,0,.55);
+}
+
+:host(:hover:not([disabled]):not([type="flat"]):not([type="link"])) ::before {
     content:'';
     position:absolute;
     top:0;
@@ -34,4 +50,48 @@
     left:0;
     background-color: currentColor;
     opacity: 0.15;
+}
+
+:host([disabledx]) ::before {
+    content:'';
+    position:absolute;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+    background-color: currentColor;
+    opacity: 0.15;
+    cursor: not-allowed;
+}
+
+:host([disabled]) {
+    background-color: #dedede;
+    color: #aaaaaa;
+    border-color: #cccccc;
+    text-shadow: currentColor;
+}
+
+:host([round="base"]) {
+    border-radius: 0.2em;
+}
+
+:host([round="pill"]) {
+    border-radius: 1.5em;
+}
+
+:host([round="fab"]) {
+    border-radius: 1.5em;
+    padding: 0.45em;
+}
+
+:host([type="link"]) {
+    line-height: 1.1em;
+    border: 0px;
+    border-bottom: 0.15em solid transparent;
+    
+}
+
+:host([type="link"]:hover) {
+    border-radius: 0px;
+    border-bottom: 0.15em solid currentColor;
 }

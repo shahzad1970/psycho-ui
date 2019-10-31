@@ -30,7 +30,6 @@ export class UiNavigation {
     async toggle() {
         
         const bodyElm = this.el.parentElement.querySelector("ui-app-body") as HTMLUiAppNavigationElement;
-        console.log("Toggle Body", bodyElm, this.el.style.visibility)
 
         if (this.el.style.visibility != 'visible') {
             this.el.style.visibility = 'visible';

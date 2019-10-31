@@ -16,3 +16,6 @@ export type UiColor = 'base' | 'primary-light' | 'primary-dark' | 'secondary-lig
 
  export type UiSize = 'xx-small'| 'x-small'| 'small'| 'medium'| 'large'| 'x-large'| 'xx-large' | 'larger' | 'smaller';
 
+export type UiButtonType = "base" | "outline" | "flat" | "link";
+
+export type UiRounding = "none" | "base" | "fab" | "pill";

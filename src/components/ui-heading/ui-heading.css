@@ -1,0 +1,16 @@
+:host {
+    display: flex;
+    flex-direction: row;
+    line-height: 1.0em;
+    padding: 0.5em 0em;
+    font-weight: bold;
+    align-items: flex-start;
+    justify-content: flex-start;
+    column-gap: 0.5em;
+}
+
+:host([background]) {
+    padding-left: 1em;
+    padding-right: 1em;
+}
+

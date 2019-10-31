@@ -4,7 +4,7 @@ import { UiCommon } from "../../utils/ui-common";
 
 @Component({
     tag: 'ui-app',
-    styleUrl: 'ui-app.scss'
+    styleUrl: 'ui-app.css'
 })
 export class UiApp  {
     @Element() el: HTMLElement;

@@ -11,11 +11,16 @@ export const config: Config = {
     {
       type: 'docs-readme'
     },
+    { 
+      type: 'docs-json',
+      file: "./src/components/ui-playground/doc.json"
+    },
     {
       type: 'www',
       serviceWorker: null,
       copy: [
         { src: 'static', dest: 'static' }
+        { src: '*.html', dest: '' }
       ]
     }
   ],
