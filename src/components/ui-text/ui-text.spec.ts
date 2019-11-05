@@ -1,19 +1,19 @@
 import { TestWindow } from '@stencil/core/testing';
-import { UiPlaygroundAttrs } from './ui-playground-attrs';
+import { UiText } from './ui-text';
 
-describe('ui-playground-attrs', () => {
+describe('ui-text', () => {
   it('should build', () => {
-    expect(new UiPlaygroundAttrs()).toBeTruthy();
+    expect(new UiText()).toBeTruthy();
   });
 
   describe('rendering', () => {
-    let element: HTMLUiPlaygroundAttrsElement;
+    let element: HTMLUiTextElement;
     let testWindow: TestWindow;
     beforeEach(async () => {
       testWindow = new TestWindow();
       element = await testWindow.load({
-        components: [UiPlaygroundAttrs],
-        html: '<ui-playground-attrs></ui-playground-attrs>'
+        components: [UiText],
+        html: '<ui-text></ui-text>'
       });
     });
 

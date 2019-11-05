@@ -1,0 +1,17 @@
+
+:host {
+    display: flex;
+    padding-left: 1em;
+    cursor: pointer;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    flex-wrap: wrap;  
+    flex: 1 1 auto;
+    
+}
+
+:host(:hover) {
+    opacity: 0.8;
+} 

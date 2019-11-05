@@ -1,4 +1,4 @@
-import {h, Host, Component, Prop } from '@stencil/core';
+import {h, Host, Component, Prop, Element } from '@stencil/core';
 import { UiColor, UiSize} from "../../utils/ui-types";
 import { UiCommon } from "../../utils/ui-common"
 
@@ -8,6 +8,8 @@ import { UiCommon } from "../../utils/ui-common"
     shadow: true
 })
 export class UiHeading {
+    @Element() el: HTMLElement;
+    
    /**
      * Forground color from the UI Color Palette
      */
@@ -28,8 +30,8 @@ export class UiHeading {
         return (
             <Host>
                 <slot></slot>
-                <style id="ui-style">
-                    {UiCommon.getCss(this.size, this.color, this.background)}
+                <style>
+                    {UiCommon.getStyle(this.size, this.color, this.background, this.el)}
                 </style>
             </Host>
         );

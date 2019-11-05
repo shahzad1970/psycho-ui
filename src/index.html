@@ -12,19 +12,25 @@
 <body>
   <ui-app background="grey-10">
     <ui-app-header background="dark" src="/static/images/logo.png">front-end framework</ui-app-header>
-    <ui-app-navigation background="primary-dark" open="close">navigation</ui-app-navigation>
+    <ui-app-navigation open="close">navigation</ui-app-navigation>
     <ui-app-body>
-        This is test line of 
-        
-        <ui-button size="large" type="base" background="primary-dark" disabled> 
-          Button
-          <ui-icon size="larger">menu</ui-icon>
-        </ui-button>
-        <ui-button size="large" round="pill" type="outline" color="primary-light" disabled> 
-            Button
-            <ui-icon size="larger">menu</ui-icon>
-          </ui-button>
-          <ui-playground></ui-playground>
+        <ui-input type="color" color="dark">
+          Input Label
+        </ui-input>
+
+        <ui-input type="radio" color="grey-80" orientation="horizontal">HMM
+          <ui-input-option slot="option" value="false" selected>Disabled</ui-input-option>
+          <ui-input-option slot="option" value="true">Enabled</ui-input-option>
+        </ui-input>
+
+        <ui-input type="text">Test Label</ui-input>
+        <ui-input type="text" orientation="horizontal">Test Label</ui-input>
+
+        <ui-code language="typescript">
+          function test() {
+            
+          }
+        </ui-code>
     </ui-app-body>
   </ui-app>
 </body>

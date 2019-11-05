@@ -4,7 +4,7 @@ class UiCommonUtils {
 
     private constructor() { }
 
-    private colorPalette: object = {
+    public colorPalette: object = {
         'grey': ['#242526', '#313336', '#3f4145', '#53565a', '#72767a', '#8e9399', '#acb0b5', '#d0d4d9', '#edf0f2', '#f8f9f9'],
         'red': ['#471819', '#691518', '#8f0e13', '#b50d12', '#de1b21', '#fa5056', '#fc9094', '#fcc7c9', '#fce8e9', '#fff5f5'],
         'pink': ['#451726', '#661430', '#8c0e38', '#b30c44', '#db1a5b', '#f74f87', '#fa8eb2', '#fcc7d9', '#fce8ef', '#fcf5f7'],
@@ -19,7 +19,7 @@ class UiCommonUtils {
         'orange': ['#3d1e14', '#5e2413', '#80280d', '#a6310d', '#c94218', '#e8663f', '#f2997e', '#f5ccbf', '#fce9e3', '#faf6f5'],
     }
 
-    private themePalette: object = {
+    public themePalette: object = {
         'primary-dark': {bg: "#001E60", fg: "#ffffff"},
         'primary-light':  {bg: "#0047BB", fg: "#ffffff"},
         'secondary-dark':  {bg: "#097A49", fg: "#ffffff"},
@@ -65,18 +65,50 @@ class UiCommonUtils {
             css += "background-color: " + c.bg + ";";
             if (!color) {
                 css += "color: " + c.fg + ";";
+                css += "border-color: "+this.convertHex(c.fg, 20)+";";
+                css += "outline-color: "+this.convertHex(c.fg, 20)+";";
             }
         }
         if (color) {
             css += "color: " + this.getColor(color).bg + ";";
+            css += "border-color: " + this.convertHex(this.getColor(color).bg, 20) +";";
+            css += "outline-color: " + this.convertHex(this.getColor(color).bg, 20) +";";
         }
         css += "}"
         return css;
     }
 
-    getStyle(size: string, color: string, background: string) {
-        return [{['font-size']: size}, {['color']: color}, {['background']: background}]
+    getStyle(size: string, color: string, background: string, el: HTMLElement) {
+        if (!HTMLElement.prototype.attachShadow) {
+            el.style.fontSize = size;
+            if (background) {
+                let c = this.getColor(background);
+                if (!color) {
+                    el.style.color = c.fg;
+                    el.style.borderColor = this.convertHex(c.fg, 20);
+                    el.style.outlineColor = this.convertHex(c.fg, 20);
+                }
+                el.style.backgroundColor = c.bg;
+            }
+            if (color) {
+                el.style.color = this.getColor(color).bg;
+                el.style.borderColor = this.convertHex(this.getColor(color).bg, 20);
+                el.style.outlineColor = this.convertHex(this.getColor(color).bg, 20);
+            }
+            return "";
+        } else {
+           return this.getCss(size, color, background);
+        }
     }
+
+    private convertHex(hex,opacity){
+        hex = hex.replace('#','');
+        let r = parseInt(hex.substring(0,2), 16);
+        let g = parseInt(hex.substring(2,4), 16);
+        let b = parseInt(hex.substring(4,6), 16);
+        return 'rgba('+r+','+g+','+b+','+opacity/100+')';
+    }
+
 
 }
 

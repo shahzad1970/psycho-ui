@@ -10,6 +10,8 @@ import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 import {
   UiButtonType,
   UiColor,
+  UiInputType,
+  UiOrientation,
   UiRounding,
   UiSize,
 } from './utils/ui-types';
@@ -102,6 +104,10 @@ export namespace Components {
     */
     'type': UiButtonType;
   }
+  interface UiCode {
+    'language': 'xml' | 'java' | 'javascript' | 'typescript' | 'sql';
+    'setCode': (code: any) => Promise<void>;
+  }
   interface UiHeading {
     /**
     * Background color from the UI Color Palette
@@ -130,6 +136,38 @@ export namespace Components {
     */
     'size': UiSize;
   }
+  interface UiInput {
+    /**
+    * @description Background color from the UI Color Palette
+    */
+    'background': UiColor;
+    /**
+    * @description Forground color from the UI Color Palette
+    */
+    'color': UiColor;
+    /**
+    * @description Type of input being requested
+    */
+    'orientation': UiOrientation;
+    /**
+    * @description Absolute font size
+    */
+    'size': UiSize;
+    /**
+    * @description Type of input being requested
+    */
+    'type': UiInputType;
+    'value': any;
+  }
+  interface UiInputColor {}
+  interface UiInputOption {
+    'getValue': () => Promise<string>;
+    'selected': boolean;
+    'value': string;
+  }
+  interface UiInputRadio {
+    'orientation': UiOrientation;
+  }
   interface UiParagraph {
     /**
     * Background color from the UI Color Palette
@@ -148,11 +186,25 @@ export namespace Components {
     'tag': string;
   }
   interface UiPlaygroundAttrs {
-    'doc': JsonDocsComponent;
-    'element': HTMLElement;
+    'docs': Array<JsonDocsComponent>;
+    'elements': Array<HTMLElement>;
   }
   interface UiRipple {
     'toggle': (e: CustomEvent<any>) => Promise<void>;
+  }
+  interface UiText {
+    /**
+    * @description Background color from the UI Color Palette
+    */
+    'background': UiColor;
+    /**
+    * @description Forground color from the UI Color Palette
+    */
+    'color': UiColor;
+    /**
+    * @description Absolute font size
+    */
+    'size': UiSize;
   }
 }
 
@@ -189,6 +241,12 @@ declare global {
     new (): HTMLUiButtonElement;
   };
 
+  interface HTMLUiCodeElement extends Components.UiCode, HTMLStencilElement {}
+  var HTMLUiCodeElement: {
+    prototype: HTMLUiCodeElement;
+    new (): HTMLUiCodeElement;
+  };
+
   interface HTMLUiHeadingElement extends Components.UiHeading, HTMLStencilElement {}
   var HTMLUiHeadingElement: {
     prototype: HTMLUiHeadingElement;
@@ -199,6 +257,30 @@ declare global {
   var HTMLUiIconElement: {
     prototype: HTMLUiIconElement;
     new (): HTMLUiIconElement;
+  };
+
+  interface HTMLUiInputElement extends Components.UiInput, HTMLStencilElement {}
+  var HTMLUiInputElement: {
+    prototype: HTMLUiInputElement;
+    new (): HTMLUiInputElement;
+  };
+
+  interface HTMLUiInputColorElement extends Components.UiInputColor, HTMLStencilElement {}
+  var HTMLUiInputColorElement: {
+    prototype: HTMLUiInputColorElement;
+    new (): HTMLUiInputColorElement;
+  };
+
+  interface HTMLUiInputOptionElement extends Components.UiInputOption, HTMLStencilElement {}
+  var HTMLUiInputOptionElement: {
+    prototype: HTMLUiInputOptionElement;
+    new (): HTMLUiInputOptionElement;
+  };
+
+  interface HTMLUiInputRadioElement extends Components.UiInputRadio, HTMLStencilElement {}
+  var HTMLUiInputRadioElement: {
+    prototype: HTMLUiInputRadioElement;
+    new (): HTMLUiInputRadioElement;
   };
 
   interface HTMLUiParagraphElement extends Components.UiParagraph, HTMLStencilElement {}
@@ -224,18 +306,30 @@ declare global {
     prototype: HTMLUiRippleElement;
     new (): HTMLUiRippleElement;
   };
+
+  interface HTMLUiTextElement extends Components.UiText, HTMLStencilElement {}
+  var HTMLUiTextElement: {
+    prototype: HTMLUiTextElement;
+    new (): HTMLUiTextElement;
+  };
   interface HTMLElementTagNameMap {
     'ui-app': HTMLUiAppElement;
     'ui-app-body': HTMLUiAppBodyElement;
     'ui-app-header': HTMLUiAppHeaderElement;
     'ui-app-navigation': HTMLUiAppNavigationElement;
     'ui-button': HTMLUiButtonElement;
+    'ui-code': HTMLUiCodeElement;
     'ui-heading': HTMLUiHeadingElement;
     'ui-icon': HTMLUiIconElement;
+    'ui-input': HTMLUiInputElement;
+    'ui-input-color': HTMLUiInputColorElement;
+    'ui-input-option': HTMLUiInputOptionElement;
+    'ui-input-radio': HTMLUiInputRadioElement;
     'ui-paragraph': HTMLUiParagraphElement;
     'ui-playground': HTMLUiPlaygroundElement;
     'ui-playground-attrs': HTMLUiPlaygroundAttrsElement;
     'ui-ripple': HTMLUiRippleElement;
+    'ui-text': HTMLUiTextElement;
   }
 }
 
@@ -324,6 +418,9 @@ declare namespace LocalJSX {
     */
     'type'?: UiButtonType;
   }
+  interface UiCode {
+    'language'?: 'xml' | 'java' | 'javascript' | 'typescript' | 'sql';
+  }
   interface UiHeading {
     /**
     * Background color from the UI Color Palette
@@ -352,6 +449,41 @@ declare namespace LocalJSX {
     */
     'size'?: UiSize;
   }
+  interface UiInput {
+    /**
+    * @description Background color from the UI Color Palette
+    */
+    'background'?: UiColor;
+    /**
+    * @description Forground color from the UI Color Palette
+    */
+    'color'?: UiColor;
+    'onUiInput'?: (event: CustomEvent<any>) => void;
+    /**
+    * @description Type of input being requested
+    */
+    'orientation'?: UiOrientation;
+    /**
+    * @description Absolute font size
+    */
+    'size'?: UiSize;
+    /**
+    * @description Type of input being requested
+    */
+    'type'?: UiInputType;
+    'value'?: any;
+  }
+  interface UiInputColor {
+    'onUiInputEvent'?: (event: CustomEvent<any>) => void;
+  }
+  interface UiInputOption {
+    'onUiInputOptionEvent'?: (event: CustomEvent<any>) => void;
+    'selected'?: boolean;
+    'value'?: string;
+  }
+  interface UiInputRadio {
+    'orientation'?: UiOrientation;
+  }
   interface UiParagraph {
     /**
     * Background color from the UI Color Palette
@@ -370,10 +502,25 @@ declare namespace LocalJSX {
     'tag'?: string;
   }
   interface UiPlaygroundAttrs {
-    'doc'?: JsonDocsComponent;
-    'element'?: HTMLElement;
+    'docs'?: Array<JsonDocsComponent>;
+    'elements'?: Array<HTMLElement>;
+    'onUpdatePlaygroundCode'?: (event: CustomEvent<any>) => void;
   }
   interface UiRipple {}
+  interface UiText {
+    /**
+    * @description Background color from the UI Color Palette
+    */
+    'background'?: UiColor;
+    /**
+    * @description Forground color from the UI Color Palette
+    */
+    'color'?: UiColor;
+    /**
+    * @description Absolute font size
+    */
+    'size'?: UiSize;
+  }
 
   interface IntrinsicElements {
     'ui-app': UiApp;
@@ -381,12 +528,18 @@ declare namespace LocalJSX {
     'ui-app-header': UiAppHeader;
     'ui-app-navigation': UiAppNavigation;
     'ui-button': UiButton;
+    'ui-code': UiCode;
     'ui-heading': UiHeading;
     'ui-icon': UiIcon;
+    'ui-input': UiInput;
+    'ui-input-color': UiInputColor;
+    'ui-input-option': UiInputOption;
+    'ui-input-radio': UiInputRadio;
     'ui-paragraph': UiParagraph;
     'ui-playground': UiPlayground;
     'ui-playground-attrs': UiPlaygroundAttrs;
     'ui-ripple': UiRipple;
+    'ui-text': UiText;
   }
 }
 
@@ -401,12 +554,18 @@ declare module "@stencil/core" {
       'ui-app-header': LocalJSX.UiAppHeader & JSXBase.HTMLAttributes<HTMLUiAppHeaderElement>;
       'ui-app-navigation': LocalJSX.UiAppNavigation & JSXBase.HTMLAttributes<HTMLUiAppNavigationElement>;
       'ui-button': LocalJSX.UiButton & JSXBase.HTMLAttributes<HTMLUiButtonElement>;
+      'ui-code': LocalJSX.UiCode & JSXBase.HTMLAttributes<HTMLUiCodeElement>;
       'ui-heading': LocalJSX.UiHeading & JSXBase.HTMLAttributes<HTMLUiHeadingElement>;
       'ui-icon': LocalJSX.UiIcon & JSXBase.HTMLAttributes<HTMLUiIconElement>;
+      'ui-input': LocalJSX.UiInput & JSXBase.HTMLAttributes<HTMLUiInputElement>;
+      'ui-input-color': LocalJSX.UiInputColor & JSXBase.HTMLAttributes<HTMLUiInputColorElement>;
+      'ui-input-option': LocalJSX.UiInputOption & JSXBase.HTMLAttributes<HTMLUiInputOptionElement>;
+      'ui-input-radio': LocalJSX.UiInputRadio & JSXBase.HTMLAttributes<HTMLUiInputRadioElement>;
       'ui-paragraph': LocalJSX.UiParagraph & JSXBase.HTMLAttributes<HTMLUiParagraphElement>;
       'ui-playground': LocalJSX.UiPlayground & JSXBase.HTMLAttributes<HTMLUiPlaygroundElement>;
       'ui-playground-attrs': LocalJSX.UiPlaygroundAttrs & JSXBase.HTMLAttributes<HTMLUiPlaygroundAttrsElement>;
       'ui-ripple': LocalJSX.UiRipple & JSXBase.HTMLAttributes<HTMLUiRippleElement>;
+      'ui-text': LocalJSX.UiText & JSXBase.HTMLAttributes<HTMLUiTextElement>;
     }
   }
 }

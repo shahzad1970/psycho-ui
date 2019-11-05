@@ -44,8 +44,8 @@ export class UiNavigation {
         return (
             <Host>
                 <slot />
-                <style id="ui-style">
-                    {UiCommon.getCss(this.size, this.color, this.background)}
+                <style>
+                    {UiCommon.getStyle(this.size, this.color, this.background, this.el)}
                 </style>
             </Host>
         );

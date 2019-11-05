@@ -19,3 +19,7 @@ export type UiColor = 'base' | 'primary-light' | 'primary-dark' | 'secondary-lig
 export type UiButtonType = "base" | "outline" | "flat" | "link";
 
 export type UiRounding = "none" | "base" | "fab" | "pill";
+
+export type UiInputType = "text" | "search" | "date" | "color" | "checkbox" | "radio";
+
+export type UiOrientation = "vertical" | "horizontal"

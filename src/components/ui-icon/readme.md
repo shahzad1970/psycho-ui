@@ -19,13 +19,13 @@
 ### Used by
 
  - [ui-app-header](../ui-app-header)
- - [ui-playground-attrs](../ui-playground/ui-playground-attrs)
+ - [ui-input](../ui-input)
 
 ### Graph
 ```mermaid
 graph TD;
   ui-app-header --> ui-icon
-  ui-playground-attrs --> ui-icon
+  ui-input --> ui-icon
   style ui-icon fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

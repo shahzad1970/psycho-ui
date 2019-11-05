@@ -1,0 +1,23 @@
+:host {
+    font-size: smaller;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    overflow-y: auto;
+    max-height: 30em;
+    
+}
+.row {
+    display: flex;
+    flex-direction: column;
+    flex:auto;
+
+}
+
+ui-button {
+    border: 0px;
+    box-shadow: none;
+    flex: auto;
+    line-height: 2em;
+    height: 2em;
+}

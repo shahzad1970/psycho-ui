@@ -4,15 +4,18 @@ import { UiCommon } from "../../utils/ui-common"
 
 /**
  * @title
- * UI Button web component
+ * UI Buttons
  * 
  * @description
- * Ui Button provides a clickable element, which can be used anywhere a mouse click interaction is required. Ui-button replaces 
- * the need for a html button / link. This component should be used for all mouse click needs in an application.
+ * Buttons allow users to take action, and make a choice, with a single tap.
  * 
  * @usage
- * <ui-button id="edit">Test Button</ui-button>
- * <ui-button id="edit" type="flat" round="fab"><ui-icon>menu</ui-icon></ui-button>
+ * <ui-button class="ui-edit-layer">
+ *      Test Button
+ * </ui-button>
+ * <ui-button class="ui-edit-layer" type="flat" round="fab">
+ *      <ui-icon>menu</ui-icon>
+ * </ui-button>
  * 
  */
 
@@ -72,9 +75,9 @@ export class UiButton {
     ripple: HTMLUiRippleElement;
 
     @Listen('click', { capture: true })
-    onClick(e: CustomEvent) {
+    onClick() {
         if (this.disabled) return;
-        this.uiClick.emit(e);
+        this.uiClick.emit();
     }
 
     @Listen('mousedown', { capture: true })
@@ -85,11 +88,11 @@ export class UiButton {
 
     render() {
         return (
-            <Host>
+            <Host> 
                 <slot></slot>
                 <ui-ripple ref={(e: HTMLUiRippleElement) => this.ripple = e}></ui-ripple>
-                <style id="ui-style">
-                    {UiCommon.getCss(this.size, this.color, this.background)}
+                <style>
+                    {UiCommon.getStyle(this.size, this.color, this.background, this.el)}
                 </style>
             </Host>
         );

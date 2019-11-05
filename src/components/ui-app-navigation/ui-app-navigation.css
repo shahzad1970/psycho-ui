@@ -1,6 +1,6 @@
 
 :host {
-    display: inline-flex;
+    display: flex;
     overflow: auto;
     padding: 1em 2em;
     position: fixed;
@@ -8,4 +8,6 @@
     overflow: auto;
     min-width: 300px;
     visibility: hidden;
+    border-right: 1px solid;
+    border-color: inherit;
 }

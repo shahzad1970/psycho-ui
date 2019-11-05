@@ -1,5 +1,5 @@
 {
-  "timestamp": "2019-10-31T02:40:24",
+  "timestamp": "2019-11-05T04:41:20",
   "compiler": {
     "name": "@stencil/core",
     "version": "1.7.5",
@@ -4553,15 +4553,15 @@
       "docs": "",
       "docsTags": [
         {
-          "text": "UI Button web component",
+          "text": "UI Buttons",
           "name": "title"
         },
         {
-          "text": "Ui Button provides a clickable element, which can be used anywhere a mouse click interaction is required. Ui-button replaces \nthe need for a html button / link. This component should be used for all mouse click needs in an application.",
+          "text": "Buttons allow users to take action, and make a choice, with a single tap.",
           "name": "description"
         },
         {
-          "text": "<ui-button id=\"edit\">Test Button</ui-button>\n<ui-button id=\"edit\" type=\"flat\" round=\"fab\"><ui-icon>menu</ui-icon></ui-button>",
+          "text": "<ui-button class=\"ui-edit-layer\">\n     Test Button\n</ui-button>\n<ui-button class=\"ui-edit-layer\" type=\"flat\" round=\"fab\">\n     <ui-icon>menu</ui-icon>\n</ui-button>",
           "name": "usage"
         }
       ],
@@ -5798,6 +5798,7 @@
       "slots": [],
       "dependents": [
         "ui-app-header",
+        "ui-input-color",
         "ui-playground-attrs"
       ],
       "dependencies": [
@@ -5810,8 +5811,81 @@
         "ui-app-header": [
           "ui-button"
         ],
+        "ui-input-color": [
+          "ui-button"
+        ],
         "ui-playground-attrs": [
           "ui-button"
+        ]
+      }
+    },
+    {
+      "filePath": "src\\components\\ui-code\\ui-code.tsx",
+      "encapsulation": "shadow",
+      "tag": "ui-code",
+      "readme": "# ui-code\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "language",
+          "type": "\"java\" | \"javascript\" | \"sql\" | \"typescript\" | \"xml\"",
+          "mutable": false,
+          "attr": "language",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "\"xml\"",
+          "values": [
+            {
+              "value": "java",
+              "type": "string"
+            },
+            {
+              "value": "javascript",
+              "type": "string"
+            },
+            {
+              "value": "sql",
+              "type": "string"
+            },
+            {
+              "value": "typescript",
+              "type": "string"
+            },
+            {
+              "value": "xml",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [
+        {
+          "name": "setCode",
+          "returns": {
+            "type": "Promise<void>",
+            "docs": ""
+          },
+          "signature": "setCode(code: any) => Promise<void>",
+          "parameters": [],
+          "docs": "",
+          "docsTags": []
+        }
+      ],
+      "events": [],
+      "styles": [],
+      "slots": [],
+      "dependents": [
+        "ui-playground"
+      ],
+      "dependencies": [],
+      "dependencyGraph": {
+        "ui-playground": [
+          "ui-code"
         ]
       }
     },
@@ -8073,15 +8147,1444 @@
       "slots": [],
       "dependents": [
         "ui-app-header",
-        "ui-playground-attrs"
+        "ui-input"
       ],
       "dependencies": [],
       "dependencyGraph": {
         "ui-app-header": [
           "ui-icon"
         ],
-        "ui-playground-attrs": [
+        "ui-input": [
           "ui-icon"
+        ]
+      }
+    },
+    {
+      "filePath": "src\\components\\ui-input\\ui-input.tsx",
+      "encapsulation": "shadow",
+      "tag": "ui-input",
+      "readme": "# ui-input\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "background",
+          "type": "\"base\" | \"primary-light\" | \"primary-dark\" | \"secondary-light\" | \"secondary-dark\" | \"success\" | \"danger\" | \"warning\" | \"info\" | \"grey-100\" | \"grey-90\" | \"grey-80\" | \"grey-70\" | \"grey-60\" | \"grey-50\" | \"grey-40\" | \"grey-30\" | \"grey-20\" | \"grey-10\" | \"red-100\" | \"red-90\" | \"red-80\" | \"red-70\" | \"red-60\" | \"red-50\" | \"red-40\" | \"red-30\" | \"red-20\" | \"red-10\" | \"pink-100\" | \"pink-90\" | \"pink-80\" | \"pink-70\" | \"pink-60\" | \"pink-50\" | \"pink-40\" | \"pink-30\" | \"pink-20\" | \"pink-10\" | \"purple-100\" | \"purple-90\" | \"purple-80\" | \"purple-70\" | \"purple-60\" | \"purple-50\" | \"purple-40\" | \"purple-30\" | \"purple-20\" | \"purple-10\" | \"indigo-100\" | \"indigo-90\" | \"indigo-80\" | \"indigo-70\" | \"indigo-60\" | \"indigo-50\" | \"indigo-40\" | \"indigo-30\" | \"indigo-20\" | \"indigo-10\" | \"navy-100\" | \"navy-90\" | \"navy-80\" | \"navy-70\" | \"navy-60\" | \"navy-50\" | \"navy-40\" | \"navy-30\" | \"navy-20\" | \"navy-10\" | \"blue-100\" | \"blue-90\" | \"blue-80\" | \"blue-70\" | \"blue-60\" | \"blue-50\" | \"blue-40\" | \"blue-30\" | \"blue-20\" | \"blue-10\" | \"teal-100\" | \"teal-90\" | \"teal-80\" | \"teal-70\" | \"teal-60\" | \"teal-50\" | \"teal-40\" | \"teal-30\" | \"teal-20\" | \"teal-10\" | \"mint-100\" | \"mint-90\" | \"mint-80\" | \"mint-70\" | \"mint-60\" | \"mint-50\" | \"mint-40\" | \"mint-30\" | \"mint-20\" | \"mint-10\" | \"green-100\" | \"green-90\" | \"green-80\" | \"green-70\" | \"green-60\" | \"green-50\" | \"green-40\" | \"green-30\" | \"green-20\" | \"green-10\" | \"yellow-100\" | \"yellow-90\" | \"yellow-80\" | \"yellow-70\" | \"yellow-60\" | \"yellow-50\" | \"yellow-40\" | \"yellow-30\" | \"yellow-20\" | \"yellow-10\" | \"orange-100\" | \"orange-90\" | \"orange-80\" | \"orange-70\" | \"orange-60\" | \"orange-50\" | \"orange-40\" | \"orange-30\" | \"orange-20\" | \"orange-10\"",
+          "mutable": false,
+          "attr": "background",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [
+            {
+              "text": "Background color from the UI Color Palette",
+              "name": "description"
+            }
+          ],
+          "values": [
+            {
+              "value": "base",
+              "type": "string"
+            },
+            {
+              "value": "primary-light",
+              "type": "string"
+            },
+            {
+              "value": "primary-dark",
+              "type": "string"
+            },
+            {
+              "value": "secondary-light",
+              "type": "string"
+            },
+            {
+              "value": "secondary-dark",
+              "type": "string"
+            },
+            {
+              "value": "success",
+              "type": "string"
+            },
+            {
+              "value": "danger",
+              "type": "string"
+            },
+            {
+              "value": "warning",
+              "type": "string"
+            },
+            {
+              "value": "info",
+              "type": "string"
+            },
+            {
+              "value": "grey-100",
+              "type": "string"
+            },
+            {
+              "value": "grey-90",
+              "type": "string"
+            },
+            {
+              "value": "grey-80",
+              "type": "string"
+            },
+            {
+              "value": "grey-70",
+              "type": "string"
+            },
+            {
+              "value": "grey-60",
+              "type": "string"
+            },
+            {
+              "value": "grey-50",
+              "type": "string"
+            },
+            {
+              "value": "grey-40",
+              "type": "string"
+            },
+            {
+              "value": "grey-30",
+              "type": "string"
+            },
+            {
+              "value": "grey-20",
+              "type": "string"
+            },
+            {
+              "value": "grey-10",
+              "type": "string"
+            },
+            {
+              "value": "red-100",
+              "type": "string"
+            },
+            {
+              "value": "red-90",
+              "type": "string"
+            },
+            {
+              "value": "red-80",
+              "type": "string"
+            },
+            {
+              "value": "red-70",
+              "type": "string"
+            },
+            {
+              "value": "red-60",
+              "type": "string"
+            },
+            {
+              "value": "red-50",
+              "type": "string"
+            },
+            {
+              "value": "red-40",
+              "type": "string"
+            },
+            {
+              "value": "red-30",
+              "type": "string"
+            },
+            {
+              "value": "red-20",
+              "type": "string"
+            },
+            {
+              "value": "red-10",
+              "type": "string"
+            },
+            {
+              "value": "pink-100",
+              "type": "string"
+            },
+            {
+              "value": "pink-90",
+              "type": "string"
+            },
+            {
+              "value": "pink-80",
+              "type": "string"
+            },
+            {
+              "value": "pink-70",
+              "type": "string"
+            },
+            {
+              "value": "pink-60",
+              "type": "string"
+            },
+            {
+              "value": "pink-50",
+              "type": "string"
+            },
+            {
+              "value": "pink-40",
+              "type": "string"
+            },
+            {
+              "value": "pink-30",
+              "type": "string"
+            },
+            {
+              "value": "pink-20",
+              "type": "string"
+            },
+            {
+              "value": "pink-10",
+              "type": "string"
+            },
+            {
+              "value": "purple-100",
+              "type": "string"
+            },
+            {
+              "value": "purple-90",
+              "type": "string"
+            },
+            {
+              "value": "purple-80",
+              "type": "string"
+            },
+            {
+              "value": "purple-70",
+              "type": "string"
+            },
+            {
+              "value": "purple-60",
+              "type": "string"
+            },
+            {
+              "value": "purple-50",
+              "type": "string"
+            },
+            {
+              "value": "purple-40",
+              "type": "string"
+            },
+            {
+              "value": "purple-30",
+              "type": "string"
+            },
+            {
+              "value": "purple-20",
+              "type": "string"
+            },
+            {
+              "value": "purple-10",
+              "type": "string"
+            },
+            {
+              "value": "indigo-100",
+              "type": "string"
+            },
+            {
+              "value": "indigo-90",
+              "type": "string"
+            },
+            {
+              "value": "indigo-80",
+              "type": "string"
+            },
+            {
+              "value": "indigo-70",
+              "type": "string"
+            },
+            {
+              "value": "indigo-60",
+              "type": "string"
+            },
+            {
+              "value": "indigo-50",
+              "type": "string"
+            },
+            {
+              "value": "indigo-40",
+              "type": "string"
+            },
+            {
+              "value": "indigo-30",
+              "type": "string"
+            },
+            {
+              "value": "indigo-20",
+              "type": "string"
+            },
+            {
+              "value": "indigo-10",
+              "type": "string"
+            },
+            {
+              "value": "navy-100",
+              "type": "string"
+            },
+            {
+              "value": "navy-90",
+              "type": "string"
+            },
+            {
+              "value": "navy-80",
+              "type": "string"
+            },
+            {
+              "value": "navy-70",
+              "type": "string"
+            },
+            {
+              "value": "navy-60",
+              "type": "string"
+            },
+            {
+              "value": "navy-50",
+              "type": "string"
+            },
+            {
+              "value": "navy-40",
+              "type": "string"
+            },
+            {
+              "value": "navy-30",
+              "type": "string"
+            },
+            {
+              "value": "navy-20",
+              "type": "string"
+            },
+            {
+              "value": "navy-10",
+              "type": "string"
+            },
+            {
+              "value": "blue-100",
+              "type": "string"
+            },
+            {
+              "value": "blue-90",
+              "type": "string"
+            },
+            {
+              "value": "blue-80",
+              "type": "string"
+            },
+            {
+              "value": "blue-70",
+              "type": "string"
+            },
+            {
+              "value": "blue-60",
+              "type": "string"
+            },
+            {
+              "value": "blue-50",
+              "type": "string"
+            },
+            {
+              "value": "blue-40",
+              "type": "string"
+            },
+            {
+              "value": "blue-30",
+              "type": "string"
+            },
+            {
+              "value": "blue-20",
+              "type": "string"
+            },
+            {
+              "value": "blue-10",
+              "type": "string"
+            },
+            {
+              "value": "teal-100",
+              "type": "string"
+            },
+            {
+              "value": "teal-90",
+              "type": "string"
+            },
+            {
+              "value": "teal-80",
+              "type": "string"
+            },
+            {
+              "value": "teal-70",
+              "type": "string"
+            },
+            {
+              "value": "teal-60",
+              "type": "string"
+            },
+            {
+              "value": "teal-50",
+              "type": "string"
+            },
+            {
+              "value": "teal-40",
+              "type": "string"
+            },
+            {
+              "value": "teal-30",
+              "type": "string"
+            },
+            {
+              "value": "teal-20",
+              "type": "string"
+            },
+            {
+              "value": "teal-10",
+              "type": "string"
+            },
+            {
+              "value": "mint-100",
+              "type": "string"
+            },
+            {
+              "value": "mint-90",
+              "type": "string"
+            },
+            {
+              "value": "mint-80",
+              "type": "string"
+            },
+            {
+              "value": "mint-70",
+              "type": "string"
+            },
+            {
+              "value": "mint-60",
+              "type": "string"
+            },
+            {
+              "value": "mint-50",
+              "type": "string"
+            },
+            {
+              "value": "mint-40",
+              "type": "string"
+            },
+            {
+              "value": "mint-30",
+              "type": "string"
+            },
+            {
+              "value": "mint-20",
+              "type": "string"
+            },
+            {
+              "value": "mint-10",
+              "type": "string"
+            },
+            {
+              "value": "green-100",
+              "type": "string"
+            },
+            {
+              "value": "green-90",
+              "type": "string"
+            },
+            {
+              "value": "green-80",
+              "type": "string"
+            },
+            {
+              "value": "green-70",
+              "type": "string"
+            },
+            {
+              "value": "green-60",
+              "type": "string"
+            },
+            {
+              "value": "green-50",
+              "type": "string"
+            },
+            {
+              "value": "green-40",
+              "type": "string"
+            },
+            {
+              "value": "green-30",
+              "type": "string"
+            },
+            {
+              "value": "green-20",
+              "type": "string"
+            },
+            {
+              "value": "green-10",
+              "type": "string"
+            },
+            {
+              "value": "yellow-100",
+              "type": "string"
+            },
+            {
+              "value": "yellow-90",
+              "type": "string"
+            },
+            {
+              "value": "yellow-80",
+              "type": "string"
+            },
+            {
+              "value": "yellow-70",
+              "type": "string"
+            },
+            {
+              "value": "yellow-60",
+              "type": "string"
+            },
+            {
+              "value": "yellow-50",
+              "type": "string"
+            },
+            {
+              "value": "yellow-40",
+              "type": "string"
+            },
+            {
+              "value": "yellow-30",
+              "type": "string"
+            },
+            {
+              "value": "yellow-20",
+              "type": "string"
+            },
+            {
+              "value": "yellow-10",
+              "type": "string"
+            },
+            {
+              "value": "orange-100",
+              "type": "string"
+            },
+            {
+              "value": "orange-90",
+              "type": "string"
+            },
+            {
+              "value": "orange-80",
+              "type": "string"
+            },
+            {
+              "value": "orange-70",
+              "type": "string"
+            },
+            {
+              "value": "orange-60",
+              "type": "string"
+            },
+            {
+              "value": "orange-50",
+              "type": "string"
+            },
+            {
+              "value": "orange-40",
+              "type": "string"
+            },
+            {
+              "value": "orange-30",
+              "type": "string"
+            },
+            {
+              "value": "orange-20",
+              "type": "string"
+            },
+            {
+              "value": "orange-10",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "color",
+          "type": "\"base\" | \"primary-light\" | \"primary-dark\" | \"secondary-light\" | \"secondary-dark\" | \"success\" | \"danger\" | \"warning\" | \"info\" | \"grey-100\" | \"grey-90\" | \"grey-80\" | \"grey-70\" | \"grey-60\" | \"grey-50\" | \"grey-40\" | \"grey-30\" | \"grey-20\" | \"grey-10\" | \"red-100\" | \"red-90\" | \"red-80\" | \"red-70\" | \"red-60\" | \"red-50\" | \"red-40\" | \"red-30\" | \"red-20\" | \"red-10\" | \"pink-100\" | \"pink-90\" | \"pink-80\" | \"pink-70\" | \"pink-60\" | \"pink-50\" | \"pink-40\" | \"pink-30\" | \"pink-20\" | \"pink-10\" | \"purple-100\" | \"purple-90\" | \"purple-80\" | \"purple-70\" | \"purple-60\" | \"purple-50\" | \"purple-40\" | \"purple-30\" | \"purple-20\" | \"purple-10\" | \"indigo-100\" | \"indigo-90\" | \"indigo-80\" | \"indigo-70\" | \"indigo-60\" | \"indigo-50\" | \"indigo-40\" | \"indigo-30\" | \"indigo-20\" | \"indigo-10\" | \"navy-100\" | \"navy-90\" | \"navy-80\" | \"navy-70\" | \"navy-60\" | \"navy-50\" | \"navy-40\" | \"navy-30\" | \"navy-20\" | \"navy-10\" | \"blue-100\" | \"blue-90\" | \"blue-80\" | \"blue-70\" | \"blue-60\" | \"blue-50\" | \"blue-40\" | \"blue-30\" | \"blue-20\" | \"blue-10\" | \"teal-100\" | \"teal-90\" | \"teal-80\" | \"teal-70\" | \"teal-60\" | \"teal-50\" | \"teal-40\" | \"teal-30\" | \"teal-20\" | \"teal-10\" | \"mint-100\" | \"mint-90\" | \"mint-80\" | \"mint-70\" | \"mint-60\" | \"mint-50\" | \"mint-40\" | \"mint-30\" | \"mint-20\" | \"mint-10\" | \"green-100\" | \"green-90\" | \"green-80\" | \"green-70\" | \"green-60\" | \"green-50\" | \"green-40\" | \"green-30\" | \"green-20\" | \"green-10\" | \"yellow-100\" | \"yellow-90\" | \"yellow-80\" | \"yellow-70\" | \"yellow-60\" | \"yellow-50\" | \"yellow-40\" | \"yellow-30\" | \"yellow-20\" | \"yellow-10\" | \"orange-100\" | \"orange-90\" | \"orange-80\" | \"orange-70\" | \"orange-60\" | \"orange-50\" | \"orange-40\" | \"orange-30\" | \"orange-20\" | \"orange-10\"",
+          "mutable": false,
+          "attr": "color",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [
+            {
+              "text": "Forground color from the UI Color Palette",
+              "name": "description"
+            }
+          ],
+          "values": [
+            {
+              "value": "base",
+              "type": "string"
+            },
+            {
+              "value": "primary-light",
+              "type": "string"
+            },
+            {
+              "value": "primary-dark",
+              "type": "string"
+            },
+            {
+              "value": "secondary-light",
+              "type": "string"
+            },
+            {
+              "value": "secondary-dark",
+              "type": "string"
+            },
+            {
+              "value": "success",
+              "type": "string"
+            },
+            {
+              "value": "danger",
+              "type": "string"
+            },
+            {
+              "value": "warning",
+              "type": "string"
+            },
+            {
+              "value": "info",
+              "type": "string"
+            },
+            {
+              "value": "grey-100",
+              "type": "string"
+            },
+            {
+              "value": "grey-90",
+              "type": "string"
+            },
+            {
+              "value": "grey-80",
+              "type": "string"
+            },
+            {
+              "value": "grey-70",
+              "type": "string"
+            },
+            {
+              "value": "grey-60",
+              "type": "string"
+            },
+            {
+              "value": "grey-50",
+              "type": "string"
+            },
+            {
+              "value": "grey-40",
+              "type": "string"
+            },
+            {
+              "value": "grey-30",
+              "type": "string"
+            },
+            {
+              "value": "grey-20",
+              "type": "string"
+            },
+            {
+              "value": "grey-10",
+              "type": "string"
+            },
+            {
+              "value": "red-100",
+              "type": "string"
+            },
+            {
+              "value": "red-90",
+              "type": "string"
+            },
+            {
+              "value": "red-80",
+              "type": "string"
+            },
+            {
+              "value": "red-70",
+              "type": "string"
+            },
+            {
+              "value": "red-60",
+              "type": "string"
+            },
+            {
+              "value": "red-50",
+              "type": "string"
+            },
+            {
+              "value": "red-40",
+              "type": "string"
+            },
+            {
+              "value": "red-30",
+              "type": "string"
+            },
+            {
+              "value": "red-20",
+              "type": "string"
+            },
+            {
+              "value": "red-10",
+              "type": "string"
+            },
+            {
+              "value": "pink-100",
+              "type": "string"
+            },
+            {
+              "value": "pink-90",
+              "type": "string"
+            },
+            {
+              "value": "pink-80",
+              "type": "string"
+            },
+            {
+              "value": "pink-70",
+              "type": "string"
+            },
+            {
+              "value": "pink-60",
+              "type": "string"
+            },
+            {
+              "value": "pink-50",
+              "type": "string"
+            },
+            {
+              "value": "pink-40",
+              "type": "string"
+            },
+            {
+              "value": "pink-30",
+              "type": "string"
+            },
+            {
+              "value": "pink-20",
+              "type": "string"
+            },
+            {
+              "value": "pink-10",
+              "type": "string"
+            },
+            {
+              "value": "purple-100",
+              "type": "string"
+            },
+            {
+              "value": "purple-90",
+              "type": "string"
+            },
+            {
+              "value": "purple-80",
+              "type": "string"
+            },
+            {
+              "value": "purple-70",
+              "type": "string"
+            },
+            {
+              "value": "purple-60",
+              "type": "string"
+            },
+            {
+              "value": "purple-50",
+              "type": "string"
+            },
+            {
+              "value": "purple-40",
+              "type": "string"
+            },
+            {
+              "value": "purple-30",
+              "type": "string"
+            },
+            {
+              "value": "purple-20",
+              "type": "string"
+            },
+            {
+              "value": "purple-10",
+              "type": "string"
+            },
+            {
+              "value": "indigo-100",
+              "type": "string"
+            },
+            {
+              "value": "indigo-90",
+              "type": "string"
+            },
+            {
+              "value": "indigo-80",
+              "type": "string"
+            },
+            {
+              "value": "indigo-70",
+              "type": "string"
+            },
+            {
+              "value": "indigo-60",
+              "type": "string"
+            },
+            {
+              "value": "indigo-50",
+              "type": "string"
+            },
+            {
+              "value": "indigo-40",
+              "type": "string"
+            },
+            {
+              "value": "indigo-30",
+              "type": "string"
+            },
+            {
+              "value": "indigo-20",
+              "type": "string"
+            },
+            {
+              "value": "indigo-10",
+              "type": "string"
+            },
+            {
+              "value": "navy-100",
+              "type": "string"
+            },
+            {
+              "value": "navy-90",
+              "type": "string"
+            },
+            {
+              "value": "navy-80",
+              "type": "string"
+            },
+            {
+              "value": "navy-70",
+              "type": "string"
+            },
+            {
+              "value": "navy-60",
+              "type": "string"
+            },
+            {
+              "value": "navy-50",
+              "type": "string"
+            },
+            {
+              "value": "navy-40",
+              "type": "string"
+            },
+            {
+              "value": "navy-30",
+              "type": "string"
+            },
+            {
+              "value": "navy-20",
+              "type": "string"
+            },
+            {
+              "value": "navy-10",
+              "type": "string"
+            },
+            {
+              "value": "blue-100",
+              "type": "string"
+            },
+            {
+              "value": "blue-90",
+              "type": "string"
+            },
+            {
+              "value": "blue-80",
+              "type": "string"
+            },
+            {
+              "value": "blue-70",
+              "type": "string"
+            },
+            {
+              "value": "blue-60",
+              "type": "string"
+            },
+            {
+              "value": "blue-50",
+              "type": "string"
+            },
+            {
+              "value": "blue-40",
+              "type": "string"
+            },
+            {
+              "value": "blue-30",
+              "type": "string"
+            },
+            {
+              "value": "blue-20",
+              "type": "string"
+            },
+            {
+              "value": "blue-10",
+              "type": "string"
+            },
+            {
+              "value": "teal-100",
+              "type": "string"
+            },
+            {
+              "value": "teal-90",
+              "type": "string"
+            },
+            {
+              "value": "teal-80",
+              "type": "string"
+            },
+            {
+              "value": "teal-70",
+              "type": "string"
+            },
+            {
+              "value": "teal-60",
+              "type": "string"
+            },
+            {
+              "value": "teal-50",
+              "type": "string"
+            },
+            {
+              "value": "teal-40",
+              "type": "string"
+            },
+            {
+              "value": "teal-30",
+              "type": "string"
+            },
+            {
+              "value": "teal-20",
+              "type": "string"
+            },
+            {
+              "value": "teal-10",
+              "type": "string"
+            },
+            {
+              "value": "mint-100",
+              "type": "string"
+            },
+            {
+              "value": "mint-90",
+              "type": "string"
+            },
+            {
+              "value": "mint-80",
+              "type": "string"
+            },
+            {
+              "value": "mint-70",
+              "type": "string"
+            },
+            {
+              "value": "mint-60",
+              "type": "string"
+            },
+            {
+              "value": "mint-50",
+              "type": "string"
+            },
+            {
+              "value": "mint-40",
+              "type": "string"
+            },
+            {
+              "value": "mint-30",
+              "type": "string"
+            },
+            {
+              "value": "mint-20",
+              "type": "string"
+            },
+            {
+              "value": "mint-10",
+              "type": "string"
+            },
+            {
+              "value": "green-100",
+              "type": "string"
+            },
+            {
+              "value": "green-90",
+              "type": "string"
+            },
+            {
+              "value": "green-80",
+              "type": "string"
+            },
+            {
+              "value": "green-70",
+              "type": "string"
+            },
+            {
+              "value": "green-60",
+              "type": "string"
+            },
+            {
+              "value": "green-50",
+              "type": "string"
+            },
+            {
+              "value": "green-40",
+              "type": "string"
+            },
+            {
+              "value": "green-30",
+              "type": "string"
+            },
+            {
+              "value": "green-20",
+              "type": "string"
+            },
+            {
+              "value": "green-10",
+              "type": "string"
+            },
+            {
+              "value": "yellow-100",
+              "type": "string"
+            },
+            {
+              "value": "yellow-90",
+              "type": "string"
+            },
+            {
+              "value": "yellow-80",
+              "type": "string"
+            },
+            {
+              "value": "yellow-70",
+              "type": "string"
+            },
+            {
+              "value": "yellow-60",
+              "type": "string"
+            },
+            {
+              "value": "yellow-50",
+              "type": "string"
+            },
+            {
+              "value": "yellow-40",
+              "type": "string"
+            },
+            {
+              "value": "yellow-30",
+              "type": "string"
+            },
+            {
+              "value": "yellow-20",
+              "type": "string"
+            },
+            {
+              "value": "yellow-10",
+              "type": "string"
+            },
+            {
+              "value": "orange-100",
+              "type": "string"
+            },
+            {
+              "value": "orange-90",
+              "type": "string"
+            },
+            {
+              "value": "orange-80",
+              "type": "string"
+            },
+            {
+              "value": "orange-70",
+              "type": "string"
+            },
+            {
+              "value": "orange-60",
+              "type": "string"
+            },
+            {
+              "value": "orange-50",
+              "type": "string"
+            },
+            {
+              "value": "orange-40",
+              "type": "string"
+            },
+            {
+              "value": "orange-30",
+              "type": "string"
+            },
+            {
+              "value": "orange-20",
+              "type": "string"
+            },
+            {
+              "value": "orange-10",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "orientation",
+          "type": "\"horizontal\" | \"vertical\"",
+          "mutable": false,
+          "attr": "orientation",
+          "reflectToAttr": true,
+          "docs": "",
+          "docsTags": [
+            {
+              "text": "Type of input being requested",
+              "name": "description"
+            }
+          ],
+          "default": "\"vertical\"",
+          "values": [
+            {
+              "value": "horizontal",
+              "type": "string"
+            },
+            {
+              "value": "vertical",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "size",
+          "type": "\"large\" | \"larger\" | \"medium\" | \"small\" | \"smaller\" | \"x-large\" | \"x-small\" | \"xx-large\" | \"xx-small\"",
+          "mutable": false,
+          "attr": "size",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [
+            {
+              "text": "Absolute font size",
+              "name": "description"
+            }
+          ],
+          "values": [
+            {
+              "value": "large",
+              "type": "string"
+            },
+            {
+              "value": "larger",
+              "type": "string"
+            },
+            {
+              "value": "medium",
+              "type": "string"
+            },
+            {
+              "value": "small",
+              "type": "string"
+            },
+            {
+              "value": "smaller",
+              "type": "string"
+            },
+            {
+              "value": "x-large",
+              "type": "string"
+            },
+            {
+              "value": "x-small",
+              "type": "string"
+            },
+            {
+              "value": "xx-large",
+              "type": "string"
+            },
+            {
+              "value": "xx-small",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "type",
+          "type": "\"checkbox\" | \"color\" | \"date\" | \"radio\" | \"search\" | \"text\"",
+          "mutable": false,
+          "attr": "type",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [
+            {
+              "text": "Type of input being requested",
+              "name": "description"
+            }
+          ],
+          "default": "\"text\"",
+          "values": [
+            {
+              "value": "checkbox",
+              "type": "string"
+            },
+            {
+              "value": "color",
+              "type": "string"
+            },
+            {
+              "value": "date",
+              "type": "string"
+            },
+            {
+              "value": "radio",
+              "type": "string"
+            },
+            {
+              "value": "search",
+              "type": "string"
+            },
+            {
+              "value": "text",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "value",
+          "type": "any",
+          "mutable": true,
+          "attr": "value",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "any"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [
+        {
+          "event": "uiInput",
+          "detail": "any",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "",
+          "docsTags": []
+        }
+      ],
+      "styles": [],
+      "slots": [],
+      "dependents": [
+        "ui-playground-attrs"
+      ],
+      "dependencies": [
+        "ui-icon",
+        "ui-text",
+        "ui-input-color",
+        "ui-input-radio"
+      ],
+      "dependencyGraph": {
+        "ui-input": [
+          "ui-icon",
+          "ui-text",
+          "ui-input-color",
+          "ui-input-radio"
+        ],
+        "ui-input-color": [
+          "ui-button"
+        ],
+        "ui-button": [
+          "ui-ripple"
+        ],
+        "ui-playground-attrs": [
+          "ui-input"
+        ]
+      }
+    },
+    {
+      "filePath": "src\\components\\ui-input\\ui-input-color\\ui-input-color.tsx",
+      "encapsulation": "shadow",
+      "tag": "ui-input-color",
+      "readme": "# ui-input-color\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [],
+      "methods": [],
+      "events": [
+        {
+          "event": "uiInputEvent",
+          "detail": "any",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "",
+          "docsTags": []
+        }
+      ],
+      "styles": [],
+      "slots": [],
+      "dependents": [
+        "ui-input"
+      ],
+      "dependencies": [
+        "ui-button"
+      ],
+      "dependencyGraph": {
+        "ui-input-color": [
+          "ui-button"
+        ],
+        "ui-button": [
+          "ui-ripple"
+        ],
+        "ui-input": [
+          "ui-input-color"
+        ]
+      }
+    },
+    {
+      "filePath": "src\\components\\ui-input\\ui-input-option\\ui-input-option.tsx",
+      "encapsulation": "shadow",
+      "tag": "ui-input-option",
+      "readme": "# ui-input-option\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "selected",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "selected",
+          "reflectToAttr": true,
+          "docs": "",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "value",
+          "type": "string",
+          "mutable": false,
+          "attr": "value",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [
+        {
+          "name": "getValue",
+          "returns": {
+            "type": "Promise<string>",
+            "docs": ""
+          },
+          "signature": "getValue() => Promise<string>",
+          "parameters": [],
+          "docs": "",
+          "docsTags": []
+        }
+      ],
+      "events": [
+        {
+          "event": "uiInputOptionEvent",
+          "detail": "any",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "",
+          "docsTags": []
+        }
+      ],
+      "styles": [],
+      "slots": [],
+      "dependents": [
+        "ui-playground-attrs"
+      ],
+      "dependencies": [
+        "ui-ripple"
+      ],
+      "dependencyGraph": {
+        "ui-input-option": [
+          "ui-ripple"
+        ],
+        "ui-playground-attrs": [
+          "ui-input-option"
+        ]
+      }
+    },
+    {
+      "filePath": "src\\components\\ui-input\\ui-input-radio\\ui-input-radio.tsx",
+      "encapsulation": "shadow",
+      "tag": "ui-input-radio",
+      "readme": "# ui-input-radio\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "orientation",
+          "type": "\"horizontal\" | \"vertical\"",
+          "mutable": false,
+          "attr": "orientation",
+          "reflectToAttr": true,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "value": "horizontal",
+              "type": "string"
+            },
+            {
+              "value": "vertical",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "styles": [],
+      "slots": [],
+      "dependents": [
+        "ui-input"
+      ],
+      "dependencies": [],
+      "dependencyGraph": {
+        "ui-input": [
+          "ui-input-radio"
         ]
       }
     },
@@ -9250,20 +10753,37 @@
       "dependencies": [
         "ui-heading",
         "ui-paragraph",
-        "ui-playground-attrs"
+        "ui-playground-attrs",
+        "ui-code",
+        "ui-text"
       ],
       "dependencyGraph": {
         "ui-playground": [
           "ui-heading",
           "ui-paragraph",
-          "ui-playground-attrs"
+          "ui-playground-attrs",
+          "ui-code",
+          "ui-text"
         ],
         "ui-playground-attrs": [
-          "ui-heading",
+          "ui-input",
           "ui-button",
-          "ui-icon"
+          "ui-input-option",
+          "ui-heading"
+        ],
+        "ui-input": [
+          "ui-icon",
+          "ui-text",
+          "ui-input-color",
+          "ui-input-radio"
+        ],
+        "ui-input-color": [
+          "ui-button"
         ],
         "ui-button": [
+          "ui-ripple"
+        ],
+        "ui-input-option": [
           "ui-ripple"
         ]
       }
@@ -9278,30 +10798,32 @@
       "usage": {},
       "props": [
         {
-          "name": "doc",
-          "type": "JsonDocsComponent",
+          "name": "docs",
+          "type": "JsonDocsComponent[]",
           "mutable": false,
           "reflectToAttr": false,
           "docs": "",
           "docsTags": [],
+          "default": "[]",
           "values": [
             {
-              "type": "JsonDocsComponent"
+              "type": "JsonDocsComponent[]"
             }
           ],
           "optional": false,
           "required": false
         },
         {
-          "name": "element",
-          "type": "HTMLElement",
+          "name": "elements",
+          "type": "HTMLElement[]",
           "mutable": false,
           "reflectToAttr": false,
           "docs": "",
           "docsTags": [],
+          "default": "[]",
           "values": [
             {
-              "type": "HTMLElement"
+              "type": "HTMLElement[]"
             }
           ],
           "optional": false,
@@ -9309,24 +10831,48 @@
         }
       ],
       "methods": [],
-      "events": [],
+      "events": [
+        {
+          "event": "updatePlaygroundCode",
+          "detail": "any",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "",
+          "docsTags": []
+        }
+      ],
       "styles": [],
       "slots": [],
       "dependents": [
         "ui-playground"
       ],
       "dependencies": [
-        "ui-heading",
+        "ui-input",
         "ui-button",
-        "ui-icon"
+        "ui-input-option",
+        "ui-heading"
       ],
       "dependencyGraph": {
         "ui-playground-attrs": [
-          "ui-heading",
+          "ui-input",
           "ui-button",
-          "ui-icon"
+          "ui-input-option",
+          "ui-heading"
+        ],
+        "ui-input": [
+          "ui-icon",
+          "ui-text",
+          "ui-input-color",
+          "ui-input-radio"
+        ],
+        "ui-input-color": [
+          "ui-button"
         ],
         "ui-button": [
+          "ui-ripple"
+        ],
+        "ui-input-option": [
           "ui-ripple"
         ],
         "ui-playground": [
@@ -9360,12 +10906,1179 @@
       "styles": [],
       "slots": [],
       "dependents": [
-        "ui-button"
+        "ui-button",
+        "ui-input-option"
       ],
       "dependencies": [],
       "dependencyGraph": {
         "ui-button": [
           "ui-ripple"
+        ],
+        "ui-input-option": [
+          "ui-ripple"
+        ]
+      }
+    },
+    {
+      "filePath": "src\\components\\ui-text\\ui-text.tsx",
+      "encapsulation": "shadow",
+      "tag": "ui-text",
+      "readme": "# ui-text\n\n\n",
+      "docs": "",
+      "docsTags": [
+        {
+          "text": "UI Text",
+          "name": "title"
+        },
+        {
+          "text": "Inline text element like html span",
+          "name": "description"
+        },
+        {
+          "text": "<ui-paragraph>\n     \"The only question before us is whether a state may lawfully demand production by a third \n      party of the \n\n     <ui-text class=\"ui-edit-layer\" background=\"primary-dark\" size=\"larger\">\n         President's\n     </ui-text>\n\n     personal financial records for use in a grand jury investigation \n     while the President is in office,\" wrote the judges, adding: \"We hold that any presidential \n     immunity from state \n\n     <ui-text class=\"ui-edit-layer\" background=\"primary-dark\" size=\"smaller\">\n            criminal process\n     </ui-text>\n\n      does not bar the enforcement of a subpoena.\"\n</ui-paragraph>",
+          "name": "usage"
+        }
+      ],
+      "usage": {},
+      "props": [
+        {
+          "name": "background",
+          "type": "\"base\" | \"primary-light\" | \"primary-dark\" | \"secondary-light\" | \"secondary-dark\" | \"success\" | \"danger\" | \"warning\" | \"info\" | \"grey-100\" | \"grey-90\" | \"grey-80\" | \"grey-70\" | \"grey-60\" | \"grey-50\" | \"grey-40\" | \"grey-30\" | \"grey-20\" | \"grey-10\" | \"red-100\" | \"red-90\" | \"red-80\" | \"red-70\" | \"red-60\" | \"red-50\" | \"red-40\" | \"red-30\" | \"red-20\" | \"red-10\" | \"pink-100\" | \"pink-90\" | \"pink-80\" | \"pink-70\" | \"pink-60\" | \"pink-50\" | \"pink-40\" | \"pink-30\" | \"pink-20\" | \"pink-10\" | \"purple-100\" | \"purple-90\" | \"purple-80\" | \"purple-70\" | \"purple-60\" | \"purple-50\" | \"purple-40\" | \"purple-30\" | \"purple-20\" | \"purple-10\" | \"indigo-100\" | \"indigo-90\" | \"indigo-80\" | \"indigo-70\" | \"indigo-60\" | \"indigo-50\" | \"indigo-40\" | \"indigo-30\" | \"indigo-20\" | \"indigo-10\" | \"navy-100\" | \"navy-90\" | \"navy-80\" | \"navy-70\" | \"navy-60\" | \"navy-50\" | \"navy-40\" | \"navy-30\" | \"navy-20\" | \"navy-10\" | \"blue-100\" | \"blue-90\" | \"blue-80\" | \"blue-70\" | \"blue-60\" | \"blue-50\" | \"blue-40\" | \"blue-30\" | \"blue-20\" | \"blue-10\" | \"teal-100\" | \"teal-90\" | \"teal-80\" | \"teal-70\" | \"teal-60\" | \"teal-50\" | \"teal-40\" | \"teal-30\" | \"teal-20\" | \"teal-10\" | \"mint-100\" | \"mint-90\" | \"mint-80\" | \"mint-70\" | \"mint-60\" | \"mint-50\" | \"mint-40\" | \"mint-30\" | \"mint-20\" | \"mint-10\" | \"green-100\" | \"green-90\" | \"green-80\" | \"green-70\" | \"green-60\" | \"green-50\" | \"green-40\" | \"green-30\" | \"green-20\" | \"green-10\" | \"yellow-100\" | \"yellow-90\" | \"yellow-80\" | \"yellow-70\" | \"yellow-60\" | \"yellow-50\" | \"yellow-40\" | \"yellow-30\" | \"yellow-20\" | \"yellow-10\" | \"orange-100\" | \"orange-90\" | \"orange-80\" | \"orange-70\" | \"orange-60\" | \"orange-50\" | \"orange-40\" | \"orange-30\" | \"orange-20\" | \"orange-10\"",
+          "mutable": false,
+          "attr": "background",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [
+            {
+              "text": "Background color from the UI Color Palette",
+              "name": "description"
+            }
+          ],
+          "values": [
+            {
+              "value": "base",
+              "type": "string"
+            },
+            {
+              "value": "primary-light",
+              "type": "string"
+            },
+            {
+              "value": "primary-dark",
+              "type": "string"
+            },
+            {
+              "value": "secondary-light",
+              "type": "string"
+            },
+            {
+              "value": "secondary-dark",
+              "type": "string"
+            },
+            {
+              "value": "success",
+              "type": "string"
+            },
+            {
+              "value": "danger",
+              "type": "string"
+            },
+            {
+              "value": "warning",
+              "type": "string"
+            },
+            {
+              "value": "info",
+              "type": "string"
+            },
+            {
+              "value": "grey-100",
+              "type": "string"
+            },
+            {
+              "value": "grey-90",
+              "type": "string"
+            },
+            {
+              "value": "grey-80",
+              "type": "string"
+            },
+            {
+              "value": "grey-70",
+              "type": "string"
+            },
+            {
+              "value": "grey-60",
+              "type": "string"
+            },
+            {
+              "value": "grey-50",
+              "type": "string"
+            },
+            {
+              "value": "grey-40",
+              "type": "string"
+            },
+            {
+              "value": "grey-30",
+              "type": "string"
+            },
+            {
+              "value": "grey-20",
+              "type": "string"
+            },
+            {
+              "value": "grey-10",
+              "type": "string"
+            },
+            {
+              "value": "red-100",
+              "type": "string"
+            },
+            {
+              "value": "red-90",
+              "type": "string"
+            },
+            {
+              "value": "red-80",
+              "type": "string"
+            },
+            {
+              "value": "red-70",
+              "type": "string"
+            },
+            {
+              "value": "red-60",
+              "type": "string"
+            },
+            {
+              "value": "red-50",
+              "type": "string"
+            },
+            {
+              "value": "red-40",
+              "type": "string"
+            },
+            {
+              "value": "red-30",
+              "type": "string"
+            },
+            {
+              "value": "red-20",
+              "type": "string"
+            },
+            {
+              "value": "red-10",
+              "type": "string"
+            },
+            {
+              "value": "pink-100",
+              "type": "string"
+            },
+            {
+              "value": "pink-90",
+              "type": "string"
+            },
+            {
+              "value": "pink-80",
+              "type": "string"
+            },
+            {
+              "value": "pink-70",
+              "type": "string"
+            },
+            {
+              "value": "pink-60",
+              "type": "string"
+            },
+            {
+              "value": "pink-50",
+              "type": "string"
+            },
+            {
+              "value": "pink-40",
+              "type": "string"
+            },
+            {
+              "value": "pink-30",
+              "type": "string"
+            },
+            {
+              "value": "pink-20",
+              "type": "string"
+            },
+            {
+              "value": "pink-10",
+              "type": "string"
+            },
+            {
+              "value": "purple-100",
+              "type": "string"
+            },
+            {
+              "value": "purple-90",
+              "type": "string"
+            },
+            {
+              "value": "purple-80",
+              "type": "string"
+            },
+            {
+              "value": "purple-70",
+              "type": "string"
+            },
+            {
+              "value": "purple-60",
+              "type": "string"
+            },
+            {
+              "value": "purple-50",
+              "type": "string"
+            },
+            {
+              "value": "purple-40",
+              "type": "string"
+            },
+            {
+              "value": "purple-30",
+              "type": "string"
+            },
+            {
+              "value": "purple-20",
+              "type": "string"
+            },
+            {
+              "value": "purple-10",
+              "type": "string"
+            },
+            {
+              "value": "indigo-100",
+              "type": "string"
+            },
+            {
+              "value": "indigo-90",
+              "type": "string"
+            },
+            {
+              "value": "indigo-80",
+              "type": "string"
+            },
+            {
+              "value": "indigo-70",
+              "type": "string"
+            },
+            {
+              "value": "indigo-60",
+              "type": "string"
+            },
+            {
+              "value": "indigo-50",
+              "type": "string"
+            },
+            {
+              "value": "indigo-40",
+              "type": "string"
+            },
+            {
+              "value": "indigo-30",
+              "type": "string"
+            },
+            {
+              "value": "indigo-20",
+              "type": "string"
+            },
+            {
+              "value": "indigo-10",
+              "type": "string"
+            },
+            {
+              "value": "navy-100",
+              "type": "string"
+            },
+            {
+              "value": "navy-90",
+              "type": "string"
+            },
+            {
+              "value": "navy-80",
+              "type": "string"
+            },
+            {
+              "value": "navy-70",
+              "type": "string"
+            },
+            {
+              "value": "navy-60",
+              "type": "string"
+            },
+            {
+              "value": "navy-50",
+              "type": "string"
+            },
+            {
+              "value": "navy-40",
+              "type": "string"
+            },
+            {
+              "value": "navy-30",
+              "type": "string"
+            },
+            {
+              "value": "navy-20",
+              "type": "string"
+            },
+            {
+              "value": "navy-10",
+              "type": "string"
+            },
+            {
+              "value": "blue-100",
+              "type": "string"
+            },
+            {
+              "value": "blue-90",
+              "type": "string"
+            },
+            {
+              "value": "blue-80",
+              "type": "string"
+            },
+            {
+              "value": "blue-70",
+              "type": "string"
+            },
+            {
+              "value": "blue-60",
+              "type": "string"
+            },
+            {
+              "value": "blue-50",
+              "type": "string"
+            },
+            {
+              "value": "blue-40",
+              "type": "string"
+            },
+            {
+              "value": "blue-30",
+              "type": "string"
+            },
+            {
+              "value": "blue-20",
+              "type": "string"
+            },
+            {
+              "value": "blue-10",
+              "type": "string"
+            },
+            {
+              "value": "teal-100",
+              "type": "string"
+            },
+            {
+              "value": "teal-90",
+              "type": "string"
+            },
+            {
+              "value": "teal-80",
+              "type": "string"
+            },
+            {
+              "value": "teal-70",
+              "type": "string"
+            },
+            {
+              "value": "teal-60",
+              "type": "string"
+            },
+            {
+              "value": "teal-50",
+              "type": "string"
+            },
+            {
+              "value": "teal-40",
+              "type": "string"
+            },
+            {
+              "value": "teal-30",
+              "type": "string"
+            },
+            {
+              "value": "teal-20",
+              "type": "string"
+            },
+            {
+              "value": "teal-10",
+              "type": "string"
+            },
+            {
+              "value": "mint-100",
+              "type": "string"
+            },
+            {
+              "value": "mint-90",
+              "type": "string"
+            },
+            {
+              "value": "mint-80",
+              "type": "string"
+            },
+            {
+              "value": "mint-70",
+              "type": "string"
+            },
+            {
+              "value": "mint-60",
+              "type": "string"
+            },
+            {
+              "value": "mint-50",
+              "type": "string"
+            },
+            {
+              "value": "mint-40",
+              "type": "string"
+            },
+            {
+              "value": "mint-30",
+              "type": "string"
+            },
+            {
+              "value": "mint-20",
+              "type": "string"
+            },
+            {
+              "value": "mint-10",
+              "type": "string"
+            },
+            {
+              "value": "green-100",
+              "type": "string"
+            },
+            {
+              "value": "green-90",
+              "type": "string"
+            },
+            {
+              "value": "green-80",
+              "type": "string"
+            },
+            {
+              "value": "green-70",
+              "type": "string"
+            },
+            {
+              "value": "green-60",
+              "type": "string"
+            },
+            {
+              "value": "green-50",
+              "type": "string"
+            },
+            {
+              "value": "green-40",
+              "type": "string"
+            },
+            {
+              "value": "green-30",
+              "type": "string"
+            },
+            {
+              "value": "green-20",
+              "type": "string"
+            },
+            {
+              "value": "green-10",
+              "type": "string"
+            },
+            {
+              "value": "yellow-100",
+              "type": "string"
+            },
+            {
+              "value": "yellow-90",
+              "type": "string"
+            },
+            {
+              "value": "yellow-80",
+              "type": "string"
+            },
+            {
+              "value": "yellow-70",
+              "type": "string"
+            },
+            {
+              "value": "yellow-60",
+              "type": "string"
+            },
+            {
+              "value": "yellow-50",
+              "type": "string"
+            },
+            {
+              "value": "yellow-40",
+              "type": "string"
+            },
+            {
+              "value": "yellow-30",
+              "type": "string"
+            },
+            {
+              "value": "yellow-20",
+              "type": "string"
+            },
+            {
+              "value": "yellow-10",
+              "type": "string"
+            },
+            {
+              "value": "orange-100",
+              "type": "string"
+            },
+            {
+              "value": "orange-90",
+              "type": "string"
+            },
+            {
+              "value": "orange-80",
+              "type": "string"
+            },
+            {
+              "value": "orange-70",
+              "type": "string"
+            },
+            {
+              "value": "orange-60",
+              "type": "string"
+            },
+            {
+              "value": "orange-50",
+              "type": "string"
+            },
+            {
+              "value": "orange-40",
+              "type": "string"
+            },
+            {
+              "value": "orange-30",
+              "type": "string"
+            },
+            {
+              "value": "orange-20",
+              "type": "string"
+            },
+            {
+              "value": "orange-10",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "color",
+          "type": "\"base\" | \"primary-light\" | \"primary-dark\" | \"secondary-light\" | \"secondary-dark\" | \"success\" | \"danger\" | \"warning\" | \"info\" | \"grey-100\" | \"grey-90\" | \"grey-80\" | \"grey-70\" | \"grey-60\" | \"grey-50\" | \"grey-40\" | \"grey-30\" | \"grey-20\" | \"grey-10\" | \"red-100\" | \"red-90\" | \"red-80\" | \"red-70\" | \"red-60\" | \"red-50\" | \"red-40\" | \"red-30\" | \"red-20\" | \"red-10\" | \"pink-100\" | \"pink-90\" | \"pink-80\" | \"pink-70\" | \"pink-60\" | \"pink-50\" | \"pink-40\" | \"pink-30\" | \"pink-20\" | \"pink-10\" | \"purple-100\" | \"purple-90\" | \"purple-80\" | \"purple-70\" | \"purple-60\" | \"purple-50\" | \"purple-40\" | \"purple-30\" | \"purple-20\" | \"purple-10\" | \"indigo-100\" | \"indigo-90\" | \"indigo-80\" | \"indigo-70\" | \"indigo-60\" | \"indigo-50\" | \"indigo-40\" | \"indigo-30\" | \"indigo-20\" | \"indigo-10\" | \"navy-100\" | \"navy-90\" | \"navy-80\" | \"navy-70\" | \"navy-60\" | \"navy-50\" | \"navy-40\" | \"navy-30\" | \"navy-20\" | \"navy-10\" | \"blue-100\" | \"blue-90\" | \"blue-80\" | \"blue-70\" | \"blue-60\" | \"blue-50\" | \"blue-40\" | \"blue-30\" | \"blue-20\" | \"blue-10\" | \"teal-100\" | \"teal-90\" | \"teal-80\" | \"teal-70\" | \"teal-60\" | \"teal-50\" | \"teal-40\" | \"teal-30\" | \"teal-20\" | \"teal-10\" | \"mint-100\" | \"mint-90\" | \"mint-80\" | \"mint-70\" | \"mint-60\" | \"mint-50\" | \"mint-40\" | \"mint-30\" | \"mint-20\" | \"mint-10\" | \"green-100\" | \"green-90\" | \"green-80\" | \"green-70\" | \"green-60\" | \"green-50\" | \"green-40\" | \"green-30\" | \"green-20\" | \"green-10\" | \"yellow-100\" | \"yellow-90\" | \"yellow-80\" | \"yellow-70\" | \"yellow-60\" | \"yellow-50\" | \"yellow-40\" | \"yellow-30\" | \"yellow-20\" | \"yellow-10\" | \"orange-100\" | \"orange-90\" | \"orange-80\" | \"orange-70\" | \"orange-60\" | \"orange-50\" | \"orange-40\" | \"orange-30\" | \"orange-20\" | \"orange-10\"",
+          "mutable": false,
+          "attr": "color",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [
+            {
+              "text": "Forground color from the UI Color Palette",
+              "name": "description"
+            }
+          ],
+          "values": [
+            {
+              "value": "base",
+              "type": "string"
+            },
+            {
+              "value": "primary-light",
+              "type": "string"
+            },
+            {
+              "value": "primary-dark",
+              "type": "string"
+            },
+            {
+              "value": "secondary-light",
+              "type": "string"
+            },
+            {
+              "value": "secondary-dark",
+              "type": "string"
+            },
+            {
+              "value": "success",
+              "type": "string"
+            },
+            {
+              "value": "danger",
+              "type": "string"
+            },
+            {
+              "value": "warning",
+              "type": "string"
+            },
+            {
+              "value": "info",
+              "type": "string"
+            },
+            {
+              "value": "grey-100",
+              "type": "string"
+            },
+            {
+              "value": "grey-90",
+              "type": "string"
+            },
+            {
+              "value": "grey-80",
+              "type": "string"
+            },
+            {
+              "value": "grey-70",
+              "type": "string"
+            },
+            {
+              "value": "grey-60",
+              "type": "string"
+            },
+            {
+              "value": "grey-50",
+              "type": "string"
+            },
+            {
+              "value": "grey-40",
+              "type": "string"
+            },
+            {
+              "value": "grey-30",
+              "type": "string"
+            },
+            {
+              "value": "grey-20",
+              "type": "string"
+            },
+            {
+              "value": "grey-10",
+              "type": "string"
+            },
+            {
+              "value": "red-100",
+              "type": "string"
+            },
+            {
+              "value": "red-90",
+              "type": "string"
+            },
+            {
+              "value": "red-80",
+              "type": "string"
+            },
+            {
+              "value": "red-70",
+              "type": "string"
+            },
+            {
+              "value": "red-60",
+              "type": "string"
+            },
+            {
+              "value": "red-50",
+              "type": "string"
+            },
+            {
+              "value": "red-40",
+              "type": "string"
+            },
+            {
+              "value": "red-30",
+              "type": "string"
+            },
+            {
+              "value": "red-20",
+              "type": "string"
+            },
+            {
+              "value": "red-10",
+              "type": "string"
+            },
+            {
+              "value": "pink-100",
+              "type": "string"
+            },
+            {
+              "value": "pink-90",
+              "type": "string"
+            },
+            {
+              "value": "pink-80",
+              "type": "string"
+            },
+            {
+              "value": "pink-70",
+              "type": "string"
+            },
+            {
+              "value": "pink-60",
+              "type": "string"
+            },
+            {
+              "value": "pink-50",
+              "type": "string"
+            },
+            {
+              "value": "pink-40",
+              "type": "string"
+            },
+            {
+              "value": "pink-30",
+              "type": "string"
+            },
+            {
+              "value": "pink-20",
+              "type": "string"
+            },
+            {
+              "value": "pink-10",
+              "type": "string"
+            },
+            {
+              "value": "purple-100",
+              "type": "string"
+            },
+            {
+              "value": "purple-90",
+              "type": "string"
+            },
+            {
+              "value": "purple-80",
+              "type": "string"
+            },
+            {
+              "value": "purple-70",
+              "type": "string"
+            },
+            {
+              "value": "purple-60",
+              "type": "string"
+            },
+            {
+              "value": "purple-50",
+              "type": "string"
+            },
+            {
+              "value": "purple-40",
+              "type": "string"
+            },
+            {
+              "value": "purple-30",
+              "type": "string"
+            },
+            {
+              "value": "purple-20",
+              "type": "string"
+            },
+            {
+              "value": "purple-10",
+              "type": "string"
+            },
+            {
+              "value": "indigo-100",
+              "type": "string"
+            },
+            {
+              "value": "indigo-90",
+              "type": "string"
+            },
+            {
+              "value": "indigo-80",
+              "type": "string"
+            },
+            {
+              "value": "indigo-70",
+              "type": "string"
+            },
+            {
+              "value": "indigo-60",
+              "type": "string"
+            },
+            {
+              "value": "indigo-50",
+              "type": "string"
+            },
+            {
+              "value": "indigo-40",
+              "type": "string"
+            },
+            {
+              "value": "indigo-30",
+              "type": "string"
+            },
+            {
+              "value": "indigo-20",
+              "type": "string"
+            },
+            {
+              "value": "indigo-10",
+              "type": "string"
+            },
+            {
+              "value": "navy-100",
+              "type": "string"
+            },
+            {
+              "value": "navy-90",
+              "type": "string"
+            },
+            {
+              "value": "navy-80",
+              "type": "string"
+            },
+            {
+              "value": "navy-70",
+              "type": "string"
+            },
+            {
+              "value": "navy-60",
+              "type": "string"
+            },
+            {
+              "value": "navy-50",
+              "type": "string"
+            },
+            {
+              "value": "navy-40",
+              "type": "string"
+            },
+            {
+              "value": "navy-30",
+              "type": "string"
+            },
+            {
+              "value": "navy-20",
+              "type": "string"
+            },
+            {
+              "value": "navy-10",
+              "type": "string"
+            },
+            {
+              "value": "blue-100",
+              "type": "string"
+            },
+            {
+              "value": "blue-90",
+              "type": "string"
+            },
+            {
+              "value": "blue-80",
+              "type": "string"
+            },
+            {
+              "value": "blue-70",
+              "type": "string"
+            },
+            {
+              "value": "blue-60",
+              "type": "string"
+            },
+            {
+              "value": "blue-50",
+              "type": "string"
+            },
+            {
+              "value": "blue-40",
+              "type": "string"
+            },
+            {
+              "value": "blue-30",
+              "type": "string"
+            },
+            {
+              "value": "blue-20",
+              "type": "string"
+            },
+            {
+              "value": "blue-10",
+              "type": "string"
+            },
+            {
+              "value": "teal-100",
+              "type": "string"
+            },
+            {
+              "value": "teal-90",
+              "type": "string"
+            },
+            {
+              "value": "teal-80",
+              "type": "string"
+            },
+            {
+              "value": "teal-70",
+              "type": "string"
+            },
+            {
+              "value": "teal-60",
+              "type": "string"
+            },
+            {
+              "value": "teal-50",
+              "type": "string"
+            },
+            {
+              "value": "teal-40",
+              "type": "string"
+            },
+            {
+              "value": "teal-30",
+              "type": "string"
+            },
+            {
+              "value": "teal-20",
+              "type": "string"
+            },
+            {
+              "value": "teal-10",
+              "type": "string"
+            },
+            {
+              "value": "mint-100",
+              "type": "string"
+            },
+            {
+              "value": "mint-90",
+              "type": "string"
+            },
+            {
+              "value": "mint-80",
+              "type": "string"
+            },
+            {
+              "value": "mint-70",
+              "type": "string"
+            },
+            {
+              "value": "mint-60",
+              "type": "string"
+            },
+            {
+              "value": "mint-50",
+              "type": "string"
+            },
+            {
+              "value": "mint-40",
+              "type": "string"
+            },
+            {
+              "value": "mint-30",
+              "type": "string"
+            },
+            {
+              "value": "mint-20",
+              "type": "string"
+            },
+            {
+              "value": "mint-10",
+              "type": "string"
+            },
+            {
+              "value": "green-100",
+              "type": "string"
+            },
+            {
+              "value": "green-90",
+              "type": "string"
+            },
+            {
+              "value": "green-80",
+              "type": "string"
+            },
+            {
+              "value": "green-70",
+              "type": "string"
+            },
+            {
+              "value": "green-60",
+              "type": "string"
+            },
+            {
+              "value": "green-50",
+              "type": "string"
+            },
+            {
+              "value": "green-40",
+              "type": "string"
+            },
+            {
+              "value": "green-30",
+              "type": "string"
+            },
+            {
+              "value": "green-20",
+              "type": "string"
+            },
+            {
+              "value": "green-10",
+              "type": "string"
+            },
+            {
+              "value": "yellow-100",
+              "type": "string"
+            },
+            {
+              "value": "yellow-90",
+              "type": "string"
+            },
+            {
+              "value": "yellow-80",
+              "type": "string"
+            },
+            {
+              "value": "yellow-70",
+              "type": "string"
+            },
+            {
+              "value": "yellow-60",
+              "type": "string"
+            },
+            {
+              "value": "yellow-50",
+              "type": "string"
+            },
+            {
+              "value": "yellow-40",
+              "type": "string"
+            },
+            {
+              "value": "yellow-30",
+              "type": "string"
+            },
+            {
+              "value": "yellow-20",
+              "type": "string"
+            },
+            {
+              "value": "yellow-10",
+              "type": "string"
+            },
+            {
+              "value": "orange-100",
+              "type": "string"
+            },
+            {
+              "value": "orange-90",
+              "type": "string"
+            },
+            {
+              "value": "orange-80",
+              "type": "string"
+            },
+            {
+              "value": "orange-70",
+              "type": "string"
+            },
+            {
+              "value": "orange-60",
+              "type": "string"
+            },
+            {
+              "value": "orange-50",
+              "type": "string"
+            },
+            {
+              "value": "orange-40",
+              "type": "string"
+            },
+            {
+              "value": "orange-30",
+              "type": "string"
+            },
+            {
+              "value": "orange-20",
+              "type": "string"
+            },
+            {
+              "value": "orange-10",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "size",
+          "type": "\"large\" | \"larger\" | \"medium\" | \"small\" | \"smaller\" | \"x-large\" | \"x-small\" | \"xx-large\" | \"xx-small\"",
+          "mutable": false,
+          "attr": "size",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [
+            {
+              "text": "Absolute font size",
+              "name": "description"
+            }
+          ],
+          "values": [
+            {
+              "value": "large",
+              "type": "string"
+            },
+            {
+              "value": "larger",
+              "type": "string"
+            },
+            {
+              "value": "medium",
+              "type": "string"
+            },
+            {
+              "value": "small",
+              "type": "string"
+            },
+            {
+              "value": "smaller",
+              "type": "string"
+            },
+            {
+              "value": "x-large",
+              "type": "string"
+            },
+            {
+              "value": "x-small",
+              "type": "string"
+            },
+            {
+              "value": "xx-large",
+              "type": "string"
+            },
+            {
+              "value": "xx-small",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "styles": [],
+      "slots": [],
+      "dependents": [
+        "ui-input",
+        "ui-playground"
+      ],
+      "dependencies": [],
+      "dependencyGraph": {
+        "ui-input": [
+          "ui-text"
+        ],
+        "ui-playground": [
+          "ui-text"
         ]
       }
     }

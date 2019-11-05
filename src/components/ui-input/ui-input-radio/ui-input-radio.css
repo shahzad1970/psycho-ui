@@ -1,0 +1,46 @@
+:host([orientation="vertical"]) {
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+    justify-content: flex-start;
+}
+
+:host([orientation="horizontal"]) {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+:host {
+    margin-bottom: 0.15em;
+}
+
+ ::slotted(ui-input-option[selected])::before {
+    font-family: "Material Icons"; content: "\e837"; 
+    margin-right: 1em;
+    border: 2px solid transparent;
+    border-radius: 1em;
+    width: 1em;
+    height: 1em;
+    display: flex;
+    align-items: center;
+    align-content: center;
+ }
+
+ ::slotted(ui-input-option:not([selected]))::before {
+    font-family: "Material Icons"; content: "\e836"; 
+    margin-right: 1em;
+    border: 2px solid transparent;
+    border-radius: 1em;
+    width: 1em;
+    height: 1em;
+    display: flex;
+    align-items: center;
+    align-content: center;
+ }
+
+ ::slotted(ui-input-option:hover)::before {
+    content: "\e837"; 
+ }
