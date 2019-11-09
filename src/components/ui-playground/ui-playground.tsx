@@ -21,6 +21,12 @@ export class UiPlayground {
 
     codeView: HTMLUiCodeElement;
 
+
+    componentDidLoad() {
+        const elm = this.codeElement.querySelector(".ui-edit-layer") as HTMLElement;
+        elm.click();
+    }
+
     select(e: any) {
 
         const element = e.target as HTMLElement;
@@ -43,10 +49,10 @@ export class UiPlayground {
         }, 200);
     }
 
-    @Listen("updatePlaygroundCode", {capture: true})
+    @Listen("updatePlaygroundCode", { capture: true })
     updateCodeView() {
         this.codeView.setCode(this.codeElement.innerHTML);
-    } 
+    }
 
     render() {
         return (
@@ -57,11 +63,11 @@ export class UiPlayground {
                         <ui-heading size="xx-large">
                             {c.docsTags.filter(t => t.name == "title").map(t => t.text)}
                         </ui-heading>,
-                        <ui-paragraph size="larger" color="grey-70">
+                        <ui-paragraph>
                             {c.docsTags.filter(t => t.name == "description").map(t => t.text)}
                         </ui-paragraph>,
                         <ui-heading size="x-large">Interactive Demo</ui-heading>,
-                        <ui-paragraph size="larger" color="grey-70">This demo lets you preview the web component, its variations, and configuration options.
+                        <ui-paragraph>This demo lets you preview the web component, its variations, and configuration options.
                         Click on an element to bring up attribute editor.</ui-paragraph>,
                         <div class="play">
                             <div class="play-code" ref={(e) => this.codeElement = e}
@@ -77,22 +83,19 @@ export class UiPlayground {
                         </div>,
                         <ui-code language="xml" ref={r => this.codeView = r}></ui-code>, <br></br>,
                         <ui-heading size="x-large">Component Properties</ui-heading>,
-                        <ui-paragraph color="grey-70">
-                            Psycho UI Web components are driven by attributes. In order to reduce psychological fatigue, attribute
-                            nameing and usage has been kept to a minimum so that a developer can easy remember attributes and attribute values.
+                        <ui-paragraph>
+                            Psycho UI Web components are driven by attributes. In order to reduce psychological fatigue of developers, attribute
+                            naming and usage has been kept to a minimum so that a developer can easy remember attributes and attribute values.
                         </ui-paragraph>,
                         <div style={{ "margin-top": "1.5em" }}>
                             {c.props.map(p => {
                                 return [
-                                    <ui-heading size="large" background="grey-20">{p.name}</ui-heading>,
-                                    <ui-heading size="large" background="base">
-                                        <ui-paragraph color="grey-60">
-                                            {p.docsTags.filter(t => t.name == "description").map(t => t.text)}
-                                        </ui-paragraph>
-                                    </ui-heading>,
+                                    <ui-heading size="large" type="underline">{p.name}</ui-heading>,
+                                    <ui-paragraph innerHTML={p.docsTags.filter(t => t.name == "description").map(t => t.text)[0]}>
+                                    </ui-paragraph>,
                                     <ui-heading size="large" background="base">Allowed values</ui-heading>,
                                     <div class="prop">
-                                        { p.values.map(val =>
+                                        {p.values.map(val =>
                                             <div class="propval">
                                                 <ui-text background="blue-20">{val.value ? val.value : val.type}</ui-text>
                                             </div>

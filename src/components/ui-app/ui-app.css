@@ -3,22 +3,7 @@
 :root {
     line-height: 1.5em;
     font-family: 'Roboto', sans-serif, "Open Sans", Helvetica, Arial, sans-serif;
-}
-
-@media view and (min-width: 640px) {
-    :root {font-size: 13px;}
-}
-
-@media screen and (min-width: 768px) {
-    :root {font-size: 14px;}
-}
-
-@media screen and (min-width: 1024px) {
-    :root {font-size: 15px;}
-}
-
-@media screen and (min-width: 1200px) {
-    :root {font-size: 16px;}
+    font-size: 16px;
 }
 
 html, body {
@@ -43,4 +28,5 @@ html, body {
 ui-app {
     display: block;
     padding-top: 3.5em;
+    font-size: 1rem;
 }

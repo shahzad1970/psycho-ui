@@ -4,8 +4,7 @@
     background-color: #000;
     color: #888;
     padding: 1em;
-    overflow-y: auto;
-    max-width: 25em;
+    max-width: 30em;
 
 }
 
@@ -21,6 +20,7 @@
 
 .attrs > * {
     margin-bottom: 1em;
+    margin-right: 0.33em;
 }
 .input-attr > ui-input-option {
     width: 7em;

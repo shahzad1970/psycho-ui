@@ -8,7 +8,11 @@ import { UiCommon } from "../../utils/ui-common"
  * UI Text
  * 
  * @description
- * Inline text element like html span
+ * The <ui-text> element is a generic inline-flex container for phrasing content, 
+ * which does not inherently represent anything. It can be used to group elements for styling purposes
+ * using supported attribute. 
+ * It should be used only when no other semantic element is appropriate. <ui-text> is very much 
+ * like a <ui-layout> element, but <ui-layout> is a block-level element whereas a <ui-text> is an inline element.
  * 
  * @usage
  * <ui-paragraph>
@@ -40,24 +44,23 @@ export class UiText {
     @Element() el: HTMLElement;
     /**
      * @description
-     * Forground color from the UI Color Palette
-     * 
-     *  
+     * Set forground color to selected palette color.
      */
     @Prop() color: UiColor;
 
     /**
      * @description
-     * Background color from the UI Color Palette
+     * Background color from the UI Color Palette. When only background is present then background will be color and forground
+     * will be either white or black. If color attribute is also present then forground color will be set to color attribute.
      */
     @Prop() background: UiColor;
 
     /**
      * @description
-     * Absolute font size 
+     * Absolute-size keywords, based on the user's default font size (which is medium).
      */
     @Prop() size: UiSize;
-    
+
 
     render() {
         return (

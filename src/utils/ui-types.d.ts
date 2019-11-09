@@ -16,10 +16,12 @@ export type UiColor = 'base' | 'primary-light' | 'primary-dark' | 'secondary-lig
 
  export type UiSize = 'xx-small'| 'x-small'| 'small'| 'medium'| 'large'| 'x-large'| 'xx-large' | 'larger' | 'smaller';
 
-export type UiButtonType = "base" | "outline" | "flat" | "link";
+export type UiButtonType = "base" | "flat" | "outline" | "link";
 
 export type UiRounding = "none" | "base" | "fab" | "pill";
 
 export type UiInputType = "text" | "search" | "date" | "color" | "checkbox" | "radio";
 
-export type UiOrientation = "vertical" | "horizontal"
+export type UiOrientation = "vertical" | "horizontal";
+
+export type UiAlignText = "left" | "right" | "center";

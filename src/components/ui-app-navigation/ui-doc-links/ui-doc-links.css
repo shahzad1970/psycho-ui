@@ -1,0 +1,12 @@
+
+:host {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 15em;
+}
+
+:host > ui-button {
+    justify-content: flex-start;
+    padding-left: 2em;
+}

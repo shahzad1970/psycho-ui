@@ -1,5 +1,5 @@
 {
-  "timestamp": "2019-11-06T00:07:17",
+  "timestamp": "2019-11-09T06:32:20",
   "compiler": {
     "name": "@stencil/core",
     "version": "1.7.5",
@@ -4561,7 +4561,7 @@
           "name": "description"
         },
         {
-          "text": "<ui-button class=\"ui-edit-layer\">\n     Test Button\n</ui-button>\n<ui-button class=\"ui-edit-layer\" type=\"flat\" round=\"fab\">\n     <ui-icon>menu</ui-icon>\n</ui-button>",
+          "text": "<ui-button class=\"ui-edit-layer\">\n     Test Button\n</ui-button>\n<ui-button class=\"ui-edit-layer\" background=\"primary-dark\">\n     <ui-icon class=\"ui-edit-layer\" size=\"larger\">menu</ui-icon>&nbsp;&nbsp;Test Button\n</ui-button>\n<ui-button class=\"ui-edit-layer\" background=\"primary-light\">\n     Test Button&nbsp;&nbsp;<ui-icon class=\"ui-edit-layer\" size=\"x-large\">menu</ui-icon> \n</ui-button>\n<ui-button class=\"ui-edit-layer\" type=\"flat\" round=\"fab\">\n     <ui-icon class=\"ui-edit-layer\">menu</ui-icon>\n</ui-button>",
           "name": "usage"
         }
       ],
@@ -4576,7 +4576,7 @@
           "docs": "",
           "docsTags": [
             {
-              "text": "Background color from the UI Color Palette",
+              "text": "Background color from the UI Color Palette. When only background is present then background will be color and forground\nwill be either white or black. If color attribute is also present then forground color will be set to color attribute.",
               "name": "description"
             }
           ],
@@ -5110,7 +5110,7 @@
           "docs": "",
           "docsTags": [
             {
-              "text": "Forground color from the UI Color Palette",
+              "text": "Set forground color to selected palette color.",
               "name": "description"
             }
           ],
@@ -5644,7 +5644,7 @@
           "docs": "",
           "docsTags": [
             {
-              "text": "Enable or disable button",
+              "text": "This Boolean attribute prevents the user from interacting with the ui-button.",
               "name": "description"
             }
           ],
@@ -5652,6 +5652,27 @@
           "values": [
             {
               "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "href",
+          "type": "string",
+          "mutable": false,
+          "attr": "href",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [
+            {
+              "text": "URL where browser will navigate to once button is clicked. If href is provided then\na click event will not be emitted and page will be redirect to the provided url.",
+              "name": "description"
+            }
+          ],
+          "values": [
+            {
+              "type": "string"
             }
           ],
           "optional": false,
@@ -5666,7 +5687,7 @@
           "docs": "",
           "docsTags": [
             {
-              "text": "Enable or disable button",
+              "text": "Rounding button corners.\n<ul>\n   <li> Base : Adds slight corner rounding</li>\n   <li> fab : Intending to creating single icon round button</li>\n   <li> none : No rounding</li>\n   <li> pill : same rounding as fab except has more padding to left and right</li>\n</ul>",
               "name": "description"
             }
           ],
@@ -5701,7 +5722,7 @@
           "docs": "",
           "docsTags": [
             {
-              "text": "Absolute font size",
+              "text": "Absolute-size keywords, based on the user's default font size (which is medium).",
               "name": "description"
             }
           ],
@@ -5755,11 +5776,11 @@
           "docs": "",
           "docsTags": [
             {
-              "text": "Set button type from supported button types",
+              "text": "Set button type from supported button types.",
               "name": "description"
             }
           ],
-          "default": "\"outline\"",
+          "default": "\"base\"",
           "values": [
             {
               "value": "base",
@@ -5798,6 +5819,7 @@
       "slots": [],
       "dependents": [
         "ui-app-header",
+        "ui-doc-links",
         "ui-input-color",
         "ui-playground-attrs"
       ],
@@ -5809,6 +5831,9 @@
           "ui-ripple"
         ],
         "ui-app-header": [
+          "ui-button"
+        ],
+        "ui-doc-links": [
           "ui-button"
         ],
         "ui-input-color": [
@@ -5890,22 +5915,96 @@
       }
     },
     {
+      "filePath": "src\\components\\ui-app-navigation\\ui-doc-links\\ui-doc-links.tsx",
+      "encapsulation": "shadow",
+      "tag": "ui-doc-links",
+      "readme": "# ui-doc-links\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [],
+      "methods": [],
+      "events": [],
+      "styles": [],
+      "slots": [],
+      "dependents": [],
+      "dependencies": [
+        "ui-button"
+      ],
+      "dependencyGraph": {
+        "ui-doc-links": [
+          "ui-button"
+        ],
+        "ui-button": [
+          "ui-ripple"
+        ]
+      }
+    },
+    {
       "filePath": "src\\components\\ui-heading\\ui-heading.tsx",
       "encapsulation": "shadow",
       "tag": "ui-heading",
       "readme": "# ui-heading\n\n\n",
       "docs": "",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "text": "UI Heading",
+          "name": "title"
+        },
+        {
+          "text": "Heading component used to provide title or headline where needed. It is a flex element and implements framework styling.",
+          "name": "description"
+        },
+        {
+          "text": "<div style=\"align-self: stretch; flex: 1;\">\n  <ui-heading class=\"ui-edit-layer\" size=\"xx-small\">Demo Heading text</ui-heading>\n  <ui-heading class=\"ui-edit-layer\" size=\"x-small\">Demo Heading text</ui-heading>\n  <ui-heading class=\"ui-edit-layer\" size=\"small\">Demo Heading text</ui-heading>\n  <ui-heading class=\"ui-edit-layer\" size=\"medium\">Demo Heading text</ui-heading>\n  <ui-heading class=\"ui-edit-layer\" size=\"large\">Demo Heading text</ui-heading>\n  <ui-heading class=\"ui-edit-layer\" size=\"x-large\">Demo Heading text</ui-heading>\n  <ui-heading class=\"ui-edit-layer\" size=\"xx-large\">Demo Heading text</ui-heading>\n</div>",
+          "name": "usage"
+        }
+      ],
       "usage": {},
       "props": [
+        {
+          "name": "align",
+          "type": "\"center\" | \"left\" | \"right\"",
+          "mutable": false,
+          "attr": "align",
+          "reflectToAttr": true,
+          "docs": "",
+          "docsTags": [
+            {
+              "text": "Absolute-size keywords, based on the user's default font size (which is medium).",
+              "name": "description"
+            }
+          ],
+          "values": [
+            {
+              "value": "center",
+              "type": "string"
+            },
+            {
+              "value": "left",
+              "type": "string"
+            },
+            {
+              "value": "right",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
         {
           "name": "background",
           "type": "\"base\" | \"primary-light\" | \"primary-dark\" | \"secondary-light\" | \"secondary-dark\" | \"success\" | \"danger\" | \"warning\" | \"info\" | \"grey-100\" | \"grey-90\" | \"grey-80\" | \"grey-70\" | \"grey-60\" | \"grey-50\" | \"grey-40\" | \"grey-30\" | \"grey-20\" | \"grey-10\" | \"red-100\" | \"red-90\" | \"red-80\" | \"red-70\" | \"red-60\" | \"red-50\" | \"red-40\" | \"red-30\" | \"red-20\" | \"red-10\" | \"pink-100\" | \"pink-90\" | \"pink-80\" | \"pink-70\" | \"pink-60\" | \"pink-50\" | \"pink-40\" | \"pink-30\" | \"pink-20\" | \"pink-10\" | \"purple-100\" | \"purple-90\" | \"purple-80\" | \"purple-70\" | \"purple-60\" | \"purple-50\" | \"purple-40\" | \"purple-30\" | \"purple-20\" | \"purple-10\" | \"indigo-100\" | \"indigo-90\" | \"indigo-80\" | \"indigo-70\" | \"indigo-60\" | \"indigo-50\" | \"indigo-40\" | \"indigo-30\" | \"indigo-20\" | \"indigo-10\" | \"navy-100\" | \"navy-90\" | \"navy-80\" | \"navy-70\" | \"navy-60\" | \"navy-50\" | \"navy-40\" | \"navy-30\" | \"navy-20\" | \"navy-10\" | \"blue-100\" | \"blue-90\" | \"blue-80\" | \"blue-70\" | \"blue-60\" | \"blue-50\" | \"blue-40\" | \"blue-30\" | \"blue-20\" | \"blue-10\" | \"teal-100\" | \"teal-90\" | \"teal-80\" | \"teal-70\" | \"teal-60\" | \"teal-50\" | \"teal-40\" | \"teal-30\" | \"teal-20\" | \"teal-10\" | \"mint-100\" | \"mint-90\" | \"mint-80\" | \"mint-70\" | \"mint-60\" | \"mint-50\" | \"mint-40\" | \"mint-30\" | \"mint-20\" | \"mint-10\" | \"green-100\" | \"green-90\" | \"green-80\" | \"green-70\" | \"green-60\" | \"green-50\" | \"green-40\" | \"green-30\" | \"green-20\" | \"green-10\" | \"yellow-100\" | \"yellow-90\" | \"yellow-80\" | \"yellow-70\" | \"yellow-60\" | \"yellow-50\" | \"yellow-40\" | \"yellow-30\" | \"yellow-20\" | \"yellow-10\" | \"orange-100\" | \"orange-90\" | \"orange-80\" | \"orange-70\" | \"orange-60\" | \"orange-50\" | \"orange-40\" | \"orange-30\" | \"orange-20\" | \"orange-10\"",
           "mutable": false,
           "attr": "background",
           "reflectToAttr": true,
-          "docs": "Background color from the UI Color Palette",
-          "docsTags": [],
+          "docs": "",
+          "docsTags": [
+            {
+              "text": "Background color from the UI Color Palette. When only background is present then background will be color and forground\nwill be either white or black. If color attribute is also present then forground color will be set to color attribute.",
+              "name": "description"
+            }
+          ],
           "values": [
             {
               "value": "base",
@@ -6433,8 +6532,13 @@
           "mutable": false,
           "attr": "color",
           "reflectToAttr": false,
-          "docs": "Forground color from the UI Color Palette",
-          "docsTags": [],
+          "docs": "",
+          "docsTags": [
+            {
+              "text": "Set forground color to selected palette color.",
+              "name": "description"
+            }
+          ],
           "values": [
             {
               "value": "base",
@@ -6962,8 +7066,13 @@
           "mutable": false,
           "attr": "size",
           "reflectToAttr": false,
-          "docs": "Absolute font size",
-          "docsTags": [],
+          "docs": "",
+          "docsTags": [
+            {
+              "text": "Absolute-size keywords, based on the user's default font size (which is medium).",
+              "name": "description"
+            }
+          ],
           "values": [
             {
               "value": "large",
@@ -6999,6 +7108,36 @@
             },
             {
               "value": "xx-small",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "type",
+          "type": "\"base\" | \"outline\" | \"underline\"",
+          "mutable": false,
+          "attr": "type",
+          "reflectToAttr": true,
+          "docs": "",
+          "docsTags": [
+            {
+              "text": "Type provide two additional feature where heading can be underlined (bottom border) or outline which gives border around the heading.",
+              "name": "description"
+            }
+          ],
+          "values": [
+            {
+              "value": "base",
+              "type": "string"
+            },
+            {
+              "value": "outline",
+              "type": "string"
+            },
+            {
+              "value": "underline",
               "type": "string"
             }
           ],
@@ -10931,7 +11070,7 @@
           "name": "title"
         },
         {
-          "text": "Inline text element like html span",
+          "text": "The <ui-text> element is a generic inline-flex container for phrasing content, \nwhich does not inherently represent anything. It can be used to group elements for styling purposes\nusing supported attribute. \nIt should be used only when no other semantic element is appropriate. <ui-text> is very much \nlike a <ui-layout> element, but <ui-layout> is a block-level element whereas a <ui-text> is an inline element.",
           "name": "description"
         },
         {
@@ -10950,7 +11089,7 @@
           "docs": "",
           "docsTags": [
             {
-              "text": "Background color from the UI Color Palette",
+              "text": "Background color from the UI Color Palette. When only background is present then background will be color and forground\nwill be either white or black. If color attribute is also present then forground color will be set to color attribute.",
               "name": "description"
             }
           ],
@@ -11484,7 +11623,7 @@
           "docs": "",
           "docsTags": [
             {
-              "text": "Forground color from the UI Color Palette",
+              "text": "Set forground color to selected palette color.",
               "name": "description"
             }
           ],
@@ -12018,7 +12157,7 @@
           "docs": "",
           "docsTags": [
             {
-              "text": "Absolute font size",
+              "text": "Absolute-size keywords, based on the user's default font size (which is medium).",
               "name": "description"
             }
           ],

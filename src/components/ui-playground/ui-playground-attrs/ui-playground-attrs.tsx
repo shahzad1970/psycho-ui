@@ -48,7 +48,7 @@ export class UiPlaygroundAttrs {
         this.currentVals[name] = null;
         this.currentVals = { ...this.currentVals };
         this.updatePlaygroundCode.emit();
-  
+
     }
 
     getAttrInput(name) {
@@ -58,19 +58,19 @@ export class UiPlaygroundAttrs {
             case "color":
                 return (
                     <ui-input type="color" onUiInput={(e: CustomEvent) => this.setAttribute("color", e.detail.value)} value={this.currentVals["color"]}>
-                        Font Color&nbsp;|&nbsp;<ui-button onUiClick={(e) => {e.stopPropagation(); this.removeAttribute("color")} } round="none" type="link" color="secondary-light" size="smaller">remove</ui-button>
+                        Font Color&nbsp;|&nbsp;<ui-button onUiClick={(e) => { e.stopPropagation(); this.removeAttribute("color") }} round="none" type="link" color="secondary-light" size="smaller">remove</ui-button>
                     </ui-input>
                 );
             case "background":
                 return (
                     <ui-input type="color" onUiInput={(e: CustomEvent) => this.setAttribute("background", e.detail.value)} value={this.currentVals["background"]}>
-                        Background Color&nbsp;|&nbsp;<ui-button onUiClick={(e) => {e.stopPropagation(); this.removeAttribute("background")} }   round="none" type="link" color="secondary-light" size="smaller">remove</ui-button>
+                        Background Color&nbsp;|&nbsp;<ui-button onUiClick={(e) => { e.stopPropagation(); this.removeAttribute("background") }} round="none" type="link" color="secondary-light" size="smaller">remove</ui-button>
                     </ui-input>
                 );
             case "disabled":
                 return (
                     <ui-input orientation="horizontal" type="radio" onUiInput={(e: CustomEvent) => this.setAttribute("disabled", e.detail.value)}>
-                        Disabled&nbsp;|&nbsp;<ui-button onUiClick={(e) => {e.stopPropagation(); this.removeAttribute("disabled")} }   round="none" type="link" color="secondary-light" size="smaller">remove</ui-button>
+                        Disabled&nbsp;|&nbsp;<ui-button onUiClick={(e) => { e.stopPropagation(); this.removeAttribute("disabled") }} round="none" type="link" color="secondary-light" size="smaller">remove</ui-button>
                         <ui-input-option slot="option" value={"true"} selected={this.currentVals["disabled"]}>True</ui-input-option>
                         <ui-input-option slot="option" value={"false"} selected={!this.currentVals["disabled"]}>False</ui-input-option>
                     </ui-input>
@@ -78,7 +78,7 @@ export class UiPlaygroundAttrs {
             case "round":
                 return (
                     <ui-input class="input-attr" orientation="horizontal" type="radio" onUiInput={(e: CustomEvent) => this.setAttribute("round", e.detail.value)}>
-                        Rounding&nbsp;|&nbsp;<ui-button onUiClick={(e) => {e.stopPropagation(); this.removeAttribute("round")} }   round="none" type="link" color="secondary-light" size="smaller">remove</ui-button>
+                        Rounding&nbsp;|&nbsp;<ui-button onUiClick={(e) => { e.stopPropagation(); this.removeAttribute("round") }} round="none" type="link" color="secondary-light" size="smaller">remove</ui-button>
                         {this.doc.props.filter(p => p.name == "round").map(p => {
                             return p.values.map(v =>
                                 <ui-input-option slot="option" value={v.value} selected={this.currentVals["round"] == v.value}>{v.value}</ui-input-option>
@@ -90,7 +90,7 @@ export class UiPlaygroundAttrs {
             case "size":
                 return (
                     <ui-input class="input-attr" orientation="horizontal" type="radio" onUiInput={(e: CustomEvent) => this.setAttribute("size", e.detail.value)}>
-                        Size&nbsp;|&nbsp;<ui-button onUiClick={(e) => {e.stopPropagation(); this.removeAttribute("size")} }   round="none" type="link" color="secondary-light" size="smaller">remove</ui-button>
+                        Size&nbsp;|&nbsp;<ui-button onUiClick={(e) => { e.stopPropagation(); this.removeAttribute("size") }} round="none" type="link" color="secondary-light" size="smaller">remove</ui-button>
                         {this.doc.props.filter(p => p.name == "size").map(p => {
                             return p.values.map(v =>
                                 <ui-input-option slot="option" value={v.value} selected={this.currentVals["size"] == v.value}>{v.value}</ui-input-option>
@@ -102,13 +102,31 @@ export class UiPlaygroundAttrs {
             case "type":
                 return (
                     <ui-input class="input-attr" orientation="horizontal" type="radio" onUiInput={(e: CustomEvent) => this.setAttribute("type", e.detail.value)}>
-                        Type&nbsp;|&nbsp;<ui-button onUiClick={(e) => {e.stopPropagation(); this.removeAttribute("type")} }   round="none" type="link" color="secondary-light" size="smaller">remove</ui-button>
-                                        {this.doc.props.filter(p => p.name == "type").map(p => {
+                        Type&nbsp;|&nbsp;<ui-button onUiClick={(e) => { e.stopPropagation(); this.removeAttribute("type") }} round="none" type="link" color="secondary-light" size="smaller">remove</ui-button>
+                        {this.doc.props.filter(p => p.name == "type").map(p => {
                             return p.values.map(v =>
                                 <ui-input-option slot="option" value={v.value} selected={this.currentVals["type"] == v.value}>{v.value}</ui-input-option>
                             )
-
                         })}
+                    </ui-input>
+                );
+            case "align":
+                    return (
+                        <ui-input class="input-attr" orientation="horizontal" type="radio" onUiInput={(e: CustomEvent) => this.setAttribute("align", e.detail.value)}>
+                            Align&nbsp;|&nbsp;<ui-button onUiClick={(e) => { e.stopPropagation(); this.removeAttribute("align") }} round="none" type="link" color="secondary-light" size="smaller">remove</ui-button>
+                            {this.doc.props.filter(p => p.name == "align").map(p => {
+                                return p.values.map(v =>
+                                    <ui-input-option slot="option" value={v.value} selected={this.currentVals["align"] == v.value}>{v.value}</ui-input-option>
+                                )
+    
+                            })}
+                        </ui-input>
+                    );
+            case "href":
+                return (
+                    <ui-input class="input-attr" type="text" onUiInput={(e: CustomEvent) => this.setAttribute("href", e.detail.value)}>
+                        href&nbsp;|&nbsp;<ui-button onUiClick={(e) => { e.stopPropagation(); this.removeAttribute("href") }} round="none" type="link" color="secondary-light" size="smaller">remove</ui-button>
+                        
                     </ui-input>
                 );
         }
@@ -120,7 +138,7 @@ export class UiPlaygroundAttrs {
                 <ui-heading background="grey-100">Layers</ui-heading>
                 <div class="attrs">
                     {this.elements.map((e) =>
-                        <ui-button onUiClick={() => this.selectElement(e)} type="flat" color="base">{e.localName}</ui-button>
+                        <ui-button onUiClick={() => this.selectElement(e)} round="none" background="grey-80">{e.localName}</ui-button>
                     )}
                 </div>
                 <ui-heading background="grey-100">{this.doc.tag}</ui-heading>

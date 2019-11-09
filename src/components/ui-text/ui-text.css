@@ -1,5 +1,8 @@
 
 :host {
     display: inline-flex;
-    line-height: 1.5em;
+    line-height: inherit;
+    padding: 0em 0.25em;
+    align-items: center;
+    justify-content: center;
 }

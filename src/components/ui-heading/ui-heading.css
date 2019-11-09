@@ -1,15 +1,34 @@
 :host {
     display: flex;
     flex-direction: row;
-    line-height: 1.0em;
-    padding: 0.5em 0em;
     font-weight: 600;
-    align-items: flex-start;
-    justify-content: flex-start;
+    line-height: 1.5em;
+    flex-wrap: nowrap;
+    align-items: center;
+    flex: 1;
 }
 
 :host([background]) {
-    padding-left: 1em;
-    padding-right: 1em;
+    padding: 0em 0.5em;
 }
 
+:host([align="left"]) {
+    justify-content: flex-start;
+}
+
+:host([align="right"]) {
+    justify-content: flex-end;
+}
+
+:host([align="center"]) {
+    justify-content: center;
+}
+
+:host([type="underline"]) {
+    border-bottom: 0.1em solid;
+}
+
+:host([type="outline"]) {
+    border: 0.1em solid;
+    padding: 0em 0.5em;
+}

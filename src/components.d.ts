@@ -8,6 +8,7 @@
 
 import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 import {
+  UiAlignText,
   UiButtonType,
   UiColor,
   UiInputType,
@@ -80,27 +81,31 @@ export namespace Components {
   }
   interface UiButton {
     /**
-    * @description Background color from the UI Color Palette
+    * @description Background color from the UI Color Palette. When only background is present then background will be color and forground will be either white or black. If color attribute is also present then forground color will be set to color attribute.
     */
     'background': UiColor;
     /**
-    * @description Forground color from the UI Color Palette
+    * @description Set forground color to selected palette color.
     */
     'color': UiColor;
     /**
-    * @description Enable or disable button
+    * @description This Boolean attribute prevents the user from interacting with the ui-button.
     */
     'disabled': boolean;
     /**
-    * @description Enable or disable button
+    * @description URL where browser will navigate to once button is clicked. If href is provided then a click event will not be emitted and page will be redirect to the provided url.
+    */
+    'href': string;
+    /**
+    * @description Rounding button corners. <ul>    <li> Base : Adds slight corner rounding</li>    <li> fab : Intending to creating single icon round button</li>    <li> none : No rounding</li>    <li> pill : same rounding as fab except has more padding to left and right</li> </ul>
     */
     'round': UiRounding;
     /**
-    * @description Absolute font size
+    * @description Absolute-size keywords, based on the user's default font size (which is medium).
     */
     'size': UiSize;
     /**
-    * @description Set button type from supported button types
+    * @description Set button type from supported button types.
     */
     'type': UiButtonType;
   }
@@ -108,19 +113,28 @@ export namespace Components {
     'language': 'xml' | 'java' | 'javascript' | 'typescript' | 'sql';
     'setCode': (code: any) => Promise<void>;
   }
+  interface UiDocLinks {}
   interface UiHeading {
     /**
-    * Background color from the UI Color Palette
+    * @description Absolute-size keywords, based on the user's default font size (which is medium).
+    */
+    'align': UiAlignText;
+    /**
+    * @description Background color from the UI Color Palette. When only background is present then background will be color and forground will be either white or black. If color attribute is also present then forground color will be set to color attribute.
     */
     'background': UiColor;
     /**
-    * Forground color from the UI Color Palette
+    * @description Set forground color to selected palette color.
     */
     'color': UiColor;
     /**
-    * Absolute font size
+    * @description Absolute-size keywords, based on the user's default font size (which is medium).
     */
     'size': UiSize;
+    /**
+    * @description Type provide two additional feature where heading can be underlined (bottom border) or outline which gives border around the heading.
+    */
+    'type': "underline" | "outline" | "base";
   }
   interface UiIcon {
     /**
@@ -194,15 +208,15 @@ export namespace Components {
   }
   interface UiText {
     /**
-    * @description Background color from the UI Color Palette
+    * @description Background color from the UI Color Palette. When only background is present then background will be color and forground will be either white or black. If color attribute is also present then forground color will be set to color attribute.
     */
     'background': UiColor;
     /**
-    * @description Forground color from the UI Color Palette
+    * @description Set forground color to selected palette color.
     */
     'color': UiColor;
     /**
-    * @description Absolute font size
+    * @description Absolute-size keywords, based on the user's default font size (which is medium).
     */
     'size': UiSize;
   }
@@ -245,6 +259,12 @@ declare global {
   var HTMLUiCodeElement: {
     prototype: HTMLUiCodeElement;
     new (): HTMLUiCodeElement;
+  };
+
+  interface HTMLUiDocLinksElement extends Components.UiDocLinks, HTMLStencilElement {}
+  var HTMLUiDocLinksElement: {
+    prototype: HTMLUiDocLinksElement;
+    new (): HTMLUiDocLinksElement;
   };
 
   interface HTMLUiHeadingElement extends Components.UiHeading, HTMLStencilElement {}
@@ -319,6 +339,7 @@ declare global {
     'ui-app-navigation': HTMLUiAppNavigationElement;
     'ui-button': HTMLUiButtonElement;
     'ui-code': HTMLUiCodeElement;
+    'ui-doc-links': HTMLUiDocLinksElement;
     'ui-heading': HTMLUiHeadingElement;
     'ui-icon': HTMLUiIconElement;
     'ui-input': HTMLUiInputElement;
@@ -393,47 +414,60 @@ declare namespace LocalJSX {
   }
   interface UiButton {
     /**
-    * @description Background color from the UI Color Palette
+    * @description Background color from the UI Color Palette. When only background is present then background will be color and forground will be either white or black. If color attribute is also present then forground color will be set to color attribute.
     */
     'background'?: UiColor;
     /**
-    * @description Forground color from the UI Color Palette
+    * @description Set forground color to selected palette color.
     */
     'color'?: UiColor;
     /**
-    * @description Enable or disable button
+    * @description This Boolean attribute prevents the user from interacting with the ui-button.
     */
     'disabled'?: boolean;
+    /**
+    * @description URL where browser will navigate to once button is clicked. If href is provided then a click event will not be emitted and page will be redirect to the provided url.
+    */
+    'href'?: string;
     'onUiClick'?: (event: CustomEvent<any>) => void;
     /**
-    * @description Enable or disable button
+    * @description Rounding button corners. <ul>    <li> Base : Adds slight corner rounding</li>    <li> fab : Intending to creating single icon round button</li>    <li> none : No rounding</li>    <li> pill : same rounding as fab except has more padding to left and right</li> </ul>
     */
     'round'?: UiRounding;
     /**
-    * @description Absolute font size
+    * @description Absolute-size keywords, based on the user's default font size (which is medium).
     */
     'size'?: UiSize;
     /**
-    * @description Set button type from supported button types
+    * @description Set button type from supported button types.
     */
     'type'?: UiButtonType;
   }
   interface UiCode {
     'language'?: 'xml' | 'java' | 'javascript' | 'typescript' | 'sql';
   }
+  interface UiDocLinks {}
   interface UiHeading {
     /**
-    * Background color from the UI Color Palette
+    * @description Absolute-size keywords, based on the user's default font size (which is medium).
+    */
+    'align'?: UiAlignText;
+    /**
+    * @description Background color from the UI Color Palette. When only background is present then background will be color and forground will be either white or black. If color attribute is also present then forground color will be set to color attribute.
     */
     'background'?: UiColor;
     /**
-    * Forground color from the UI Color Palette
+    * @description Set forground color to selected palette color.
     */
     'color'?: UiColor;
     /**
-    * Absolute font size
+    * @description Absolute-size keywords, based on the user's default font size (which is medium).
     */
     'size'?: UiSize;
+    /**
+    * @description Type provide two additional feature where heading can be underlined (bottom border) or outline which gives border around the heading.
+    */
+    'type'?: "underline" | "outline" | "base";
   }
   interface UiIcon {
     /**
@@ -509,15 +543,15 @@ declare namespace LocalJSX {
   interface UiRipple {}
   interface UiText {
     /**
-    * @description Background color from the UI Color Palette
+    * @description Background color from the UI Color Palette. When only background is present then background will be color and forground will be either white or black. If color attribute is also present then forground color will be set to color attribute.
     */
     'background'?: UiColor;
     /**
-    * @description Forground color from the UI Color Palette
+    * @description Set forground color to selected palette color.
     */
     'color'?: UiColor;
     /**
-    * @description Absolute font size
+    * @description Absolute-size keywords, based on the user's default font size (which is medium).
     */
     'size'?: UiSize;
   }
@@ -529,6 +563,7 @@ declare namespace LocalJSX {
     'ui-app-navigation': UiAppNavigation;
     'ui-button': UiButton;
     'ui-code': UiCode;
+    'ui-doc-links': UiDocLinks;
     'ui-heading': UiHeading;
     'ui-icon': UiIcon;
     'ui-input': UiInput;
@@ -555,6 +590,7 @@ declare module "@stencil/core" {
       'ui-app-navigation': LocalJSX.UiAppNavigation & JSXBase.HTMLAttributes<HTMLUiAppNavigationElement>;
       'ui-button': LocalJSX.UiButton & JSXBase.HTMLAttributes<HTMLUiButtonElement>;
       'ui-code': LocalJSX.UiCode & JSXBase.HTMLAttributes<HTMLUiCodeElement>;
+      'ui-doc-links': LocalJSX.UiDocLinks & JSXBase.HTMLAttributes<HTMLUiDocLinksElement>;
       'ui-heading': LocalJSX.UiHeading & JSXBase.HTMLAttributes<HTMLUiHeadingElement>;
       'ui-icon': LocalJSX.UiIcon & JSXBase.HTMLAttributes<HTMLUiIconElement>;
       'ui-input': LocalJSX.UiInput & JSXBase.HTMLAttributes<HTMLUiInputElement>;

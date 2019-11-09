@@ -4,6 +4,18 @@ class UiCommonUtils {
 
     private constructor() { }
 
+    public fontSizeMap: object = {
+        'xx-small': "0.65rem",
+        'x-small' : "0.75rem",
+        'small'   : "0.9rem",
+        'medium'  : "1rem",
+        'large'   : "1.5rem",
+        'x-large' : "2rem",
+        'xx-large': "2.5rem",
+        'larger'  : "larger",
+        'smaller' : "smaller"
+    }
+
     public colorPalette: object = {
         'grey': ['#242526', '#313336', '#3f4145', '#53565a', '#72767a', '#8e9399', '#acb0b5', '#d0d4d9', '#edf0f2', '#f8f9f9'],
         'red': ['#471819', '#691518', '#8f0e13', '#b50d12', '#de1b21', '#fa5056', '#fc9094', '#fcc7c9', '#fce8e9', '#fff5f5'],
@@ -58,7 +70,7 @@ class UiCommonUtils {
     getCss(size: string, color: string, background: string) {
         let css = ":host {";
         if (size) {
-            css += "font-size: " + size + ";";
+            css += "font-size: " + this.fontSizeMap[size] + ";";
         }
         if (background) {
             let c = this.getColor(background);
@@ -80,7 +92,7 @@ class UiCommonUtils {
 
     getStyle(size: string, color: string, background: string, el: HTMLElement) {
         if (!HTMLElement.prototype.attachShadow) {
-            el.style.fontSize = size;
+            el.style.fontSize = this.fontSizeMap[size];
             if (background) {
                 let c = this.getColor(background);
                 if (!color) {

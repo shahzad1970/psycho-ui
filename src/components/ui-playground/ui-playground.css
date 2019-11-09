@@ -1,7 +1,6 @@
-
 :host {
     display: block;
-    padding-right: 4em; 
+    padding-right: 4em;
     padding-left: 4em;
     margin-bottom: 4em;
 }
@@ -13,16 +12,19 @@
     margin: 1em;
     margin-bottom: 4em;
 }
+
 .propval {
     width: 120px;
     font-size: small;
     margin: 0.25em;
 }
-.propval > ui-text {
+
+.propval>ui-text {
     padding: 0.2em 0.2em;
     display: block;
     text-align: center;
 }
+
 .play {
     display: flex;
     flex-direction: row;
@@ -30,29 +32,32 @@
     margin-top: 1em;
     margin-bottom: 1em;
 }
+
 .play-code {
     display: flex;
     flex-direction: column;
-     padding: 2em;
-     justify-content: center;
-     align-items: center;
-     border: 2px solid #dedede;
-     flex: 1;
-     margin-right: 1em;
+    padding: 2em;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #dedede;
+    background-color: #fafafa;
+    flex: 1;
+    margin-right: 1em;
+    cursor: pointer;
 }
 
-.play-code > * {
+.play-code>* {
     margin-top: 2em;
 }
 
 .play-attrs {
-  flex: 0;
-  max-width: 25em;
-  min-width: 25em;
-  max-height: 35em;
-  min-height: 35em;
-  overflow-y: auto;
-  background-color: black;
+    flex: 0;
+    max-width: 30em;
+    min-width: 30em;
+    max-height: 35em;
+    min-height: 35em;
+    background-color: black;
+    overflow-y: scroll;
 }
 
 .nodeFocus {
