@@ -14,13 +14,13 @@ export class UiPlayground {
     @Prop() tag: string;
 
     @State() selectedNodes: HTMLElement[] = [];
+    @State() iconPage: number = 0;
 
     doc: JsonDocs = componentDoc as any;
 
     codeElement: HTMLElement;
 
     codeView: HTMLUiCodeElement;
-
 
     componentDidLoad() {
         const elm = this.codeElement.querySelector(".ui-edit-layer") as HTMLElement;
@@ -52,6 +52,37 @@ export class UiPlayground {
     @Listen("updatePlaygroundCode", { capture: true })
     updateCodeView() {
         this.codeView.setCode(this.codeElement.innerHTML);
+    }
+
+
+    onClickCopyText(e: Event) {
+        const target = e.target as HTMLUiTextElement;
+        const el = document.createElement('textarea');
+        el.value = target.textContent;
+        el.setAttribute('readonly', '');
+        el.style.position = 'absolute';
+        el.style.left = '-9999px';
+        document.body.appendChild(el);
+        el.select();
+        document.execCommand('copy');
+        document.body.removeChild(el);
+
+    }
+
+    nextIconPage(total) {
+        console.log(total)
+        this.iconPage+=50;
+        if (this.iconPage > total) {
+            this.iconPage = total - 50;
+        }
+    }
+
+    backIconPage(total) {
+        console.log(total)
+        this.iconPage-=50;
+        if (this.iconPage < 0) {
+            this.iconPage = 0;
+        }
     }
 
     render() {
@@ -97,17 +128,27 @@ export class UiPlayground {
                                     <div class="prop">
                                         {p.values.map(val =>
                                             <div class="propval">
-                                                <ui-text background="blue-20">{val.value ? val.value : val.type}</ui-text>
+                                                {p.name == "icon" &&
+                                                    <div class="icon-container">
+                                                        <ui-icon>{val.value}</ui-icon>
+                                                        <ui-text title="click to copy text" background="blue-20" onClick={(e) => this.onClickCopyText(e)}>{val.value ? val.value : val.type}</ui-text>
+                                                    </div>
+                                                }
+                                                {p.name != "icon" &&
+                                                    <ui-text background="blue-20">{val.value ? val.value : val.type}</ui-text>
+                                                }
+
                                             </div>
                                         )}
-                                    </div>
 
+                                    </div>
                                 ]
                             })}
                         </div>
                     ]
-                })}
-            </Host>
+                })
+                }
+            </Host >
         );
     }
 }

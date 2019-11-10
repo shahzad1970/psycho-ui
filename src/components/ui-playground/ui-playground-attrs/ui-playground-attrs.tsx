@@ -111,22 +111,29 @@ export class UiPlaygroundAttrs {
                     </ui-input>
                 );
             case "align":
-                    return (
-                        <ui-input class="input-attr" orientation="horizontal" type="radio" onUiInput={(e: CustomEvent) => this.setAttribute("align", e.detail.value)}>
-                            Align&nbsp;|&nbsp;<ui-button onUiClick={(e) => { e.stopPropagation(); this.removeAttribute("align") }} round="none" type="link" color="secondary-light" size="smaller">remove</ui-button>
-                            {this.doc.props.filter(p => p.name == "align").map(p => {
-                                return p.values.map(v =>
-                                    <ui-input-option slot="option" value={v.value} selected={this.currentVals["align"] == v.value}>{v.value}</ui-input-option>
-                                )
-    
-                            })}
-                        </ui-input>
-                    );
+                return (
+                    <ui-input class="input-attr" orientation="horizontal" type="radio" onUiInput={(e: CustomEvent) => this.setAttribute("align", e.detail.value)}>
+                        Align&nbsp;|&nbsp;<ui-button onUiClick={(e) => { e.stopPropagation(); this.removeAttribute("align") }} round="none" type="link" color="secondary-light" size="smaller">remove</ui-button>
+                        {this.doc.props.filter(p => p.name == "align").map(p => {
+                            return p.values.map(v =>
+                                <ui-input-option slot="option" value={v.value} selected={this.currentVals["align"] == v.value}>{v.value}</ui-input-option>
+                            )
+
+                        })}
+                    </ui-input>
+                );
+            case "icon":
+                return (
+                    <ui-input class="input-attr" type="text" onUiInput={(e: CustomEvent) => this.setAttribute("icon", e.detail.value)}>
+                        Icon&nbsp;|&nbsp;<ui-button onUiClick={(e) => { e.stopPropagation(); this.removeAttribute("icon") }} round="none" type="link" color="secondary-light" size="smaller">remove</ui-button>
+
+                    </ui-input>
+                );
             case "href":
                 return (
                     <ui-input class="input-attr" type="text" onUiInput={(e: CustomEvent) => this.setAttribute("href", e.detail.value)}>
                         href&nbsp;|&nbsp;<ui-button onUiClick={(e) => { e.stopPropagation(); this.removeAttribute("href") }} round="none" type="link" color="secondary-light" size="smaller">remove</ui-button>
-                        
+
                     </ui-input>
                 );
         }

@@ -20,6 +20,7 @@
 - [ui-paragraph](../ui-paragraph)
 - [ui-playground-attrs](ui-playground-attrs)
 - [ui-code](../ui-code)
+- [ui-icon](../ui-icon)
 - [ui-text](../ui-text)
 
 ### Graph
@@ -29,6 +30,7 @@ graph TD;
   ui-playground --> ui-paragraph
   ui-playground --> ui-playground-attrs
   ui-playground --> ui-code
+  ui-playground --> ui-icon
   ui-playground --> ui-text
   ui-playground-attrs --> ui-input
   ui-playground-attrs --> ui-button

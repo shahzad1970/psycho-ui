@@ -103,11 +103,17 @@ export class UiInput {
             default:
                 return (
                     <div class="input-container" ref={(el) => this.inputContainer = el}>
-                        <input type="text" onFocus={() => this.onFocus()} onBlur={() => this.onBlur()}></input>
+                        <input type="text" onInput={()=> this.onTextInput()} ref={(el) => this.inputField = el} onFocus={() => this.onFocus()} onBlur={() => this.onBlur()}></input>
                         {this.getIcon()}
                     </div>
                 )
         }
+    }
+
+    onTextInput() {
+        console.log(this.inputField.value);
+        this.value = this.inputField.value;
+        this.uiInput.emit({ value: this.value });
     }
 
     onColorValue(e: CustomEvent) {

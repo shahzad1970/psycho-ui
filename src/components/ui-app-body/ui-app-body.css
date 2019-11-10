@@ -1,7 +1,7 @@
 
 :host {
-    display: block;
-    padding: 1em 2em;
-    height: 1200px;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5em 3em;
 }
 

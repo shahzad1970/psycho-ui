@@ -17,6 +17,9 @@ import {
   UiSize,
 } from './utils/ui-types';
 import {
+  UiIcons,
+} from './components/ui-icon/icon';
+import {
   JsonDocsComponent,
 } from './components/ui-playground/doc';
 
@@ -138,15 +141,19 @@ export namespace Components {
   }
   interface UiIcon {
     /**
-    * Background color from the UI Color Palette
+    * @description Background color from the UI Color Palette. When only background is present then background will be color and forground will be either white or black. If color attribute is also present then forground color will be set to color attribute.
     */
     'background': UiColor;
     /**
-    * Forground color from the UI Color Palette
+    * @description Set forground color to selected palette color.
     */
     'color': UiColor;
     /**
-    * Absolute font size
+    * @description Material design icons are used as part of this framework. Name of the icon can be between the tag or it can be sent in as an attribute. For example as attribute &lt;ui-icon icon="apps"&gt;&lt;/ui-icon&gt; or &lt;ui-icon&gt;apps&lt;/ui-icon&gt; In addition to this svg of an icon can be placed within the icon tag to create an svg icon.   <pre><ui-text color="danger">* CLICK NAME TO COPY TO CLIPBOARD * </ui-text></pre>
+    */
+    'icon': UiIcons;
+    /**
+    * @description Absolute-size keywords, based on the user's default font size (which is medium).
     */
     'size': UiSize;
   }
@@ -471,15 +478,19 @@ declare namespace LocalJSX {
   }
   interface UiIcon {
     /**
-    * Background color from the UI Color Palette
+    * @description Background color from the UI Color Palette. When only background is present then background will be color and forground will be either white or black. If color attribute is also present then forground color will be set to color attribute.
     */
     'background'?: UiColor;
     /**
-    * Forground color from the UI Color Palette
+    * @description Set forground color to selected palette color.
     */
     'color'?: UiColor;
     /**
-    * Absolute font size
+    * @description Material design icons are used as part of this framework. Name of the icon can be between the tag or it can be sent in as an attribute. For example as attribute &lt;ui-icon icon="apps"&gt;&lt;/ui-icon&gt; or &lt;ui-icon&gt;apps&lt;/ui-icon&gt; In addition to this svg of an icon can be placed within the icon tag to create an svg icon.   <pre><ui-text color="danger">* CLICK NAME TO COPY TO CLIPBOARD * </ui-text></pre>
+    */
+    'icon'?: UiIcons;
+    /**
+    * @description Absolute-size keywords, based on the user's default font size (which is medium).
     */
     'size'?: UiSize;
   }

@@ -10,4 +10,5 @@
     border-color: inherit;
     padding-top: 1.5em;
     padding-bottom: 1.5em;
+    z-index: 100;
 }
