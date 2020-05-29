@@ -12,6 +12,7 @@
     left: 0px;
     flex-wrap: nowrap;
     z-index: 100;
+    font-weight: 500;
 }
 
 :host(*) {
@@ -21,6 +22,6 @@
 }
 
 img {
-    height: 35px;
+    height: 2em;
     align-self: center;
 }

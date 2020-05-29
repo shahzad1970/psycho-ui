@@ -1,5 +1,5 @@
 import { h, Host, Component, Prop, Element } from '@stencil/core';
-import { UiColor, UiSize, UiAlignText } from "../../utils/ui-types";
+import { UiColor, UiSize, UiAlign } from "../../utils/ui-types";
 import { UiCommon } from "../../utils/ui-common"
 
 /**
@@ -51,7 +51,7 @@ export class UiHeading {
      * @description
      * Absolute-size keywords, based on the user's default font size (which is medium).
      */
-    @Prop({ reflect: true }) align: UiAlignText;
+    @Prop({ reflect: true }) align: UiAlign;
 
     /**
      * @description

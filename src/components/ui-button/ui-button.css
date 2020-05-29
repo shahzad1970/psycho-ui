@@ -9,11 +9,10 @@
     position: relative;
     box-sizing: content-box;
     cursor: pointer;
-    border: 0.15em solid transparent;
+    border: 0.10em solid transparent;
     font-weight: 600;
     flex-wrap: nowrap;
     white-space: nowrap;
-    line-height: 2em;
     padding: 0em 1em;
 }
 

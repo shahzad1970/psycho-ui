@@ -2,7 +2,7 @@
 :host {
     display: inline-flex;
     line-height: inherit;
-    padding: 0em 0.25em;
+    padding: 0.25em 0.5em;
     align-items: center;
     justify-content: center;
 }

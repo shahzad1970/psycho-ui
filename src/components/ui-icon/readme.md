@@ -21,14 +21,14 @@
 
  - [ui-app-header](../ui-app-header)
  - [ui-input](../ui-input)
- - [ui-playground](../ui-playground)
+ - [ui-playground-values](../ui-playground/ui-playground-values)
 
 ### Graph
 ```mermaid
 graph TD;
   ui-app-header --> ui-icon
   ui-input --> ui-icon
-  ui-playground --> ui-icon
+  ui-playground-values --> ui-icon
   style ui-icon fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

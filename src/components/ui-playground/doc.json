@@ -1,13 +1,13 @@
 {
-  "timestamp": "2019-11-10T00:59:06",
+  "timestamp": "2020-05-27T00:41:22",
   "compiler": {
     "name": "@stencil/core",
-    "version": "1.7.5",
-    "typescriptVersion": "3.6.3"
+    "version": "1.13.0",
+    "typescriptVersion": "3.8.3"
   },
   "components": [
     {
-      "filePath": "src\\components\\ui-app\\ui-app.tsx",
+      "filePath": "./src/components/ui-app/ui-app.tsx",
       "encapsulation": "none",
       "tag": "ui-app",
       "readme": "# ui-app\n\n\n",
@@ -1125,14 +1125,16 @@
       ],
       "methods": [],
       "events": [],
+      "listeners": [],
       "styles": [],
       "slots": [],
+      "parts": [],
       "dependents": [],
       "dependencies": [],
       "dependencyGraph": {}
     },
     {
-      "filePath": "src\\components\\ui-app-body\\ui-app-body.tsx",
+      "filePath": "./src/components/ui-app-body/ui-app-body.tsx",
       "encapsulation": "shadow",
       "tag": "ui-app-body",
       "readme": "# ui-app-body\n\n\n",
@@ -2250,14 +2252,16 @@
       ],
       "methods": [],
       "events": [],
+      "listeners": [],
       "styles": [],
       "slots": [],
+      "parts": [],
       "dependents": [],
       "dependencies": [],
       "dependencyGraph": {}
     },
     {
-      "filePath": "src\\components\\ui-app-header\\ui-app-header.tsx",
+      "filePath": "./src/components/ui-app-header/ui-app-header.tsx",
       "encapsulation": "shadow",
       "tag": "ui-app-header",
       "readme": "# ui-app-header\n\n\n",
@@ -3391,8 +3395,10 @@
       ],
       "methods": [],
       "events": [],
+      "listeners": [],
       "styles": [],
       "slots": [],
+      "parts": [],
       "dependents": [],
       "dependencies": [
         "ui-button",
@@ -3409,7 +3415,7 @@
       }
     },
     {
-      "filePath": "src\\components\\ui-app-navigation\\ui-app-navigation.tsx",
+      "filePath": "./src/components/ui-app-navigation/ui-app-navigation.tsx",
       "encapsulation": "shadow",
       "tag": "ui-app-navigation",
       "readme": "# ui-app-navigation\n\n\n",
@@ -4483,6 +4489,7 @@
           "reflectToAttr": false,
           "docs": "Absolute font size",
           "docsTags": [],
+          "default": "\"medium\"",
           "values": [
             {
               "value": "large",
@@ -4539,14 +4546,16 @@
         }
       ],
       "events": [],
+      "listeners": [],
       "styles": [],
       "slots": [],
+      "parts": [],
       "dependents": [],
       "dependencies": [],
       "dependencyGraph": {}
     },
     {
-      "filePath": "src\\components\\ui-button\\ui-button.tsx",
+      "filePath": "./src/components/ui-button/ui-button.tsx",
       "encapsulation": "shadow",
       "tag": "ui-button",
       "readme": "# ui-button\n\n\n",
@@ -5815,13 +5824,27 @@
           "docsTags": []
         }
       ],
+      "listeners": [
+        {
+          "event": "click",
+          "capture": true,
+          "passive": false
+        },
+        {
+          "event": "mousedown",
+          "capture": true,
+          "passive": true
+        }
+      ],
       "styles": [],
       "slots": [],
+      "parts": [],
       "dependents": [
         "ui-app-header",
         "ui-doc-links",
         "ui-input-color",
-        "ui-playground-attrs"
+        "ui-playground-attrs",
+        "ui-playground-values"
       ],
       "dependencies": [
         "ui-ripple"
@@ -5841,11 +5864,14 @@
         ],
         "ui-playground-attrs": [
           "ui-button"
+        ],
+        "ui-playground-values": [
+          "ui-button"
         ]
       }
     },
     {
-      "filePath": "src\\components\\ui-code\\ui-code.tsx",
+      "filePath": "./src/components/ui-code/ui-code.tsx",
       "encapsulation": "shadow",
       "tag": "ui-code",
       "readme": "# ui-code\n\n\n",
@@ -5902,8 +5928,10 @@
         }
       ],
       "events": [],
+      "listeners": [],
       "styles": [],
       "slots": [],
+      "parts": [],
       "dependents": [
         "ui-playground"
       ],
@@ -5915,7 +5943,7 @@
       }
     },
     {
-      "filePath": "src\\components\\ui-app-navigation\\ui-doc-links\\ui-doc-links.tsx",
+      "filePath": "./src/components/ui-app-navigation/ui-doc-links/ui-doc-links.tsx",
       "encapsulation": "shadow",
       "tag": "ui-doc-links",
       "readme": "# ui-doc-links\n\n\n",
@@ -5925,8 +5953,10 @@
       "props": [],
       "methods": [],
       "events": [],
+      "listeners": [],
       "styles": [],
       "slots": [],
+      "parts": [],
       "dependents": [],
       "dependencies": [
         "ui-button"
@@ -5941,7 +5971,7 @@
       }
     },
     {
-      "filePath": "src\\components\\ui-heading\\ui-heading.tsx",
+      "filePath": "./src/components/ui-heading/ui-heading.tsx",
       "encapsulation": "shadow",
       "tag": "ui-heading",
       "readme": "# ui-heading\n\n\n",
@@ -5964,7 +5994,7 @@
       "props": [
         {
           "name": "align",
-          "type": "\"center\" | \"left\" | \"right\"",
+          "type": "\"end\" | \"middle\" | \"start\"",
           "mutable": false,
           "attr": "align",
           "reflectToAttr": true,
@@ -5977,15 +6007,15 @@
           ],
           "values": [
             {
-              "value": "center",
+              "value": "end",
               "type": "string"
             },
             {
-              "value": "left",
+              "value": "middle",
               "type": "string"
             },
             {
-              "value": "right",
+              "value": "start",
               "type": "string"
             }
           ],
@@ -7147,8 +7177,10 @@
       ],
       "methods": [],
       "events": [],
+      "listeners": [],
       "styles": [],
       "slots": [],
+      "parts": [],
       "dependents": [
         "ui-playground",
         "ui-playground-attrs"
@@ -7164,7 +7196,7 @@
       }
     },
     {
-      "filePath": "src\\components\\ui-icon\\ui-icon.tsx",
+      "filePath": "./src/components/ui-icon/ui-icon.tsx",
       "encapsulation": "shadow",
       "tag": "ui-icon",
       "readme": "# ui-icon\n\n\n",
@@ -12056,12 +12088,14 @@
       ],
       "methods": [],
       "events": [],
+      "listeners": [],
       "styles": [],
       "slots": [],
+      "parts": [],
       "dependents": [
         "ui-app-header",
         "ui-input",
-        "ui-playground"
+        "ui-playground-values"
       ],
       "dependencies": [],
       "dependencyGraph": {
@@ -12071,18 +12105,31 @@
         "ui-input": [
           "ui-icon"
         ],
-        "ui-playground": [
+        "ui-playground-values": [
           "ui-icon"
         ]
       }
     },
     {
-      "filePath": "src\\components\\ui-input\\ui-input.tsx",
+      "filePath": "./src/components/ui-input/ui-input.tsx",
       "encapsulation": "shadow",
       "tag": "ui-input",
       "readme": "# ui-input\n\n\n",
       "docs": "",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "text": "UI Paragraph",
+          "name": "title"
+        },
+        {
+          "text": "The HTML ui-paragraph element represents a paragraph. Paragraphs are usually represented in visual media as blocks \nof text separated from adjacent blocks by blank lines and/or first-line indentation, but HTML paragraphs \ncan be any structural grouping of related content, such as images or form fields.",
+          "name": "description"
+        },
+        {
+          "text": "<ui-input type=\"text\" class=\"ui-edit-layer\">Example input label</ui-input>",
+          "name": "usage"
+        }
+      ],
       "usage": {},
       "props": [
         {
@@ -13306,10 +13353,24 @@
           "docsTags": []
         }
       ],
+      "listeners": [
+        {
+          "event": "click",
+          "capture": true,
+          "passive": false
+        },
+        {
+          "event": "uiInputOptionEvent",
+          "capture": true,
+          "passive": false
+        }
+      ],
       "styles": [],
       "slots": [],
+      "parts": [],
       "dependents": [
-        "ui-playground-attrs"
+        "ui-playground-attrs",
+        "ui-playground-values"
       ],
       "dependencies": [
         "ui-icon",
@@ -13332,11 +13393,14 @@
         ],
         "ui-playground-attrs": [
           "ui-input"
+        ],
+        "ui-playground-values": [
+          "ui-input"
         ]
       }
     },
     {
-      "filePath": "src\\components\\ui-input\\ui-input-color\\ui-input-color.tsx",
+      "filePath": "./src/components/ui-input/ui-input-color/ui-input-color.tsx",
       "encapsulation": "shadow",
       "tag": "ui-input-color",
       "readme": "# ui-input-color\n\n\n",
@@ -13356,8 +13420,10 @@
           "docsTags": []
         }
       ],
+      "listeners": [],
       "styles": [],
       "slots": [],
+      "parts": [],
       "dependents": [
         "ui-input"
       ],
@@ -13377,7 +13443,7 @@
       }
     },
     {
-      "filePath": "src\\components\\ui-input\\ui-input-option\\ui-input-option.tsx",
+      "filePath": "./src/components/ui-input/ui-input-option/ui-input-option.tsx",
       "encapsulation": "shadow",
       "tag": "ui-input-option",
       "readme": "# ui-input-option\n\n\n",
@@ -13443,8 +13509,21 @@
           "docsTags": []
         }
       ],
+      "listeners": [
+        {
+          "event": "click",
+          "capture": true,
+          "passive": false
+        },
+        {
+          "event": "mousedown",
+          "capture": true,
+          "passive": true
+        }
+      ],
       "styles": [],
       "slots": [],
+      "parts": [],
       "dependents": [
         "ui-playground-attrs"
       ],
@@ -13461,7 +13540,7 @@
       }
     },
     {
-      "filePath": "src\\components\\ui-input\\ui-input-radio\\ui-input-radio.tsx",
+      "filePath": "./src/components/ui-input/ui-input-radio/ui-input-radio.tsx",
       "encapsulation": "shadow",
       "tag": "ui-input-radio",
       "readme": "# ui-input-radio\n\n\n",
@@ -13493,8 +13572,10 @@
       ],
       "methods": [],
       "events": [],
+      "listeners": [],
       "styles": [],
       "slots": [],
+      "parts": [],
       "dependents": [
         "ui-input"
       ],
@@ -13506,12 +13587,1364 @@
       }
     },
     {
-      "filePath": "src\\components\\ui-paragraph\\ui-paragraph.tsx",
+      "filePath": "./src/components/ui-layout/ui-layout.tsx",
+      "encapsulation": "shadow",
+      "tag": "ui-layout",
+      "readme": "# ui-layout\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "align",
+          "type": "\"end\" | \"middle\" | \"start\"",
+          "mutable": false,
+          "attr": "align",
+          "reflectToAttr": true,
+          "docs": "",
+          "docsTags": [
+            {
+              "text": "Absolute-size keywords, based on the user's default font size (which is medium).",
+              "name": "description"
+            }
+          ],
+          "values": [
+            {
+              "value": "end",
+              "type": "string"
+            },
+            {
+              "value": "middle",
+              "type": "string"
+            },
+            {
+              "value": "start",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "background",
+          "type": "\"base\" | \"primary-light\" | \"primary-dark\" | \"secondary-light\" | \"secondary-dark\" | \"success\" | \"danger\" | \"warning\" | \"info\" | \"grey-100\" | \"grey-90\" | \"grey-80\" | \"grey-70\" | \"grey-60\" | \"grey-50\" | \"grey-40\" | \"grey-30\" | \"grey-20\" | \"grey-10\" | \"red-100\" | \"red-90\" | \"red-80\" | \"red-70\" | \"red-60\" | \"red-50\" | \"red-40\" | \"red-30\" | \"red-20\" | \"red-10\" | \"pink-100\" | \"pink-90\" | \"pink-80\" | \"pink-70\" | \"pink-60\" | \"pink-50\" | \"pink-40\" | \"pink-30\" | \"pink-20\" | \"pink-10\" | \"purple-100\" | \"purple-90\" | \"purple-80\" | \"purple-70\" | \"purple-60\" | \"purple-50\" | \"purple-40\" | \"purple-30\" | \"purple-20\" | \"purple-10\" | \"indigo-100\" | \"indigo-90\" | \"indigo-80\" | \"indigo-70\" | \"indigo-60\" | \"indigo-50\" | \"indigo-40\" | \"indigo-30\" | \"indigo-20\" | \"indigo-10\" | \"navy-100\" | \"navy-90\" | \"navy-80\" | \"navy-70\" | \"navy-60\" | \"navy-50\" | \"navy-40\" | \"navy-30\" | \"navy-20\" | \"navy-10\" | \"blue-100\" | \"blue-90\" | \"blue-80\" | \"blue-70\" | \"blue-60\" | \"blue-50\" | \"blue-40\" | \"blue-30\" | \"blue-20\" | \"blue-10\" | \"teal-100\" | \"teal-90\" | \"teal-80\" | \"teal-70\" | \"teal-60\" | \"teal-50\" | \"teal-40\" | \"teal-30\" | \"teal-20\" | \"teal-10\" | \"mint-100\" | \"mint-90\" | \"mint-80\" | \"mint-70\" | \"mint-60\" | \"mint-50\" | \"mint-40\" | \"mint-30\" | \"mint-20\" | \"mint-10\" | \"green-100\" | \"green-90\" | \"green-80\" | \"green-70\" | \"green-60\" | \"green-50\" | \"green-40\" | \"green-30\" | \"green-20\" | \"green-10\" | \"yellow-100\" | \"yellow-90\" | \"yellow-80\" | \"yellow-70\" | \"yellow-60\" | \"yellow-50\" | \"yellow-40\" | \"yellow-30\" | \"yellow-20\" | \"yellow-10\" | \"orange-100\" | \"orange-90\" | \"orange-80\" | \"orange-70\" | \"orange-60\" | \"orange-50\" | \"orange-40\" | \"orange-30\" | \"orange-20\" | \"orange-10\"",
+          "mutable": false,
+          "attr": "background",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [
+            {
+              "text": "Background color from the UI Color Palette. When only background is present then background will be color and forground\nwill be either white or black. If color attribute is also present then forground color will be set to color attribute.",
+              "name": "description"
+            }
+          ],
+          "values": [
+            {
+              "value": "base",
+              "type": "string"
+            },
+            {
+              "value": "primary-light",
+              "type": "string"
+            },
+            {
+              "value": "primary-dark",
+              "type": "string"
+            },
+            {
+              "value": "secondary-light",
+              "type": "string"
+            },
+            {
+              "value": "secondary-dark",
+              "type": "string"
+            },
+            {
+              "value": "success",
+              "type": "string"
+            },
+            {
+              "value": "danger",
+              "type": "string"
+            },
+            {
+              "value": "warning",
+              "type": "string"
+            },
+            {
+              "value": "info",
+              "type": "string"
+            },
+            {
+              "value": "grey-100",
+              "type": "string"
+            },
+            {
+              "value": "grey-90",
+              "type": "string"
+            },
+            {
+              "value": "grey-80",
+              "type": "string"
+            },
+            {
+              "value": "grey-70",
+              "type": "string"
+            },
+            {
+              "value": "grey-60",
+              "type": "string"
+            },
+            {
+              "value": "grey-50",
+              "type": "string"
+            },
+            {
+              "value": "grey-40",
+              "type": "string"
+            },
+            {
+              "value": "grey-30",
+              "type": "string"
+            },
+            {
+              "value": "grey-20",
+              "type": "string"
+            },
+            {
+              "value": "grey-10",
+              "type": "string"
+            },
+            {
+              "value": "red-100",
+              "type": "string"
+            },
+            {
+              "value": "red-90",
+              "type": "string"
+            },
+            {
+              "value": "red-80",
+              "type": "string"
+            },
+            {
+              "value": "red-70",
+              "type": "string"
+            },
+            {
+              "value": "red-60",
+              "type": "string"
+            },
+            {
+              "value": "red-50",
+              "type": "string"
+            },
+            {
+              "value": "red-40",
+              "type": "string"
+            },
+            {
+              "value": "red-30",
+              "type": "string"
+            },
+            {
+              "value": "red-20",
+              "type": "string"
+            },
+            {
+              "value": "red-10",
+              "type": "string"
+            },
+            {
+              "value": "pink-100",
+              "type": "string"
+            },
+            {
+              "value": "pink-90",
+              "type": "string"
+            },
+            {
+              "value": "pink-80",
+              "type": "string"
+            },
+            {
+              "value": "pink-70",
+              "type": "string"
+            },
+            {
+              "value": "pink-60",
+              "type": "string"
+            },
+            {
+              "value": "pink-50",
+              "type": "string"
+            },
+            {
+              "value": "pink-40",
+              "type": "string"
+            },
+            {
+              "value": "pink-30",
+              "type": "string"
+            },
+            {
+              "value": "pink-20",
+              "type": "string"
+            },
+            {
+              "value": "pink-10",
+              "type": "string"
+            },
+            {
+              "value": "purple-100",
+              "type": "string"
+            },
+            {
+              "value": "purple-90",
+              "type": "string"
+            },
+            {
+              "value": "purple-80",
+              "type": "string"
+            },
+            {
+              "value": "purple-70",
+              "type": "string"
+            },
+            {
+              "value": "purple-60",
+              "type": "string"
+            },
+            {
+              "value": "purple-50",
+              "type": "string"
+            },
+            {
+              "value": "purple-40",
+              "type": "string"
+            },
+            {
+              "value": "purple-30",
+              "type": "string"
+            },
+            {
+              "value": "purple-20",
+              "type": "string"
+            },
+            {
+              "value": "purple-10",
+              "type": "string"
+            },
+            {
+              "value": "indigo-100",
+              "type": "string"
+            },
+            {
+              "value": "indigo-90",
+              "type": "string"
+            },
+            {
+              "value": "indigo-80",
+              "type": "string"
+            },
+            {
+              "value": "indigo-70",
+              "type": "string"
+            },
+            {
+              "value": "indigo-60",
+              "type": "string"
+            },
+            {
+              "value": "indigo-50",
+              "type": "string"
+            },
+            {
+              "value": "indigo-40",
+              "type": "string"
+            },
+            {
+              "value": "indigo-30",
+              "type": "string"
+            },
+            {
+              "value": "indigo-20",
+              "type": "string"
+            },
+            {
+              "value": "indigo-10",
+              "type": "string"
+            },
+            {
+              "value": "navy-100",
+              "type": "string"
+            },
+            {
+              "value": "navy-90",
+              "type": "string"
+            },
+            {
+              "value": "navy-80",
+              "type": "string"
+            },
+            {
+              "value": "navy-70",
+              "type": "string"
+            },
+            {
+              "value": "navy-60",
+              "type": "string"
+            },
+            {
+              "value": "navy-50",
+              "type": "string"
+            },
+            {
+              "value": "navy-40",
+              "type": "string"
+            },
+            {
+              "value": "navy-30",
+              "type": "string"
+            },
+            {
+              "value": "navy-20",
+              "type": "string"
+            },
+            {
+              "value": "navy-10",
+              "type": "string"
+            },
+            {
+              "value": "blue-100",
+              "type": "string"
+            },
+            {
+              "value": "blue-90",
+              "type": "string"
+            },
+            {
+              "value": "blue-80",
+              "type": "string"
+            },
+            {
+              "value": "blue-70",
+              "type": "string"
+            },
+            {
+              "value": "blue-60",
+              "type": "string"
+            },
+            {
+              "value": "blue-50",
+              "type": "string"
+            },
+            {
+              "value": "blue-40",
+              "type": "string"
+            },
+            {
+              "value": "blue-30",
+              "type": "string"
+            },
+            {
+              "value": "blue-20",
+              "type": "string"
+            },
+            {
+              "value": "blue-10",
+              "type": "string"
+            },
+            {
+              "value": "teal-100",
+              "type": "string"
+            },
+            {
+              "value": "teal-90",
+              "type": "string"
+            },
+            {
+              "value": "teal-80",
+              "type": "string"
+            },
+            {
+              "value": "teal-70",
+              "type": "string"
+            },
+            {
+              "value": "teal-60",
+              "type": "string"
+            },
+            {
+              "value": "teal-50",
+              "type": "string"
+            },
+            {
+              "value": "teal-40",
+              "type": "string"
+            },
+            {
+              "value": "teal-30",
+              "type": "string"
+            },
+            {
+              "value": "teal-20",
+              "type": "string"
+            },
+            {
+              "value": "teal-10",
+              "type": "string"
+            },
+            {
+              "value": "mint-100",
+              "type": "string"
+            },
+            {
+              "value": "mint-90",
+              "type": "string"
+            },
+            {
+              "value": "mint-80",
+              "type": "string"
+            },
+            {
+              "value": "mint-70",
+              "type": "string"
+            },
+            {
+              "value": "mint-60",
+              "type": "string"
+            },
+            {
+              "value": "mint-50",
+              "type": "string"
+            },
+            {
+              "value": "mint-40",
+              "type": "string"
+            },
+            {
+              "value": "mint-30",
+              "type": "string"
+            },
+            {
+              "value": "mint-20",
+              "type": "string"
+            },
+            {
+              "value": "mint-10",
+              "type": "string"
+            },
+            {
+              "value": "green-100",
+              "type": "string"
+            },
+            {
+              "value": "green-90",
+              "type": "string"
+            },
+            {
+              "value": "green-80",
+              "type": "string"
+            },
+            {
+              "value": "green-70",
+              "type": "string"
+            },
+            {
+              "value": "green-60",
+              "type": "string"
+            },
+            {
+              "value": "green-50",
+              "type": "string"
+            },
+            {
+              "value": "green-40",
+              "type": "string"
+            },
+            {
+              "value": "green-30",
+              "type": "string"
+            },
+            {
+              "value": "green-20",
+              "type": "string"
+            },
+            {
+              "value": "green-10",
+              "type": "string"
+            },
+            {
+              "value": "yellow-100",
+              "type": "string"
+            },
+            {
+              "value": "yellow-90",
+              "type": "string"
+            },
+            {
+              "value": "yellow-80",
+              "type": "string"
+            },
+            {
+              "value": "yellow-70",
+              "type": "string"
+            },
+            {
+              "value": "yellow-60",
+              "type": "string"
+            },
+            {
+              "value": "yellow-50",
+              "type": "string"
+            },
+            {
+              "value": "yellow-40",
+              "type": "string"
+            },
+            {
+              "value": "yellow-30",
+              "type": "string"
+            },
+            {
+              "value": "yellow-20",
+              "type": "string"
+            },
+            {
+              "value": "yellow-10",
+              "type": "string"
+            },
+            {
+              "value": "orange-100",
+              "type": "string"
+            },
+            {
+              "value": "orange-90",
+              "type": "string"
+            },
+            {
+              "value": "orange-80",
+              "type": "string"
+            },
+            {
+              "value": "orange-70",
+              "type": "string"
+            },
+            {
+              "value": "orange-60",
+              "type": "string"
+            },
+            {
+              "value": "orange-50",
+              "type": "string"
+            },
+            {
+              "value": "orange-40",
+              "type": "string"
+            },
+            {
+              "value": "orange-30",
+              "type": "string"
+            },
+            {
+              "value": "orange-20",
+              "type": "string"
+            },
+            {
+              "value": "orange-10",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "color",
+          "type": "\"base\" | \"primary-light\" | \"primary-dark\" | \"secondary-light\" | \"secondary-dark\" | \"success\" | \"danger\" | \"warning\" | \"info\" | \"grey-100\" | \"grey-90\" | \"grey-80\" | \"grey-70\" | \"grey-60\" | \"grey-50\" | \"grey-40\" | \"grey-30\" | \"grey-20\" | \"grey-10\" | \"red-100\" | \"red-90\" | \"red-80\" | \"red-70\" | \"red-60\" | \"red-50\" | \"red-40\" | \"red-30\" | \"red-20\" | \"red-10\" | \"pink-100\" | \"pink-90\" | \"pink-80\" | \"pink-70\" | \"pink-60\" | \"pink-50\" | \"pink-40\" | \"pink-30\" | \"pink-20\" | \"pink-10\" | \"purple-100\" | \"purple-90\" | \"purple-80\" | \"purple-70\" | \"purple-60\" | \"purple-50\" | \"purple-40\" | \"purple-30\" | \"purple-20\" | \"purple-10\" | \"indigo-100\" | \"indigo-90\" | \"indigo-80\" | \"indigo-70\" | \"indigo-60\" | \"indigo-50\" | \"indigo-40\" | \"indigo-30\" | \"indigo-20\" | \"indigo-10\" | \"navy-100\" | \"navy-90\" | \"navy-80\" | \"navy-70\" | \"navy-60\" | \"navy-50\" | \"navy-40\" | \"navy-30\" | \"navy-20\" | \"navy-10\" | \"blue-100\" | \"blue-90\" | \"blue-80\" | \"blue-70\" | \"blue-60\" | \"blue-50\" | \"blue-40\" | \"blue-30\" | \"blue-20\" | \"blue-10\" | \"teal-100\" | \"teal-90\" | \"teal-80\" | \"teal-70\" | \"teal-60\" | \"teal-50\" | \"teal-40\" | \"teal-30\" | \"teal-20\" | \"teal-10\" | \"mint-100\" | \"mint-90\" | \"mint-80\" | \"mint-70\" | \"mint-60\" | \"mint-50\" | \"mint-40\" | \"mint-30\" | \"mint-20\" | \"mint-10\" | \"green-100\" | \"green-90\" | \"green-80\" | \"green-70\" | \"green-60\" | \"green-50\" | \"green-40\" | \"green-30\" | \"green-20\" | \"green-10\" | \"yellow-100\" | \"yellow-90\" | \"yellow-80\" | \"yellow-70\" | \"yellow-60\" | \"yellow-50\" | \"yellow-40\" | \"yellow-30\" | \"yellow-20\" | \"yellow-10\" | \"orange-100\" | \"orange-90\" | \"orange-80\" | \"orange-70\" | \"orange-60\" | \"orange-50\" | \"orange-40\" | \"orange-30\" | \"orange-20\" | \"orange-10\"",
+          "mutable": false,
+          "attr": "color",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [
+            {
+              "text": "Set forground color to selected palette color.",
+              "name": "description"
+            }
+          ],
+          "values": [
+            {
+              "value": "base",
+              "type": "string"
+            },
+            {
+              "value": "primary-light",
+              "type": "string"
+            },
+            {
+              "value": "primary-dark",
+              "type": "string"
+            },
+            {
+              "value": "secondary-light",
+              "type": "string"
+            },
+            {
+              "value": "secondary-dark",
+              "type": "string"
+            },
+            {
+              "value": "success",
+              "type": "string"
+            },
+            {
+              "value": "danger",
+              "type": "string"
+            },
+            {
+              "value": "warning",
+              "type": "string"
+            },
+            {
+              "value": "info",
+              "type": "string"
+            },
+            {
+              "value": "grey-100",
+              "type": "string"
+            },
+            {
+              "value": "grey-90",
+              "type": "string"
+            },
+            {
+              "value": "grey-80",
+              "type": "string"
+            },
+            {
+              "value": "grey-70",
+              "type": "string"
+            },
+            {
+              "value": "grey-60",
+              "type": "string"
+            },
+            {
+              "value": "grey-50",
+              "type": "string"
+            },
+            {
+              "value": "grey-40",
+              "type": "string"
+            },
+            {
+              "value": "grey-30",
+              "type": "string"
+            },
+            {
+              "value": "grey-20",
+              "type": "string"
+            },
+            {
+              "value": "grey-10",
+              "type": "string"
+            },
+            {
+              "value": "red-100",
+              "type": "string"
+            },
+            {
+              "value": "red-90",
+              "type": "string"
+            },
+            {
+              "value": "red-80",
+              "type": "string"
+            },
+            {
+              "value": "red-70",
+              "type": "string"
+            },
+            {
+              "value": "red-60",
+              "type": "string"
+            },
+            {
+              "value": "red-50",
+              "type": "string"
+            },
+            {
+              "value": "red-40",
+              "type": "string"
+            },
+            {
+              "value": "red-30",
+              "type": "string"
+            },
+            {
+              "value": "red-20",
+              "type": "string"
+            },
+            {
+              "value": "red-10",
+              "type": "string"
+            },
+            {
+              "value": "pink-100",
+              "type": "string"
+            },
+            {
+              "value": "pink-90",
+              "type": "string"
+            },
+            {
+              "value": "pink-80",
+              "type": "string"
+            },
+            {
+              "value": "pink-70",
+              "type": "string"
+            },
+            {
+              "value": "pink-60",
+              "type": "string"
+            },
+            {
+              "value": "pink-50",
+              "type": "string"
+            },
+            {
+              "value": "pink-40",
+              "type": "string"
+            },
+            {
+              "value": "pink-30",
+              "type": "string"
+            },
+            {
+              "value": "pink-20",
+              "type": "string"
+            },
+            {
+              "value": "pink-10",
+              "type": "string"
+            },
+            {
+              "value": "purple-100",
+              "type": "string"
+            },
+            {
+              "value": "purple-90",
+              "type": "string"
+            },
+            {
+              "value": "purple-80",
+              "type": "string"
+            },
+            {
+              "value": "purple-70",
+              "type": "string"
+            },
+            {
+              "value": "purple-60",
+              "type": "string"
+            },
+            {
+              "value": "purple-50",
+              "type": "string"
+            },
+            {
+              "value": "purple-40",
+              "type": "string"
+            },
+            {
+              "value": "purple-30",
+              "type": "string"
+            },
+            {
+              "value": "purple-20",
+              "type": "string"
+            },
+            {
+              "value": "purple-10",
+              "type": "string"
+            },
+            {
+              "value": "indigo-100",
+              "type": "string"
+            },
+            {
+              "value": "indigo-90",
+              "type": "string"
+            },
+            {
+              "value": "indigo-80",
+              "type": "string"
+            },
+            {
+              "value": "indigo-70",
+              "type": "string"
+            },
+            {
+              "value": "indigo-60",
+              "type": "string"
+            },
+            {
+              "value": "indigo-50",
+              "type": "string"
+            },
+            {
+              "value": "indigo-40",
+              "type": "string"
+            },
+            {
+              "value": "indigo-30",
+              "type": "string"
+            },
+            {
+              "value": "indigo-20",
+              "type": "string"
+            },
+            {
+              "value": "indigo-10",
+              "type": "string"
+            },
+            {
+              "value": "navy-100",
+              "type": "string"
+            },
+            {
+              "value": "navy-90",
+              "type": "string"
+            },
+            {
+              "value": "navy-80",
+              "type": "string"
+            },
+            {
+              "value": "navy-70",
+              "type": "string"
+            },
+            {
+              "value": "navy-60",
+              "type": "string"
+            },
+            {
+              "value": "navy-50",
+              "type": "string"
+            },
+            {
+              "value": "navy-40",
+              "type": "string"
+            },
+            {
+              "value": "navy-30",
+              "type": "string"
+            },
+            {
+              "value": "navy-20",
+              "type": "string"
+            },
+            {
+              "value": "navy-10",
+              "type": "string"
+            },
+            {
+              "value": "blue-100",
+              "type": "string"
+            },
+            {
+              "value": "blue-90",
+              "type": "string"
+            },
+            {
+              "value": "blue-80",
+              "type": "string"
+            },
+            {
+              "value": "blue-70",
+              "type": "string"
+            },
+            {
+              "value": "blue-60",
+              "type": "string"
+            },
+            {
+              "value": "blue-50",
+              "type": "string"
+            },
+            {
+              "value": "blue-40",
+              "type": "string"
+            },
+            {
+              "value": "blue-30",
+              "type": "string"
+            },
+            {
+              "value": "blue-20",
+              "type": "string"
+            },
+            {
+              "value": "blue-10",
+              "type": "string"
+            },
+            {
+              "value": "teal-100",
+              "type": "string"
+            },
+            {
+              "value": "teal-90",
+              "type": "string"
+            },
+            {
+              "value": "teal-80",
+              "type": "string"
+            },
+            {
+              "value": "teal-70",
+              "type": "string"
+            },
+            {
+              "value": "teal-60",
+              "type": "string"
+            },
+            {
+              "value": "teal-50",
+              "type": "string"
+            },
+            {
+              "value": "teal-40",
+              "type": "string"
+            },
+            {
+              "value": "teal-30",
+              "type": "string"
+            },
+            {
+              "value": "teal-20",
+              "type": "string"
+            },
+            {
+              "value": "teal-10",
+              "type": "string"
+            },
+            {
+              "value": "mint-100",
+              "type": "string"
+            },
+            {
+              "value": "mint-90",
+              "type": "string"
+            },
+            {
+              "value": "mint-80",
+              "type": "string"
+            },
+            {
+              "value": "mint-70",
+              "type": "string"
+            },
+            {
+              "value": "mint-60",
+              "type": "string"
+            },
+            {
+              "value": "mint-50",
+              "type": "string"
+            },
+            {
+              "value": "mint-40",
+              "type": "string"
+            },
+            {
+              "value": "mint-30",
+              "type": "string"
+            },
+            {
+              "value": "mint-20",
+              "type": "string"
+            },
+            {
+              "value": "mint-10",
+              "type": "string"
+            },
+            {
+              "value": "green-100",
+              "type": "string"
+            },
+            {
+              "value": "green-90",
+              "type": "string"
+            },
+            {
+              "value": "green-80",
+              "type": "string"
+            },
+            {
+              "value": "green-70",
+              "type": "string"
+            },
+            {
+              "value": "green-60",
+              "type": "string"
+            },
+            {
+              "value": "green-50",
+              "type": "string"
+            },
+            {
+              "value": "green-40",
+              "type": "string"
+            },
+            {
+              "value": "green-30",
+              "type": "string"
+            },
+            {
+              "value": "green-20",
+              "type": "string"
+            },
+            {
+              "value": "green-10",
+              "type": "string"
+            },
+            {
+              "value": "yellow-100",
+              "type": "string"
+            },
+            {
+              "value": "yellow-90",
+              "type": "string"
+            },
+            {
+              "value": "yellow-80",
+              "type": "string"
+            },
+            {
+              "value": "yellow-70",
+              "type": "string"
+            },
+            {
+              "value": "yellow-60",
+              "type": "string"
+            },
+            {
+              "value": "yellow-50",
+              "type": "string"
+            },
+            {
+              "value": "yellow-40",
+              "type": "string"
+            },
+            {
+              "value": "yellow-30",
+              "type": "string"
+            },
+            {
+              "value": "yellow-20",
+              "type": "string"
+            },
+            {
+              "value": "yellow-10",
+              "type": "string"
+            },
+            {
+              "value": "orange-100",
+              "type": "string"
+            },
+            {
+              "value": "orange-90",
+              "type": "string"
+            },
+            {
+              "value": "orange-80",
+              "type": "string"
+            },
+            {
+              "value": "orange-70",
+              "type": "string"
+            },
+            {
+              "value": "orange-60",
+              "type": "string"
+            },
+            {
+              "value": "orange-50",
+              "type": "string"
+            },
+            {
+              "value": "orange-40",
+              "type": "string"
+            },
+            {
+              "value": "orange-30",
+              "type": "string"
+            },
+            {
+              "value": "orange-20",
+              "type": "string"
+            },
+            {
+              "value": "orange-10",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "gap",
+          "type": "\"large\" | \"larger\" | \"medium\" | \"small\" | \"smaller\" | \"x-large\" | \"x-small\" | \"xx-large\" | \"xx-small\"",
+          "mutable": false,
+          "attr": "gap",
+          "reflectToAttr": true,
+          "docs": "",
+          "docsTags": [
+            {
+              "text": "Amount of gap between the row items or column items;",
+              "name": "description"
+            }
+          ],
+          "values": [
+            {
+              "value": "large",
+              "type": "string"
+            },
+            {
+              "value": "larger",
+              "type": "string"
+            },
+            {
+              "value": "medium",
+              "type": "string"
+            },
+            {
+              "value": "small",
+              "type": "string"
+            },
+            {
+              "value": "smaller",
+              "type": "string"
+            },
+            {
+              "value": "x-large",
+              "type": "string"
+            },
+            {
+              "value": "x-small",
+              "type": "string"
+            },
+            {
+              "value": "xx-large",
+              "type": "string"
+            },
+            {
+              "value": "xx-small",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "height",
+          "type": "string",
+          "mutable": false,
+          "attr": "height",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [
+            {
+              "text": "Max width of the column or row, should really only be used on a column type layout. \nany CSS unit of measurement can be used.",
+              "name": "description"
+            }
+          ],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "justify",
+          "type": "\"end\" | \"middle\" | \"start\"",
+          "mutable": false,
+          "attr": "justify",
+          "reflectToAttr": true,
+          "docs": "",
+          "docsTags": [
+            {
+              "text": "Absolute-size keywords, based on the user's default font size (which is medium).",
+              "name": "description"
+            }
+          ],
+          "values": [
+            {
+              "value": "end",
+              "type": "string"
+            },
+            {
+              "value": "middle",
+              "type": "string"
+            },
+            {
+              "value": "start",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "size",
+          "type": "\"large\" | \"larger\" | \"medium\" | \"small\" | \"smaller\" | \"x-large\" | \"x-small\" | \"xx-large\" | \"xx-small\"",
+          "mutable": false,
+          "attr": "size",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [
+            {
+              "text": "Absolute-size keywords, based on the user's default font size (which is medium).",
+              "name": "description"
+            }
+          ],
+          "values": [
+            {
+              "value": "large",
+              "type": "string"
+            },
+            {
+              "value": "larger",
+              "type": "string"
+            },
+            {
+              "value": "medium",
+              "type": "string"
+            },
+            {
+              "value": "small",
+              "type": "string"
+            },
+            {
+              "value": "smaller",
+              "type": "string"
+            },
+            {
+              "value": "x-large",
+              "type": "string"
+            },
+            {
+              "value": "x-small",
+              "type": "string"
+            },
+            {
+              "value": "xx-large",
+              "type": "string"
+            },
+            {
+              "value": "xx-small",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "type",
+          "type": "\"column\" | \"row\"",
+          "mutable": false,
+          "attr": "type",
+          "reflectToAttr": true,
+          "docs": "",
+          "docsTags": [
+            {
+              "text": "Layout type, default is \"row\" can also be \"column\"",
+              "name": "description"
+            }
+          ],
+          "default": "\"row\"",
+          "values": [
+            {
+              "value": "column",
+              "type": "string"
+            },
+            {
+              "value": "row",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "width",
+          "type": "string",
+          "mutable": false,
+          "attr": "width",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [
+            {
+              "text": "Max width of the column or row, should really only be used on a column type layout. \nany CSS unit of measurement can be used.",
+              "name": "description"
+            }
+          ],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [
+        "ui-playground",
+        "ui-playground-attrs",
+        "ui-playground-values"
+      ],
+      "dependencies": [],
+      "dependencyGraph": {
+        "ui-playground": [
+          "ui-layout"
+        ],
+        "ui-playground-attrs": [
+          "ui-layout"
+        ],
+        "ui-playground-values": [
+          "ui-layout"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/ui-paragraph/ui-paragraph.tsx",
       "encapsulation": "shadow",
       "tag": "ui-paragraph",
       "readme": "# ui-paragraph\n\n\n",
       "docs": "",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "text": "UI Paragraph",
+          "name": "title"
+        },
+        {
+          "text": "The HTML ui-paragraph element represents a paragraph. Paragraphs are usually represented in visual media as blocks \nof text separated from adjacent blocks by blank lines and/or first-line indentation, but HTML paragraphs \ncan be any structural grouping of related content, such as images or form fields.",
+          "name": "description"
+        },
+        {
+          "text": "<ui-layout type=\"column\" width=\"600px\">\n<ui-paragraph class=\"ui-edit-layer\">\n     \"The only question before us is whether a state may lawfully demand production by a third \n      party of the President's\n     personal financial records for use in a grand jury investigation \n     while the President is in office,\" wrote the judges, adding: \"We hold that any presidential \n     immunity from state criminal process does not bar the enforcement of a subpoena.\"\n</ui-paragraph>\n</ui-layout>",
+          "name": "usage"
+        }
+      ],
       "usage": {},
       "props": [
         {
@@ -14624,8 +16057,10 @@
       ],
       "methods": [],
       "events": [],
+      "listeners": [],
       "styles": [],
       "slots": [],
+      "parts": [],
       "dependents": [
         "ui-playground"
       ],
@@ -14637,7 +16072,7 @@
       }
     },
     {
-      "filePath": "src\\components\\ui-playground\\ui-playground.tsx",
+      "filePath": "./src/components/ui-playground/ui-playground.tsx",
       "encapsulation": "shadow",
       "tag": "ui-playground",
       "readme": "# ui-playground\n\n\n",
@@ -14664,30 +16099,39 @@
       ],
       "methods": [],
       "events": [],
+      "listeners": [
+        {
+          "event": "updatePlaygroundCode",
+          "capture": true,
+          "passive": false
+        }
+      ],
       "styles": [],
       "slots": [],
+      "parts": [],
       "dependents": [],
       "dependencies": [
+        "ui-layout",
         "ui-heading",
         "ui-paragraph",
         "ui-playground-attrs",
         "ui-code",
-        "ui-icon",
-        "ui-text"
+        "ui-playground-values"
       ],
       "dependencyGraph": {
         "ui-playground": [
+          "ui-layout",
           "ui-heading",
           "ui-paragraph",
           "ui-playground-attrs",
           "ui-code",
-          "ui-icon",
-          "ui-text"
+          "ui-playground-values"
         ],
         "ui-playground-attrs": [
           "ui-input",
           "ui-button",
           "ui-input-option",
+          "ui-layout",
           "ui-heading"
         ],
         "ui-input": [
@@ -14704,11 +16148,18 @@
         ],
         "ui-input-option": [
           "ui-ripple"
+        ],
+        "ui-playground-values": [
+          "ui-layout",
+          "ui-input",
+          "ui-icon",
+          "ui-button",
+          "ui-text"
         ]
       }
     },
     {
-      "filePath": "src\\components\\ui-playground\\ui-playground-attrs\\ui-playground-attrs.tsx",
+      "filePath": "./src/components/ui-playground/ui-playground-attrs/ui-playground-attrs.tsx",
       "encapsulation": "shadow",
       "tag": "ui-playground-attrs",
       "readme": "# ui-playground-attrs\n\n\n",
@@ -14761,8 +16212,10 @@
           "docsTags": []
         }
       ],
+      "listeners": [],
       "styles": [],
       "slots": [],
+      "parts": [],
       "dependents": [
         "ui-playground"
       ],
@@ -14770,6 +16223,7 @@
         "ui-input",
         "ui-button",
         "ui-input-option",
+        "ui-layout",
         "ui-heading"
       ],
       "dependencyGraph": {
@@ -14777,6 +16231,7 @@
           "ui-input",
           "ui-button",
           "ui-input-option",
+          "ui-layout",
           "ui-heading"
         ],
         "ui-input": [
@@ -14800,7 +16255,73 @@
       }
     },
     {
-      "filePath": "src\\components\\ui-ripple\\ui-ripple.tsx",
+      "filePath": "./src/components/ui-playground/ui-playground-values/ui-playground-values.tsx",
+      "encapsulation": "shadow",
+      "tag": "ui-playground-values",
+      "readme": "# ui-playground-values\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "prop",
+          "type": "JsonDocsProp",
+          "mutable": false,
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "JsonDocsProp"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [
+        "ui-playground"
+      ],
+      "dependencies": [
+        "ui-layout",
+        "ui-input",
+        "ui-icon",
+        "ui-button",
+        "ui-text"
+      ],
+      "dependencyGraph": {
+        "ui-playground-values": [
+          "ui-layout",
+          "ui-input",
+          "ui-icon",
+          "ui-button",
+          "ui-text"
+        ],
+        "ui-input": [
+          "ui-icon",
+          "ui-text",
+          "ui-input-color",
+          "ui-input-radio"
+        ],
+        "ui-input-color": [
+          "ui-button"
+        ],
+        "ui-button": [
+          "ui-ripple"
+        ],
+        "ui-playground": [
+          "ui-playground-values"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/ui-ripple/ui-ripple.tsx",
       "encapsulation": "shadow",
       "tag": "ui-ripple",
       "readme": "# ui-ripple\n\n\n",
@@ -14822,8 +16343,10 @@
         }
       ],
       "events": [],
+      "listeners": [],
       "styles": [],
       "slots": [],
+      "parts": [],
       "dependents": [
         "ui-button",
         "ui-input-option"
@@ -14839,7 +16362,7 @@
       }
     },
     {
-      "filePath": "src\\components\\ui-text\\ui-text.tsx",
+      "filePath": "./src/components/ui-text/ui-text.tsx",
       "encapsulation": "shadow",
       "tag": "ui-text",
       "readme": "# ui-text\n\n\n",
@@ -14854,7 +16377,7 @@
           "name": "description"
         },
         {
-          "text": "<ui-paragraph>\n     \"The only question before us is whether a state may lawfully demand production by a third \n      party of the \n\n     <ui-text class=\"ui-edit-layer\" background=\"primary-dark\" size=\"larger\">\n         President's\n     </ui-text>\n\n     personal financial records for use in a grand jury investigation \n     while the President is in office,\" wrote the judges, adding: \"We hold that any presidential \n     immunity from state \n\n     <ui-text class=\"ui-edit-layer\" background=\"primary-dark\" size=\"smaller\">\n            criminal process\n     </ui-text>\n\n      does not bar the enforcement of a subpoena.\"\n</ui-paragraph>",
+          "text": "<ui-layout type=\"column\" width=\"600px\">\n<ui-paragraph>\n     \"The only question before us is whether a state may lawfully demand production by a third \n      party of the \n\n     <ui-text class=\"ui-edit-layer\" background=\"primary-dark\" size=\"larger\">\n         President's\n     </ui-text>\n\n     personal financial records for use in a grand jury investigation \n     while the President is in office,\" wrote the judges, adding: \"We hold that any presidential \n     immunity from state \n\n     <ui-text class=\"ui-edit-layer\" background=\"primary-dark\" size=\"smaller\">\n            criminal process\n     </ui-text>\n\n      does not bar the enforcement of a subpoena.\"\n</ui-paragraph>\n</ui-layout>",
           "name": "usage"
         }
       ],
@@ -15985,18 +17508,20 @@
       ],
       "methods": [],
       "events": [],
+      "listeners": [],
       "styles": [],
       "slots": [],
+      "parts": [],
       "dependents": [
         "ui-input",
-        "ui-playground"
+        "ui-playground-values"
       ],
       "dependencies": [],
       "dependencyGraph": {
         "ui-input": [
           "ui-text"
         ],
-        "ui-playground": [
+        "ui-playground-values": [
           "ui-text"
         ]
       }

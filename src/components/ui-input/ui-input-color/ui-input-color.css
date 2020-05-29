@@ -18,6 +18,7 @@ ui-button {
     border: 0px;
     box-shadow: none;
     flex: auto;
-    line-height: 2em;
-    height: 2em;
+    line-height: 3em;
+    height: 3em;
+    margin: 0.1em;
 }

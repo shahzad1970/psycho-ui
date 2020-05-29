@@ -15,6 +15,7 @@ import { UiCommon } from "../../utils/ui-common"
  * like a <ui-layout> element, but <ui-layout> is a block-level element whereas a <ui-text> is an inline element.
  * 
  * @usage
+ * <ui-layout type="column" width="600px">
  * <ui-paragraph>
  *      "The only question before us is whether a state may lawfully demand production by a third 
  *       party of the 
@@ -33,6 +34,7 @@ import { UiCommon } from "../../utils/ui-common"
  * 
  *       does not bar the enforcement of a subpoena."
  * </ui-paragraph>
+ * </ui-layout>
  */
 
 @Component({

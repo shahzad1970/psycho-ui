@@ -2,25 +2,23 @@
     display: flex;
     flex-direction: row;
     font-weight: 600;
-    line-height: 1.5em;
     flex-wrap: nowrap;
     align-items: center;
-    flex: 1;
 }
 
 :host([background]) {
-    padding: 0em 0.5em;
+    padding: .25em 0.75em;
 }
 
-:host([align="left"]) {
+:host([align="start"]) {
     justify-content: flex-start;
 }
 
-:host([align="right"]) {
+:host([align="end"]) {
     justify-content: flex-end;
 }
 
-:host([align="center"]) {
+:host([align="middle"]) {
     justify-content: center;
 }
 

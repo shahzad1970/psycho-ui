@@ -12,6 +12,7 @@
     justify-content: flex-start;
     align-items: flex-start;
     flex-wrap: wrap;
+    flex: 1 1 auto;
 }
 :host {
     margin-bottom: 0.15em;
@@ -19,11 +20,12 @@
 
  ::slotted(ui-input-option[selected])::before {
     font-family: "Material Icons"; content: "\e837"; 
-    margin-right: 1em;
+    margin-right: .75em;
     border: 2px solid transparent;
     border-radius: 1em;
     width: 1em;
     height: 1em;
+    font-size: 1.25em;
     display: flex;
     align-items: center;
     align-content: center;
@@ -31,11 +33,12 @@
 
  ::slotted(ui-input-option:not([selected]))::before {
     font-family: "Material Icons"; content: "\e836"; 
-    margin-right: 1em;
+    margin-right: .75em;
     border: 2px solid transparent;
     border-radius: 1em;
     width: 1em;
     height: 1em;
+    font-size: 1.25em;
     display: flex;
     align-items: center;
     align-content: center;

@@ -14,7 +14,6 @@ export class UiInputRadio {
         return (
             <Host>
                 <slot></slot>
-                
             </Host>
         );
     }

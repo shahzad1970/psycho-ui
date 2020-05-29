@@ -23,7 +23,7 @@ export class UiNavigation {
     /**
      * Absolute font size 
      */
-    @Prop() size: UiSize;
+    @Prop() size: UiSize = "medium";
 
 
     @Method()

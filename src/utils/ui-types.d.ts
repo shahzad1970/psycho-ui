@@ -1,6 +1,6 @@
 
 export type UiColor = 'base' | 'primary-light' | 'primary-dark' | 'secondary-light' | 'secondary-dark'
-    | 'success' | 'danger' | 'warning' | 'info' 
+    | 'success' | 'danger' | 'warning' | 'info'
     | 'grey-100' | 'grey-90' | 'grey-80' | 'grey-70' | 'grey-60' | 'grey-50' | 'grey-40' | 'grey-30' | 'grey-20' | 'grey-10'
     | 'red-100' | 'red-90' | 'red-80' | 'red-70' | 'red-60' | 'red-50' | 'red-40' | 'red-30' | 'red-20' | 'red-10'
     | 'pink-100' | 'pink-90' | 'pink-80' | 'pink-70' | 'pink-60' | 'pink-50' | 'pink-40' | 'pink-30' | 'pink-20' | 'pink-10'
@@ -14,7 +14,7 @@ export type UiColor = 'base' | 'primary-light' | 'primary-dark' | 'secondary-lig
     | 'yellow-100' | 'yellow-90' | 'yellow-80' | 'yellow-70' | 'yellow-60' | 'yellow-50' | 'yellow-40' | 'yellow-30' | 'yellow-20' | 'yellow-10'
     | 'orange-100' | 'orange-90' | 'orange-80' | 'orange-70' | 'orange-60' | 'orange-50' | 'orange-40' | 'orange-30' | 'orange-20' | 'orange-10';
 
- export type UiSize = 'xx-small'| 'x-small'| 'small'| 'medium'| 'large'| 'x-large'| 'xx-large' | 'larger' | 'smaller';
+export type UiSize = 'xx-small' | 'x-small' | 'small' | 'medium' | 'large' | 'x-large' | 'xx-large' | 'larger' | 'smaller';
 
 export type UiButtonType = "base" | "flat" | "outline" | "link";
 
@@ -24,4 +24,8 @@ export type UiInputType = "text" | "search" | "date" | "color" | "checkbox" | "r
 
 export type UiOrientation = "vertical" | "horizontal";
 
-export type UiAlignText = "left" | "right" | "center";
+export type UiAlign = "start" | "middle" | "end" | "stretch";
+
+export type UiLayoutType = "row" | "column";
+
+export type UiAlignContent = "start" | "middle" | "end";

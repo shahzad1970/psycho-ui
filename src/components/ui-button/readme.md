@@ -33,6 +33,7 @@
  - [ui-doc-links](../ui-app-navigation/ui-doc-links)
  - [ui-input-color](../ui-input/ui-input-color)
  - [ui-playground-attrs](../ui-playground/ui-playground-attrs)
+ - [ui-playground-values](../ui-playground/ui-playground-values)
 
 ### Depends on
 
@@ -46,6 +47,7 @@ graph TD;
   ui-doc-links --> ui-button
   ui-input-color --> ui-button
   ui-playground-attrs --> ui-button
+  ui-playground-values --> ui-button
   style ui-button fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

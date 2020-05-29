@@ -1,7 +1,13 @@
 
 :host {
     display: block;
-    line-height: 1.5em;
-    margin-top: 1em;
-    margin-bottom: 1em;
+    box-sizing: border-box;
+}
+
+:host([background]) {
+    padding: 0.5em 1em;
+}
+
+:host(:not(:last-of-type)) {
+    margin-bottom: 1em; 
 }

@@ -1,96 +1,9 @@
 :host {
     display: block;
-    max-width: 1200px;
-    align-self: center;
-    flex: 1;
 }
 
-.prop {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    margin: 1em;
-    margin-bottom: 4em;
-}
-
-.propval {
-    width: 140px;
-    font-size: small;
-    margin: 0.25em;
-}
-
-.propval>ui-text {
-    padding: 0.2em 0.2em;
-    display: block;
-    text-align: center;
-}
-
-.play {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap-reverse;
-    margin-top: 1em;
-    margin-bottom: 1em;
-    flex: 1 1 auto;
-}
-
-.play-code {
-    display: flex;
-    flex-direction: column;
-    padding: 2em;
-    justify-content: center;
-    align-items: center;
-    border: 2px solid #dedede;
-    background-color: #fafafa;
-    margin-right: 1em;
-    cursor: pointer;
-    flex: 1;
-}
-
-.play-code > * {
-    margin: 1em;
-}
-
-.play-attrs {
-    min-width: 30em;
-    min-height: 35em;
-    background-color: black;
-    overflow-y: scroll;
-    flex: 1;
-    
-}
 
 .nodeFocus {
-    outline: 3px dotted yellowgreen;
-    outline-offset: 0.5em;
+    outline: 5px dotted yellowgreen;
 }
 
-.icon-container {
-    display: flex;
-    flex-direction: column;
-    flex: 1 1 auto;
-    min-width: 12em;
-    align-items: center;
-    background-color: #f8f8f8;
-    width: 20px;
-}
-
-.icon-container ui-icon {
-    padding: 1em;
-    font-size: 36px;
-}
-
-.icon-container ui-text {
-    align-self: stretch;
-    padding: 0.3em;
-    cursor: pointer;
-}
-
-.icon-container ui-text:hover {
-    color: green;
-}
-
-.pager {
-    display: flex;
-    justify-content: flex-end;
-}

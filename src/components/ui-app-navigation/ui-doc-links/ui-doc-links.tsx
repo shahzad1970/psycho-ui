@@ -16,6 +16,8 @@ export class UiDocLinks {
                 <ui-button round="none" type="flat" background="base" color="grey-80" href="/ui-button.html">UI Button</ui-button>
                 <ui-button round="none" type="flat" background="base" color="grey-80" href="/ui-heading.html">UI Heading</ui-button>
                 <ui-button round="none" type="flat" background="base" color="grey-80" href="/ui-icon.html">UI Icon</ui-button>
+                <ui-button round="none" type="flat" background="base" color="grey-80" href="/ui-input.html">UI Input</ui-button>
+                <ui-button round="none" type="flat" background="base" color="grey-80" href="/ui-paragraph.html">UI Paragraph</ui-button>
                 <ui-button round="none" type="flat" background="base" color="grey-80" href="/ui-text.html">UI Text</ui-button>
             </Host>
         );

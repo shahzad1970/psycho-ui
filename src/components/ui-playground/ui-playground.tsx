@@ -54,24 +54,9 @@ export class UiPlayground {
         this.codeView.setCode(this.codeElement.innerHTML);
     }
 
-
-    onClickCopyText(e: Event) {
-        const target = e.target as HTMLUiTextElement;
-        const el = document.createElement('textarea');
-        el.value = target.textContent;
-        el.setAttribute('readonly', '');
-        el.style.position = 'absolute';
-        el.style.left = '-9999px';
-        document.body.appendChild(el);
-        el.select();
-        document.execCommand('copy');
-        document.body.removeChild(el);
-
-    }
-
     nextIconPage(total) {
         console.log(total)
-        this.iconPage+=50;
+        this.iconPage += 50;
         if (this.iconPage > total) {
             this.iconPage = total - 50;
         }
@@ -79,7 +64,7 @@ export class UiPlayground {
 
     backIconPage(total) {
         console.log(total)
-        this.iconPage-=50;
+        this.iconPage -= 50;
         if (this.iconPage < 0) {
             this.iconPage = 0;
         }
@@ -90,64 +75,49 @@ export class UiPlayground {
             <Host>
                 <slot></slot>
                 {this.doc.components.filter(c => c.tag == this.tag).map(c => {
-                    return [
-                        <ui-heading size="xx-large">
-                            {c.docsTags.filter(t => t.name == "title").map(t => t.text)}
-                        </ui-heading>,
-                        <ui-paragraph>
-                            {c.docsTags.filter(t => t.name == "description").map(t => t.text)}
-                        </ui-paragraph>,
-                        <ui-heading size="x-large">Interactive Demo</ui-heading>,
-                        <ui-paragraph>This demo lets you preview the web component, its variations, and configuration options.
-                        Click on an element to bring up attribute editor.</ui-paragraph>,
-                        <div class="play">
-                            <div class="play-code" ref={(e) => this.codeElement = e}
-                                innerHTML={c.docsTags.filter(t => t.name == "usage").map(t => t.text)[0]}
-                                onClick={(e) => this.select(e)}></div>
+                    return (
 
-                            <div class="play-attrs">
-                                {this.selectedNodes.length > 0 &&
-                                    <ui-playground-attrs elements={this.selectedNodes} docs={this.doc.components}></ui-playground-attrs>
-                                }
-                            </div>
+                        <ui-layout type="column" gap="small">
+                            <ui-heading size="x-large">
+                                {c.docsTags.filter(t => t.name == "title").map(t => t.text)}
+                            </ui-heading>
+                            <ui-paragraph>
+                                {c.docsTags.filter(t => t.name == "description").map(t => t.text)}
+                            </ui-paragraph>
+                            <ui-heading size="x-large">Interactive Demo</ui-heading>
+                            <ui-paragraph>This demo lets you preview the web component, its variations, and configuration options.
+                                    Click on an element to bring up attribute editor.</ui-paragraph>
 
-                        </div>,
-                        <ui-code language="xml" ref={r => this.codeView = r}></ui-code>, <br></br>,
-                        <ui-heading size="x-large">Component Properties</ui-heading>,
-                        <ui-paragraph>
-                            Psycho UI Web components are driven by attributes. In order to reduce psychological fatigue of developers, attribute
-                            naming and usage has been kept to a minimum so that a developer can easy remember attributes and attribute values.
-                        </ui-paragraph>,
-                        <div style={{ "margin-top": "1.5em" }}>
+                            <ui-layout gap="xx-large" type="column" background="grey-20">
+                                <ui-layout gap="large" type="column" align="start" ref={(e) => this.codeElement = e}
+                                    innerHTML={c.docsTags.filter(t => t.name == "usage").map(t => t.text)[0]}
+                                    onClick={(e) => this.select(e)}>
+                                </ui-layout>
+                                 <ui-code language="xml" ref={r => this.codeView = r}></ui-code>
+                            </ui-layout>
+                            <ui-heading size="x-large">Component Properties</ui-heading>
+                            <ui-paragraph>
+                                Psycho UI Web components are driven by attributes. In order to reduce psychological fatigue of developers, attribute
+                                naming and usage has been kept to a minimum so that a developer can easy remember attributes and attribute values.
+                           </ui-paragraph>
+
                             {c.props.map(p => {
                                 return [
                                     <ui-heading size="large" type="underline">{p.name}</ui-heading>,
                                     <ui-paragraph innerHTML={p.docsTags.filter(t => t.name == "description").map(t => t.text)[0]}>
                                     </ui-paragraph>,
-                                    <ui-heading size="large" background="base">Allowed values</ui-heading>,
-                                    <div class="prop">
-                                        {p.values.map(val =>
-                                            <div class="propval">
-                                                {p.name == "icon" &&
-                                                    <div class="icon-container">
-                                                        <ui-icon>{val.value}</ui-icon>
-                                                        <ui-text title="click to copy text" background="blue-20" onClick={(e) => this.onClickCopyText(e)}>{val.value ? val.value : val.type}</ui-text>
-                                                    </div>
-                                                }
-                                                {p.name != "icon" &&
-                                                    <ui-text background="blue-20">{val.value ? val.value : val.type}</ui-text>
-                                                }
-
-                                            </div>
-                                        )}
-
-                                    </div>
+                                    <ui-heading size="medium" background="base">Allowed values</ui-heading>,
+                                    <ui-playground-values prop={p}></ui-playground-values>
                                 ]
                             })}
-                        </div>
-                    ]
+
+                        </ui-layout>
+                    )
                 })
                 }
+                 {this.selectedNodes.length > 0 &&
+                    <ui-playground-attrs background="grey-80" elements={this.selectedNodes} docs={this.doc.components}></ui-playground-attrs>
+                 }
             </Host >
         );
     }

@@ -1,7 +1,4 @@
-:host {
-    margin-top: 0.5em;
-    margin-bottom: 0.5em;
-}
+
 :host([orientation="vertical"]) {
     display: flex;
     flex-direction: column;
@@ -27,6 +24,7 @@ input {
     vertical-align: center;
     min-width: 7em;
     color: currentColor;
+    outline: 0px;
 }
 
 .input-label {

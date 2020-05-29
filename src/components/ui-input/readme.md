@@ -29,6 +29,7 @@
 ### Used by
 
  - [ui-playground-attrs](../ui-playground/ui-playground-attrs)
+ - [ui-playground-values](../ui-playground/ui-playground-values)
 
 ### Depends on
 
@@ -47,6 +48,7 @@ graph TD;
   ui-input-color --> ui-button
   ui-button --> ui-ripple
   ui-playground-attrs --> ui-input
+  ui-playground-values --> ui-input
   style ui-input fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

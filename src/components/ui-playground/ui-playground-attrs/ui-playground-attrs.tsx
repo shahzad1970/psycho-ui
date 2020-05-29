@@ -1,5 +1,7 @@
-import { h, Component, Prop, Host, State, Event, EventEmitter } from '@stencil/core';
+import { h, Component, Prop, Host, State, Event, EventEmitter, Element } from '@stencil/core';
 import { JsonDocsComponent } from '../doc';
+import { UiColor, UiSize } from "../../../utils/ui-types";
+import { UiCommon } from "../../../utils/ui-common"
 
 @Component({
     tag: 'ui-playground-attrs',
@@ -7,6 +9,26 @@ import { JsonDocsComponent } from '../doc';
     shadow: true
 })
 export class UiPlaygroundAttrs {
+    @Element() el: HTMLElement;
+
+    /**
+     * @description
+     * Set forground color to selected palette color.
+     */
+    @Prop() color: UiColor;
+
+    /**
+     * @description
+     * Background color from the UI Color Palette. When only background is present then background will be color and forground
+     * will be either white or black. If color attribute is also present then forground color will be set to color attribute.
+     */
+    @Prop() background: UiColor;
+
+    /**
+     * @description
+     * Absolute-size keywords, based on the user's default font size (which is medium).
+     */
+    @Prop() size: UiSize;
 
     @Prop() elements: Array<HTMLElement> = [];
     @Prop() docs: Array<JsonDocsComponent> = [];
@@ -77,7 +99,7 @@ export class UiPlaygroundAttrs {
                 );
             case "round":
                 return (
-                    <ui-input class="input-attr" orientation="horizontal" type="radio" onUiInput={(e: CustomEvent) => this.setAttribute("round", e.detail.value)}>
+                    <ui-input orientation="horizontal" type="radio" onUiInput={(e: CustomEvent) => this.setAttribute("round", e.detail.value)}>
                         Rounding&nbsp;|&nbsp;<ui-button onUiClick={(e) => { e.stopPropagation(); this.removeAttribute("round") }} round="none" type="link" color="secondary-light" size="smaller">remove</ui-button>
                         {this.doc.props.filter(p => p.name == "round").map(p => {
                             return p.values.map(v =>
@@ -89,7 +111,7 @@ export class UiPlaygroundAttrs {
                 );
             case "size":
                 return (
-                    <ui-input class="input-attr" orientation="horizontal" type="radio" onUiInput={(e: CustomEvent) => this.setAttribute("size", e.detail.value)}>
+                    <ui-input orientation="horizontal" type="radio" onUiInput={(e: CustomEvent) => this.setAttribute("size", e.detail.value)}>
                         Size&nbsp;|&nbsp;<ui-button onUiClick={(e) => { e.stopPropagation(); this.removeAttribute("size") }} round="none" type="link" color="secondary-light" size="smaller">remove</ui-button>
                         {this.doc.props.filter(p => p.name == "size").map(p => {
                             return p.values.map(v =>
@@ -101,7 +123,7 @@ export class UiPlaygroundAttrs {
                 );
             case "type":
                 return (
-                    <ui-input class="input-attr" orientation="horizontal" type="radio" onUiInput={(e: CustomEvent) => this.setAttribute("type", e.detail.value)}>
+                    <ui-input orientation="horizontal" type="radio" onUiInput={(e: CustomEvent) => this.setAttribute("type", e.detail.value)}>
                         Type&nbsp;|&nbsp;<ui-button onUiClick={(e) => { e.stopPropagation(); this.removeAttribute("type") }} round="none" type="link" color="secondary-light" size="smaller">remove</ui-button>
                         {this.doc.props.filter(p => p.name == "type").map(p => {
                             return p.values.map(v =>
@@ -112,7 +134,7 @@ export class UiPlaygroundAttrs {
                 );
             case "align":
                 return (
-                    <ui-input class="input-attr" orientation="horizontal" type="radio" onUiInput={(e: CustomEvent) => this.setAttribute("align", e.detail.value)}>
+                    <ui-input orientation="horizontal" type="radio" onUiInput={(e: CustomEvent) => this.setAttribute("align", e.detail.value)}>
                         Align&nbsp;|&nbsp;<ui-button onUiClick={(e) => { e.stopPropagation(); this.removeAttribute("align") }} round="none" type="link" color="secondary-light" size="smaller">remove</ui-button>
                         {this.doc.props.filter(p => p.name == "align").map(p => {
                             return p.values.map(v =>
@@ -124,14 +146,14 @@ export class UiPlaygroundAttrs {
                 );
             case "icon":
                 return (
-                    <ui-input class="input-attr" type="text" onUiInput={(e: CustomEvent) => this.setAttribute("icon", e.detail.value)}>
+                    <ui-input type="text" onUiInput={(e: CustomEvent) => this.setAttribute("icon", e.detail.value)}>
                         Icon&nbsp;|&nbsp;<ui-button onUiClick={(e) => { e.stopPropagation(); this.removeAttribute("icon") }} round="none" type="link" color="secondary-light" size="smaller">remove</ui-button>
 
                     </ui-input>
                 );
             case "href":
                 return (
-                    <ui-input class="input-attr" type="text" onUiInput={(e: CustomEvent) => this.setAttribute("href", e.detail.value)}>
+                    <ui-input type="text" onUiInput={(e: CustomEvent) => this.setAttribute("href", e.detail.value)}>
                         href&nbsp;|&nbsp;<ui-button onUiClick={(e) => { e.stopPropagation(); this.removeAttribute("href") }} round="none" type="link" color="secondary-light" size="smaller">remove</ui-button>
 
                     </ui-input>
@@ -142,19 +164,22 @@ export class UiPlaygroundAttrs {
         if (this.elements.length == 0) return;
         return (
             <Host>
-                <ui-heading background="grey-100">Layers</ui-heading>
-                <div class="attrs">
-                    {this.elements.map((e) =>
-                        <ui-button onUiClick={() => this.selectElement(e)} round="none" background="grey-80">{e.localName}</ui-button>
-                    )}
-                </div>
-                <ui-heading background="grey-100">{this.doc.tag}</ui-heading>
-                <div class="attrs">
-                    {this.doc.props.map(p => {
-                        return this.getAttrInput(p.name);
-                    })}
-
-                </div>
+                <ui-layout type="column" size="small" gap="large" color="grey-40">
+                    <ui-heading background="grey-100">Layers</ui-heading>
+                    <ui-layout type="row" gap="small">
+                        {this.elements.map((e) =>
+                            <ui-button onUiClick={() => this.selectElement(e)} round="none" background="grey-80">{e.localName}</ui-button>
+                        )}
+                    </ui-layout>
+                    <ui-heading background="grey-100">{this.doc.tag}</ui-heading>
+                   
+                        {this.doc.props.map(p => {
+                            return this.getAttrInput(p.name);
+                        })}
+                </ui-layout>
+                <style>
+                    {UiCommon.getStyle(this.size, this.color, this.background, this.el)}
+                </style>
             </Host>
         );
     }

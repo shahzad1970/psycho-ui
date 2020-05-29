@@ -15,19 +15,23 @@
     "loader/"
   ],
   "scripts": {
-    "build": "stencil build --docs",
-    "start": "stencil build --docs-json -dev --es5 --watch --serve",
+    "docs": "stencil build --docs-json ./src/components/ui-playground/doc.json",
+    "build": "stencil build --docs --docs-json",
+    "start": "stencil build -dev --watch --serve",
     "test": "stencil test --spec --e2e",
     "test.watch": "stencil test --spec --e2e --watchAll",
     "generate": "stencil generate"
   },
   "devDependencies": {
-    "@stencil/core": "1.7.5",
-    "@stencil/sass": "^1.1.0"
+    "@stencil/core": "^1.13.0",
+    "workbox-build": "4.3.1"
   },
   "license": "MIT",
   "dependencies": {
-    "chokidar": "^3.2.1",
-    "highlight.js": "^9.16.2"
+    "chokidar": "^3.4.0",
+    "highlight.js": "^9.18.1",
+    "install": "0.13.0",
+    "mermaid": "^8.5.1",
+    "npm": "6.14.5"
   }
 }

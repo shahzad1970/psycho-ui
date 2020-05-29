@@ -30,11 +30,10 @@ export class UiCode {
         this.code = hljs.fixMarkup(hljs.highlight(this.language, code, true).value);
     }
 
-
     render() {
         return (
             <Host>
-               <pre><code class="hljs" innerHTML={this.code}></code></pre>
+               <code class="hljs" innerHTML={this.code}></code>
             </Host>
         );
     }

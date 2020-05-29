@@ -35,7 +35,7 @@ export class UiAppHeader {
     render() {
         return (
             <Host>
-                <ui-button round="fab" type="base" onClick={() => this.navigation()} size="larger">
+                <ui-button round="fab" type="base" onClick={() => this.navigation()} size="large">
                     <ui-icon>menu</ui-icon>
                 </ui-button>
                 <img src={this.src}></img>

@@ -11,10 +11,8 @@ import { UiIcons } from "./icon"
  * Heading component used to provide title or headline where needed. It is a flex element and implements framework styling.
  * 
  * @usage
- * 
  *  <ui-icon class="ui-edit-layer" size="xx-large">airplay</ui-icon>
  *  <ui-icon class="ui-edit-layer" size="xx-large" icon="archive"></ui-icon>
- * 
  */
 @Component({
     tag: 'ui-icon',

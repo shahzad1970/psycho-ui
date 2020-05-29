@@ -19,13 +19,13 @@
 ### Used by
 
  - [ui-input](../ui-input)
- - [ui-playground](../ui-playground)
+ - [ui-playground-values](../ui-playground/ui-playground-values)
 
 ### Graph
 ```mermaid
 graph TD;
   ui-input --> ui-text
-  ui-playground --> ui-text
+  ui-playground-values --> ui-text
   style ui-text fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

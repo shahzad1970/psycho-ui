@@ -10,6 +10,7 @@ import { UiCommon } from "../../utils/ui-common"
  * Buttons allow users to take action, and make a choice, with a single tap.
  * 
  * @usage
+ * 
  * <ui-button class="ui-edit-layer">
  *      Test Button
  * </ui-button>

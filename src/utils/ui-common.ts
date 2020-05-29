@@ -5,15 +5,15 @@ class UiCommonUtils {
     private constructor() { }
 
     public fontSizeMap: object = {
-        'xx-small': "0.65rem",
-        'x-small' : "0.75rem",
-        'small'   : "0.9rem",
-        'medium'  : "1rem",
-        'large'   : "1.5rem",
-        'x-large' : "2rem",
-        'xx-large': "2.5rem",
-        'larger'  : "larger",
-        'smaller' : "smaller"
+        'xx-small': "0.65em",
+        'x-small': "0.75em",
+        'small': "0.9em",
+        'medium': "1em",
+        'large': "1.5em",
+        'x-large': "2em",
+        'xx-large': "2.5em",
+        'larger': "1.25em",
+        'smaller': "0.75em",
     }
 
     public colorPalette: object = {
@@ -32,16 +32,16 @@ class UiCommonUtils {
     }
 
     public themePalette: object = {
-        'primary-dark': {bg: "#001E60", fg: "#ffffff"},
-        'primary-light':  {bg: "#0047BB", fg: "#ffffff"},
-        'secondary-dark':  {bg: "#097A49", fg: "#ffffff"},
-        'secondary-light':  {bg: "#48D597", fg: "#000000"},
-        'success':  {bg: "#097A49", fg: "#ffffff"},
-        'info':  {bg: "#0047BB", fg: "#ffffff"},
-        'danger':  {bg: "#B50D12", fg: "#ffffff"},
-        'warning': {bg: "#A66102", fg: "#ffffff"},
-        'base': {bg: "#ffffff", fg: "#000000"},
-        'dark': {bg: "#000000", fg: "#ffffff"},
+        'primary-dark': { bg: "#001E60", fg: "#ffffff" },
+        'primary-light': { bg: "#0047BB", fg: "#ffffff" },
+        'secondary-dark': { bg: "#097A49", fg: "#ffffff" },
+        'secondary-light': { bg: "#48D597", fg: "#000000" },
+        'success': { bg: "#097A49", fg: "#ffffff" },
+        'info': { bg: "#0047BB", fg: "#ffffff" },
+        'danger': { bg: "#B50D12", fg: "#ffffff" },
+        'warning': { bg: "#A66102", fg: "#ffffff" },
+        'base': { bg: "#ffffff", fg: "#000000" },
+        'dark': { bg: "#000000", fg: "#ffffff" },
     }
 
     public static getInstance(): UiCommonUtils {
@@ -55,7 +55,7 @@ class UiCommonUtils {
         let c1 = c.split("-")[0];
         let cc: any = c.split("-")[1];
         let c2 = (100 - cc) / 10;
-    
+
         return {
             bg: this.colorPalette[c1][c2],
             fg: (c2 as any < 5 ? "#ffffff" : '#000000')
@@ -77,14 +77,14 @@ class UiCommonUtils {
             css += "background-color: " + c.bg + ";";
             if (!color) {
                 css += "color: " + c.fg + ";";
-                css += "border-color: "+this.convertHex(c.fg, 20)+";";
-                css += "outline-color: "+this.convertHex(c.fg, 20)+";";
+                css += "border-color: " + this.convertHex(c.fg, 20) + ";";
+                css += "outline-color: " + this.convertHex(c.fg, 20) + ";";
             }
         }
         if (color) {
             css += "color: " + this.getColor(color).bg + ";";
-            css += "border-color: " + this.convertHex(this.getColor(color).bg, 20) +";";
-            css += "outline-color: " + this.convertHex(this.getColor(color).bg, 20) +";";
+            css += "border-color: " + this.convertHex(this.getColor(color).bg, 20) + ";";
+            css += "outline-color: " + this.convertHex(this.getColor(color).bg, 20) + ";";
         }
         css += "}"
         return css;
@@ -109,19 +109,72 @@ class UiCommonUtils {
             }
             return "";
         } else {
-           return this.getCss(size, color, background);
+            return this.getCss(size, color, background);
         }
     }
 
-    private convertHex(hex,opacity){
-        hex = hex.replace('#','');
-        let r = parseInt(hex.substring(0,2), 16);
-        let g = parseInt(hex.substring(2,4), 16);
-        let b = parseInt(hex.substring(4,6), 16);
-        return 'rgba('+r+','+g+','+b+','+opacity/100+')';
+    getPosition(alignContent: string, justifyContent: string, alignItems: string, flex: string,
+        padding: string, margin: string, gap: string, alignSelf: string, width: string, autoFit: boolean, autoFill: boolean, el: HTMLElement) {
+        let css = ":host {";
+        if (alignContent) {
+            css += "    align-content: " + this.getAlign(alignContent) + ";";
+        }
+        if (justifyContent) {
+            css += "    justify-content: " + this.getAlign(justifyContent) + ";";
+        }
+        if (alignItems) {
+            css += "    align-items: " + this.getAlign(alignItems) + ";";
+        }
+        if (flex) {
+            css += "    flex: " + flex + ";";
+        }
+        if (padding) {
+            css += "    padding: " + padding + ";";
+        }
+        if (margin) {
+            css += "    margin: " + margin + ";";
+        }
+        if (alignSelf) {
+            css += "    align-self: " + alignSelf + ";";
+        }
+        if (el.nodeName == "UI-GRID") {
+            let eWidth = !width ? "100px" : width;
+            let eGap = !gap ? "0px" : gap;
+            css += " gap: " + eGap + ";";
+            if (autoFit || (!autoFit && !autoFill)) {
+                css += "grid-template-columns: repeat(auto-fit, minmax(" + eWidth + ", 1fr));";
+            } else if (autoFill) {
+                css += "grid-template-columns: repeat(auto-fill, minmax(" + eWidth + ", 1fr));";
+            }
+
+        }
+        css += "}"
+        if (gap) {
+            css += " ::slotted(:not(:last-child)) {"
+            if (el.nodeName == "UI-COLUMN") {
+                css += " margin-bottom: " + gap + ";"
+            }
+            if (el.nodeName == "UI-ROW") {
+                css += " margin-right: " + gap + ";"
+            }
+            css += "}"
+        }
+        console.log(css)
+        return css;
     }
 
-
+    private getAlign(val: string) {
+        if (val == "start") return "flex-start";
+        if (val == "end") return "flex-end";
+        if (val == "middle") return "center";
+    }
+    private convertHex(hex, opacity) {
+        hex = hex.replace('#', '');
+        let r = parseInt(hex.substring(0, 2), 16);
+        let g = parseInt(hex.substring(2, 4), 16);
+        let b = parseInt(hex.substring(4, 6), 16);
+        return 'rgba(' + r + ',' + g + ',' + b + ',' + opacity / 100 + ')';
+    }
 }
 
 export const UiCommon = UiCommonUtils.getInstance();

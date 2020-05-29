@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
-
 :root {
-    line-height: 1.5em;
+    line-height: 1.65;
     font-family: 'Roboto', sans-serif, "Open Sans", Helvetica, Arial, sans-serif;
     font-size: 16px;
 }
@@ -28,5 +27,5 @@ html, body {
 ui-app {
     display: block;
     padding-top: 3.5em;
-    font-size: 1rem;
 }
+
