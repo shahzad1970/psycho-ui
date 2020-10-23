@@ -27,7 +27,7 @@ self.addEventListener('message', (event) => {
 self.__precacheManifest = [
   {
     "url": "index.html",
-    "revision": "08154869fa7232c07ba78537b49b0154"
+    "revision": "df5464d6409b9984ec32334ce40b6d1c"
   },
   {
     "url": "ui-button.html",
@@ -58,115 +58,28 @@ self.__precacheManifest = [
     "revision": "d41d8cd98f00b204e9800998ecf8427e"
   },
   {
-    "url": "build/p-0824106d.entry.js"
+    "url": "build/p-07bee6f9.entry.js"
   },
   {
-    "url": "build/p-0ea14e86.entry.js"
+    "url": "build/p-2019edcf.entry.js"
   },
   {
-    "url": "build/p-17258165.js"
+    "url": "build/p-2c20acc8.js"
   },
   {
-    "url": "build/p-21fb5184.entry.js"
+    "url": "build/p-7a087ca4.entry.js"
   },
   {
-    "url": "build/p-2b669725.js"
+    "url": "build/p-a76084b0.js"
   },
   {
-    "url": "build/p-2e9cb895.entry.js"
+    "url": "build/p-b078b41e.entry.js"
   },
   {
-    "url": "build/p-2f5f18d4.entry.js"
+    "url": "build/p-e0ca88c2.entry.js"
   },
   {
-    "url": "build/p-2f7736a3.entry.js"
-  },
-  {
-    "url": "build/p-306950f1.entry.js"
-  },
-  {
-    "url": "build/p-36a5a942.entry.js"
-  },
-  {
-    "url": "build/p-3984e19c.js"
-  },
-  {
-    "url": "build/p-3990da8c.entry.js"
-  },
-  {
-    "url": "build/p-3d7cbf20.entry.js"
-  },
-  {
-    "url": "build/p-44c48430.entry.js"
-  },
-  {
-    "url": "build/p-6cd23258.entry.js"
-  },
-  {
-    "url": "build/p-7a4b75ea.js"
-  },
-  {
-    "url": "build/p-7bb6c451.entry.js"
-  },
-  {
-    "url": "build/p-7cfb0d60.entry.js"
-  },
-  {
-    "url": "build/p-866c729f.js"
-  },
-  {
-    "url": "build/p-9280aa5c.entry.js"
-  },
-  {
-    "url": "build/p-948e8153.entry.js"
-  },
-  {
-    "url": "build/p-952428b3.entry.js"
-  },
-  {
-    "url": "build/p-955d6554.entry.js"
-  },
-  {
-    "url": "build/p-9f8c4bca.js"
-  },
-  {
-    "url": "build/p-9f959416.entry.js"
-  },
-  {
-    "url": "build/p-a1e5ab2f.entry.js"
-  },
-  {
-    "url": "build/p-b4ff2a7b.entry.js"
-  },
-  {
-    "url": "build/p-bfc0e701.entry.js"
-  },
-  {
-    "url": "build/p-d28c656f.entry.js"
-  },
-  {
-    "url": "build/p-d6f0559d.entry.js"
-  },
-  {
-    "url": "build/p-de803772.js"
-  },
-  {
-    "url": "build/p-e3e902be.js"
-  },
-  {
-    "url": "build/p-ee4d59bb.entry.js"
-  },
-  {
-    "url": "build/p-fb793f61.entry.js"
-  },
-  {
-    "url": "build/p-fb9e802c.entry.js"
-  },
-  {
-    "url": "build/p-fd86d9a0.js"
-  },
-  {
-    "url": "build/p-fdfd84d7.entry.js"
+    "url": "build/p-e298b231.entry.js"
   },
   {
     "url": "static/js/raphael.js",

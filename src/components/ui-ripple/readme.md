@@ -7,7 +7,7 @@
 
 ## Methods
 
-### `toggle(e: CustomEvent<any>) => Promise<void>`
+### `toggle(e: CustomEvent) => Promise<void>`
 
 
 

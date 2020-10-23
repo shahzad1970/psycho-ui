@@ -5,9 +5,9 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { UiAlign, UiButtonType, UiColor, UiInputType, UiLayoutType, UiOrientation, UiRounding, UiSize, } from "./utils/ui-types";
-import { UiIcons, } from "./components/ui-icon/icon";
-import { JsonDocsComponent, JsonDocsProp, } from "./components/ui-playground/doc";
+import { UiAlign, UiButtonType, UiColor, UiInputType, UiLayoutType, UiOrientation, UiRounding, UiSize } from "./utils/ui-types";
+import { UiIcons } from "./components/ui-icon/icon";
+import { JsonDocsComponent, JsonDocsProp } from "./components/ui-playground/doc";
 export namespace Components {
     interface UiApp {
         /**
@@ -98,7 +98,7 @@ export namespace Components {
         "type": UiButtonType;
     }
     interface UiCode {
-        "language": "xml" | "java" | "javascript" | "typescript" | "sql";
+        "language": 'xml' | 'java' | 'javascript' | 'typescript' | 'sql';
         "setCode": (code: any) => Promise<void>;
     }
     interface UiColumn {
@@ -355,7 +355,7 @@ export namespace Components {
         "prop": JsonDocsProp;
     }
     interface UiRipple {
-        "toggle": (e: CustomEvent<any>) => Promise<void>;
+        "toggle": (e: CustomEvent) => Promise<void>;
     }
     interface UiRow {
         /**
@@ -673,7 +673,7 @@ declare namespace LocalJSX {
         "type"?: UiButtonType;
     }
     interface UiCode {
-        "language"?: "xml" | "java" | "javascript" | "typescript" | "sql";
+        "language"?: 'xml' | 'java' | 'javascript' | 'typescript' | 'sql';
     }
     interface UiColumn {
         /**
