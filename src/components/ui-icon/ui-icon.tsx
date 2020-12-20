@@ -61,7 +61,7 @@ export class UiIcon {
                 }
                 {this.icon}
                 <style>
-                    {UiCommon.getStyle(this.size, this.color, this.background, this.el)}
+                    {UiCommon.getStyles(this)};;
                 </style>
             </Host>
         );

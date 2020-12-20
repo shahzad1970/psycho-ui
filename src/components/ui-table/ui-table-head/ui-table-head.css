@@ -1,0 +1,8 @@
+:host {
+    display: table-header-group;
+}
+
+::slotted(ui-table-row) {
+    border-bottom: 2px solid var(--ui-border-color);
+    font-weight: bold;
+}

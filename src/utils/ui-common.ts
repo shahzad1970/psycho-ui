@@ -67,50 +67,63 @@ class UiCommonUtils {
         return this.themePalette[c] ? this.themePalette[c] : this.getColorPalette(c);
     }
 
-    getCss(size: string, color: string, background: string) {
+    getStyles(component) {
         let css = ":host {";
-        if (size) {
-            css += "font-size: " + this.fontSizeMap[size] + ";";
+        if (component.size) {
+            css += "font-size: " + this.fontSizeMap[component.size] + ";";
         }
-        if (background) {
-            let c = this.getColor(background);
+
+        if (component.gap) {
+            css += "gap: " + this.fontSizeMap[component.gap] + ";";
+        }
+
+        if (component.background) {
+            let c = this.getColor(component.background);
             css += "background-color: " + c.bg + ";";
-            if (!color) {
+            if (!component.color) {
                 css += "color: " + c.fg + ";";
-                css += "border-color: " + this.convertHex(c.fg, 20) + ";";
-                css += "outline-color: " + this.convertHex(c.fg, 20) + ";";
+                css += "--ui-border-color: " + this.convertHex(c.fg, 20) + ";";
+                css += "--ui-highlight: " + this.convertHex(c.fg, 10) + ";";
             }
         }
-        if (color) {
-            css += "color: " + this.getColor(color).bg + ";";
-            css += "border-color: " + this.convertHex(this.getColor(color).bg, 20) + ";";
-            css += "outline-color: " + this.convertHex(this.getColor(color).bg, 20) + ";";
+        if (component.color) {
+            css += "color: " + this.getColor(component.color).bg + ";";
+            css += "--ui-border-color: " + this.convertHex(this.getColor(component.color).bg, 20) + ";";
+            css += "--ui-highlight: " + this.convertHex(this.getColor(component.color).bg, 10) + ";";
         }
+        if (component.width) {
+            css += "width: "+ component.width;
+        }
+        if (component.height) {
+            css += "height: "+ component.height;
+        }
+        if (component.padding) {
+            css += "padding: "+ component.padding;
+        }
+        if (component.margin) {
+            css += "margin: "+ component.margin;
+        }
+        if (component.align) {
+            css += "    align-content: " + this.getAlign(component.align) + ";";
+        }
+        if (component.justify) {
+            css += "    justify-content: " + this.getAlign(component.justify) + ";";
+        }
+
+        switch(component.elevation) {
+            case "none" : css += "    box-shadow: none;"; break;
+            case "xx-small" : css += "   box-shadow: 0 1px 1px 0 rgba(0,0,0,0.14), 0 2px 1px -1px rgba(0,0,0,0.12), 0 1px 3px 0 rgba(0,0,0,0.20);"; break;
+            case "x-small" : css += "    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.20);"; break;
+            case "small" : css += "    box-shadow: 0 3px 4px 0 rgba(0,0,0,0.14), 0 3px 3px -2px rgba(0,0,0,0.12), 0 1px 8px 0 rgba(0,0,0,0.20);"; break;
+            case "medium" : css += "    box-shadow: 0 6px 10px 0 rgba(0,0,0,0.14), 0 1px 18px 0 rgba(0,0,0,0.12), 0 3px 5px -1px rgba(0,0,0,0.20);"; break;
+            case "large" : css += "    box-shadow: 0 9px 12px 1px rgba(0,0,0,0.14), 0 3px 16px 2px rgba(0,0,0,0.12), 0 5px 6px -3px rgba(0,0,0,0.20);"; break;
+            case "x-large" : css += "    box-shadow: 0 16px 24px 2px rgba(0,0,0,0.14), 0 6px 30px 5px rgba(0,0,0,0.12), 0 8px 10px -5px rgba(0,0,0,0.20);"; break;
+            case "xx-large" : css += "    box-shadow: 0 24px 38px 3px rgba(0,0,0,0.14), 0 9px 46px 8px rgba(0,0,0,0.12), 0 11px 15px -7px rgba(0,0,0,0.20);"; break;
+
+        }
+
         css += "}"
         return css;
-    }
-
-    getStyle(size: string, color: string, background: string, el: HTMLElement) {
-        if (!HTMLElement.prototype.attachShadow) {
-            el.style.fontSize = this.fontSizeMap[size];
-            if (background) {
-                let c = this.getColor(background);
-                if (!color) {
-                    el.style.color = c.fg;
-                    el.style.borderColor = this.convertHex(c.fg, 20);
-                    el.style.outlineColor = this.convertHex(c.fg, 20);
-                }
-                el.style.backgroundColor = c.bg;
-            }
-            if (color) {
-                el.style.color = this.getColor(color).bg;
-                el.style.borderColor = this.convertHex(this.getColor(color).bg, 20);
-                el.style.outlineColor = this.convertHex(this.getColor(color).bg, 20);
-            }
-            return "";
-        } else {
-            return this.getCss(size, color, background);
-        }
     }
 
     getPosition(alignContent: string, justifyContent: string, alignItems: string, flex: string,

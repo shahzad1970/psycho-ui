@@ -32,6 +32,8 @@
  - [ui-app-header](../ui-app-header)
  - [ui-doc-links](../ui-app-navigation/ui-doc-links)
  - [ui-input-color](../ui-input/ui-input-color)
+ - [ui-modal-header](../ui-modal/ui-modal-header)
+ - [ui-modal-test](../ui-modal/ui-modal-test)
  - [ui-playground-attrs](../ui-playground/ui-playground-attrs)
  - [ui-playground-values](../ui-playground/ui-playground-values)
 
@@ -46,6 +48,8 @@ graph TD;
   ui-app-header --> ui-button
   ui-doc-links --> ui-button
   ui-input-color --> ui-button
+  ui-modal-header --> ui-button
+  ui-modal-test --> ui-button
   ui-playground-attrs --> ui-button
   ui-playground-values --> ui-button
   style ui-button fill:#f9f,stroke:#333,stroke-width:4px

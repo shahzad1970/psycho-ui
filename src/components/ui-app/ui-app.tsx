@@ -17,7 +17,7 @@ export class UiApp  {
     /**
      * Background color from the UI Color Palette
      */
-    @Prop() background: UiColor;
+    @Prop() background: UiColor = "base";
 
     /**
      * Absolute font size 
@@ -35,7 +35,7 @@ export class UiApp  {
             <Host>
                 <slot />
                 <style>
-                    {UiCommon.getStyle(this.size, this.color, this.background, this.el)}
+                    {UiCommon.getStyles(this)};;
                 </style>
             </Host>
         );

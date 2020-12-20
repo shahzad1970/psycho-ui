@@ -1,0 +1,17 @@
+
+:host {
+    display: flex;
+    flex-direction: row;
+    line-height: 3em;
+    font-weight: bold;
+    padding-left: 1em;
+    border-bottom: 1px solid var(--ui-border-color);
+    gap: 1em;
+}
+.title {
+    flex: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100px;
+}

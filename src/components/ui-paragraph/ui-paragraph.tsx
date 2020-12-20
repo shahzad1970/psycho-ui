@@ -5,7 +5,7 @@ import { UiCommon } from "../../utils/ui-common"
 
 /**
  * @title
- * UI Paragraph
+ * Paragraph
  * 
  * @description
  * The HTML ui-paragraph element represents a paragraph. Paragraphs are usually represented in visual media as blocks 
@@ -13,7 +13,6 @@ import { UiCommon } from "../../utils/ui-common"
  * can be any structural grouping of related content, such as images or form fields.
  * 
  * @usage
- * <ui-layout type="column" width="600px">
  * <ui-paragraph class="ui-edit-layer">
  *      "The only question before us is whether a state may lawfully demand production by a third 
  *       party of the President's
@@ -21,7 +20,6 @@ import { UiCommon } from "../../utils/ui-common"
  *      while the President is in office," wrote the judges, adding: "We hold that any presidential 
  *      immunity from state criminal process does not bar the enforcement of a subpoena."
  * </ui-paragraph>
- * </ui-layout>
  */
 
 @Component({
@@ -53,7 +51,7 @@ export class UiParagraph {
             <Host>
                 <slot></slot>
                 <style>
-                    {UiCommon.getStyle(this.size, this.color, this.background, this.el)}
+                    {UiCommon.getStyles(this)};;
                 </style>
             </Host>
         );

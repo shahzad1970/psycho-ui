@@ -1,0 +1,16 @@
+:host {
+    display: table-row-group;
+}
+
+:host([stripe="odd"]) ::slotted(ui-table-row:nth-child(odd)) {
+    background-color: var(--ui-highlight);
+}
+
+:host([stripe="even"]) ::slotted(ui-table-row:nth-child(even)) {
+    background-color: var(--ui-highlight);
+}
+
+:host([hover]) ::slotted(ui-table-row:hover) {
+    background-color: var(--ui-border-color);
+}
+

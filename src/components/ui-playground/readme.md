@@ -41,6 +41,8 @@ graph TD;
   ui-input --> ui-text
   ui-input --> ui-input-color
   ui-input --> ui-input-radio
+  ui-input --> ui-input-text
+  ui-input-color --> ui-layout
   ui-input-color --> ui-button
   ui-button --> ui-ripple
   ui-playground-attrs --> ui-input

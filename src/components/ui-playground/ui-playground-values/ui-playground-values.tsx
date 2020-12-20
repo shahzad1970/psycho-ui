@@ -52,13 +52,13 @@ export class UiPlaygroundValues {
                     <ui-layout type="column" align="end" height="4em">
                         <ui-input type="search" onUiInput={(e) => this.onSearch(e)}></ui-input>
                     </ui-layout>,
-                    <ui-layout type="row" gap="small">
+                    <ui-layout type="row" gap="xx-small">
                         {this.prop.values.filter(p => p.value.indexOf(this.search) != -1).slice(this.page, this.page + 60).map(val =>
                             <ui-layout type="column" justify="end" height="120px" width="200px" background="grey-10">
-                                <ui-layout type="column" justify="middle" align="middle" height="90px">
-                                    <ui-icon size="x-large">{val.value}</ui-icon>
+                                <ui-layout type="column" justify="middle" align="middle" height="90px" width="120px">
+                                    <ui-icon color="grey-80" size="x-large">{val.value}</ui-icon>
                                 </ui-layout>
-                                <ui-button round="none" background="grey-20" color="grey-60" type="flat" size="x-small" title={val.value + " (click to copy)"} onClick={(e) => this.onClickCopyText(e)}>{val.value ? val.value : val.type}</ui-button>
+                                <ui-button round="none" background="grey-20" color="grey-60" type="flat" size="xx-small" title={val.value + " (click to copy)"} onClick={(e) => this.onClickCopyText(e)}>{val.value ? val.value : val.type}</ui-button>
 
                             </ui-layout>
 
@@ -76,9 +76,9 @@ export class UiPlaygroundValues {
                 ]}
 
                 {this.prop.name != "icon" &&
-                    <ui-layout type="row" gap="x-small" align="start">
+                    <ui-layout type="row" gap="xx-small" align="start">
                         {this.prop.values.map(val =>
-                            <ui-layout justify="middle" align="middle" type="column" width="120px" background="blue-20" height="1.8em">
+                            <ui-layout width="8em" justify="middle" align="middle" type="column" background="blue-20">
                                 <ui-text size="small">{val.value ? val.value : val.type}</ui-text>
                             </ui-layout>
                         )}

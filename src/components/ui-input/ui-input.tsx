@@ -12,8 +12,10 @@ import { UiCommon } from "../../utils/ui-common"
  * can be any structural grouping of related content, such as images or form fields.
  * 
  * @usage
- *<ui-input type="text" class="ui-edit-layer">Example input label</ui-input>
- *  
+ * <ui-layout type="column" padding="10px" gap="large" class="ui-edit-layer">
+ *   <ui-input type="text" class="ui-edit-layer">Example input label</ui-input>
+ *   <ui-input orientation="horizontal" type="text" class="ui-edit-layer">Example input label</ui-input>
+ * </ui-layout>
  */
 
 @Component({
@@ -29,26 +31,26 @@ export class UiInput {
      * Forground color from the UI Color Palette
      * 
      */
-    @Prop() color: UiColor;
+    @Prop({ reflect: true }) color: UiColor;
 
     /**
      * @description
      * Background color from the UI Color Palette
      */
-    @Prop() background: UiColor;
+    @Prop({ reflect: true }) background: UiColor;
 
     /**
-     * @description
+     * @description 
      * Absolute font size 
      */
-    @Prop() size: UiSize;
+    @Prop({ reflect: true }) size: UiSize;
 
     /**
      * @description
      * Type of input being requested
      */
 
-    @Prop() type: UiInputType = "text";
+    @Prop({ reflect: true }) type: UiInputType = "text";
 
     /**
      * @description
@@ -115,11 +117,8 @@ export class UiInput {
                     <ui-input-radio orientation={this.orientation}><slot name="option"></slot></ui-input-radio>
                 ]
             default:
-                return (
-                    <div class="input-container" ref={(el) => this.inputContainer = el}>
-                        <input type="text" onInput={()=> this.onTextInput()} ref={(el) => this.inputField = el} onFocus={() => this.onFocus()} onBlur={() => this.onBlur()}></input>
-                        {this.getIcon()}
-                    </div>
+                return ( 
+                    <ui-input-text></ui-input-text>                    
                 )
         }
     }
@@ -156,15 +155,11 @@ export class UiInput {
 
     render() {
         return (
-            <Host>
-                <div class="input-label">
-                    <slot></slot>
-                </div>
-
+            <Host>               
+                <slot></slot>
                 {this.getInput()}
-
                 <style>
-                    {UiCommon.getStyle(this.size, this.color, this.background, this.el)}
+                    {UiCommon.getStyles(this)};;
                 </style>
             </Host>
         );

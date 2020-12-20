@@ -1,0 +1,15 @@
+:host {
+    display: block;
+    position: fixed;
+    top: 5em;
+    left: 50%;
+    transform: translate(-50%,0);
+    z-index: 1000;
+}
+
+.modal {
+    position: fixed;
+    top: 5em;
+    left: 50%;
+    transform: translate(-50%,0);
+}

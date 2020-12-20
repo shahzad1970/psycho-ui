@@ -13,12 +13,14 @@ export class UiDocLinks {
     render() {
         return (
             <Host>
-                <ui-button round="none" type="flat" background="base" color="grey-80" href="/ui-button.html">UI Button</ui-button>
-                <ui-button round="none" type="flat" background="base" color="grey-80" href="/ui-heading.html">UI Heading</ui-button>
-                <ui-button round="none" type="flat" background="base" color="grey-80" href="/ui-icon.html">UI Icon</ui-button>
-                <ui-button round="none" type="flat" background="base" color="grey-80" href="/ui-input.html">UI Input</ui-button>
-                <ui-button round="none" type="flat" background="base" color="grey-80" href="/ui-paragraph.html">UI Paragraph</ui-button>
-                <ui-button round="none" type="flat" background="base" color="grey-80" href="/ui-text.html">UI Text</ui-button>
+                <ui-button round="none" type="flat" href="/ui-button.html">Button</ui-button>
+                <ui-button round="none" type="flat" href="/ui-heading.html">Heading</ui-button>
+                <ui-button round="none" type="flat" href="/ui-icon.html">Icon</ui-button>
+                <ui-button round="none" type="flat" href="/ui-input.html">Input</ui-button>
+                <ui-button round="none" type="flat" href="/ui-modal.html">Modal</ui-button>
+                <ui-button round="none" type="flat" href="/ui-paragraph.html">Paragraph</ui-button>
+                <ui-button round="none" type="flat" href="/ui-table.html">Table</ui-button>
+                <ui-button round="none" type="flat" href="/ui-text.html">Text</ui-button>
             </Host>
         );
     }

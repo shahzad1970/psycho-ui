@@ -1,4 +1,4 @@
-import { h, Component, Prop, Host, State, Event, EventEmitter, Element } from '@stencil/core';
+import { h, Component, Prop, Host, State, Event, EventEmitter, Element, Listen } from '@stencil/core';
 import { JsonDocsComponent } from '../doc';
 import { UiColor, UiSize } from "../../../utils/ui-types";
 import { UiCommon } from "../../../utils/ui-common"
@@ -71,6 +71,15 @@ export class UiPlaygroundAttrs {
         this.currentVals = { ...this.currentVals };
         this.updatePlaygroundCode.emit();
 
+    }
+
+    @State() clickEvents : number = 0;
+
+    @Listen('click', {target: 'window'})
+    onClickEvent(ev: any) {
+        if (ev.originalTarget == this.element) {
+            this.clickEvents++;
+        }
     }
 
     getAttrInput(name) {
@@ -176,9 +185,16 @@ export class UiPlaygroundAttrs {
                         {this.doc.props.map(p => {
                             return this.getAttrInput(p.name);
                         })}
+                    <ui-heading background="grey-100">Events</ui-heading>
+                    <table>
+                        <tr>
+                            <td>onClick</td>
+                            <td>{this.clickEvents}</td>
+                        </tr>
+                    </table>
                 </ui-layout>
                 <style>
-                    {UiCommon.getStyle(this.size, this.color, this.background, this.el)}
+                    {UiCommon.getStyles(this)};;
                 </style>
             </Host>
         );

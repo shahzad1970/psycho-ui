@@ -89,7 +89,7 @@ export class UiColumn {
             <Host>
                 <slot></slot>
                 <style>
-                    {UiCommon.getStyle(this.size, this.color, this.background, this.el)}
+                    {UiCommon.getStyles(this)};;
 
                     {UiCommon.getPosition(this.alignContent, this.justifyContent,
                          this.alignItems, this.flex, this.padding, this.margin, 

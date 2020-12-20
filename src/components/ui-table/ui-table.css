@@ -1,0 +1,12 @@
+:host {
+    display: block;
+    overflow-x: auto;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+ui-layout.table {
+    display: table;
+    width: 100%;
+    border-collapse: collapse;
+}

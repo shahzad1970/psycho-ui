@@ -1,5 +1,6 @@
 :host {
     display: block;
+    width: calc(100% - 24em);
 }
 
 

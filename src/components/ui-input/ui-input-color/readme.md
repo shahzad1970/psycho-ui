@@ -20,11 +20,13 @@
 
 ### Depends on
 
+- [ui-layout](../../ui-layout)
 - [ui-button](../../ui-button)
 
 ### Graph
 ```mermaid
 graph TD;
+  ui-input-color --> ui-layout
   ui-input-color --> ui-button
   ui-button --> ui-ripple
   ui-input --> ui-input-color

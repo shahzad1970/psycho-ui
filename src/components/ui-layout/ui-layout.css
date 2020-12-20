@@ -16,30 +16,6 @@
     flex: 1 1 auto;
 }
 
-:host([align="start"]) {
-    align-items: flex-start;
-}
-
-:host([align="end"]) {
-    align-items: flex-end;
-}
-
-:host([align="middle"]) {
-    align-items: center;
-}
-
-:host([justify="start"]) {
-    justify-content: flex-start;
-}
-
-:host([justify="end"]) {
-    justify-content: flex-end;
-}
-
-:host([justify="middle"]) {
-    justify-content: center;
-}
-
 
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
     :host([type="row"]::slotted(*))  {
@@ -47,3 +23,4 @@
         min-width: 1px;
     }
 }
+

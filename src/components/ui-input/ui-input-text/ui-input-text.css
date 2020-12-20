@@ -1,0 +1,18 @@
+:host {
+    display: inline-block;
+    line-height: 2em;
+    padding-right: 0.5em;
+    padding-left: 0.5em;
+    border-radius: 2px;
+    font-size: calc(1em - 2px);
+    border: 2px solid var(--ui-border-color);
+    opacity: 0.8;
+}
+
+input {
+    border: 0px;
+    padding: 0px;
+    margin: 0px;
+    color: currentColor;
+    background-color: transparent;
+}

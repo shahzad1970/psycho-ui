@@ -2,10 +2,15 @@
     display: block;
     overflow: auto;
     position: fixed;
-    top: 0;
+    top: 3.5em;
     right:0;
     z-index: 999;
     width: 20em;
-    height: calc(100vh - 3em);
+    height: calc(100vh - 6.5em);
     padding: 1.5em;
+    direction: rtl;
+}
+
+* {
+    direction: ltr;
 }

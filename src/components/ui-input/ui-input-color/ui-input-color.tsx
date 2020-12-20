@@ -18,12 +18,13 @@ export class UiInputColor {
     render() {
         return (
             <Host>
-                <div class="row">
+                
+                <ui-layout type="row" background="primary-dark">
                     {Object.keys(UiCommon.themePalette).map(k =>
                         <ui-button onUiClick={() => this.select(k)} background={(k) as UiColor} round="none" type="base">{(k) as UiColor}</ui-button>
                     )}
 
-                </div>
+                </ui-layout>
                 {Object.keys(UiCommon.colorPalette).map(k =>
                     <div class="row">
                         {[100, 90, 80, 70, 60, 50, 40, 30, 20, 10].map(w =>

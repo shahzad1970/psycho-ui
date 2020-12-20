@@ -14,6 +14,7 @@ export const config: Config = {
 
     {
       type: 'www',
+      baseUrl: "",
       copy: [
         { src: 'static', dest: 'static' },
         { src: '*.html', dest: '' }

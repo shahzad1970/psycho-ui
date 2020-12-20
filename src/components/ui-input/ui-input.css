@@ -11,8 +11,9 @@
     flex-direction: row;
     align-content: center;
     justify-content: flex-start;
-    align-items: flex-start;
+    align-items: center;
     flex-wrap: wrap;
+    gap: 0.5em;
 }
 
 input {

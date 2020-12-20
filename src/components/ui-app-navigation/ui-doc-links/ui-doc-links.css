@@ -9,4 +9,6 @@
 :host > ui-button {
     justify-content: flex-start;
     padding-left: 2em;
+    margin-right: 0.5em;
+    margin-left: 0.5em;
 }

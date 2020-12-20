@@ -1,0 +1,7 @@
+:host {
+    display: table-cell;
+    line-height: 2em;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    border-bottom: 1px solid var(--ui-border-color);
+}

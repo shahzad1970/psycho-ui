@@ -29,3 +29,5 @@ export type UiAlign = "start" | "middle" | "end" | "stretch";
 export type UiLayoutType = "row" | "column";
 
 export type UiAlignContent = "start" | "middle" | "end";
+
+export type UiElevation = 'none' | 'xx-small' | 'x-small' | 'small' | 'medium' | 'large' | 'x-large' | 'xx-large';

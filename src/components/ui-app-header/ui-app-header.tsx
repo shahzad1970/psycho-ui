@@ -35,13 +35,13 @@ export class UiAppHeader {
     render() {
         return (
             <Host>
-                <ui-button round="fab" type="base" onClick={() => this.navigation()} size="large">
-                    <ui-icon>menu</ui-icon>
+                <ui-button round="fab" type="base" onClick={() => this.navigation()} size="medium">
+                    <ui-icon size="larger">menu</ui-icon>
                 </ui-button>
                 <img src={this.src}></img>
                 <slot />
                 <style>
-                    {UiCommon.getStyle(this.size, this.color, this.background, this.el)}
+                    {UiCommon.getStyles(this)};;
                 </style>
             </Host>
         );

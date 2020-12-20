@@ -21,6 +21,7 @@
 
  - [ui-app-header](../ui-app-header)
  - [ui-input](../ui-input)
+ - [ui-modal-header](../ui-modal/ui-modal-header)
  - [ui-playground-values](../ui-playground/ui-playground-values)
 
 ### Graph
@@ -28,6 +29,7 @@
 graph TD;
   ui-app-header --> ui-icon
   ui-input --> ui-icon
+  ui-modal-header --> ui-icon
   ui-playground-values --> ui-icon
   style ui-icon fill:#f9f,stroke:#333,stroke-width:4px
 ```

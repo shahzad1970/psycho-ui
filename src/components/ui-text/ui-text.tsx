@@ -69,7 +69,7 @@ export class UiText {
             <Host>
                 <slot></slot>
                 <style>
-                    {UiCommon.getStyle(this.size, this.color, this.background, this.el)}
+                    {UiCommon.getStyles(this)};;
                 </style>
             </Host>
         );

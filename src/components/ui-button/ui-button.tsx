@@ -10,20 +10,28 @@ import { UiCommon } from "../../utils/ui-common"
  * Buttons allow users to take action, and make a choice, with a single tap.
  * 
  * @usage
- * 
- * <ui-button class="ui-edit-layer">
- *      Test Button
- * </ui-button>
- *<ui-button class="ui-edit-layer" background="primary-dark">
- *      <ui-icon class="ui-edit-layer" size="larger">menu</ui-icon>&nbsp;&nbsp;Test Button
- * </ui-button>
- *<ui-button class="ui-edit-layer" background="primary-light">
- *      Test Button&nbsp;&nbsp;<ui-icon class="ui-edit-layer" size="x-large">menu</ui-icon> 
- * </ui-button>
- * <ui-button class="ui-edit-layer" type="flat" round="fab">
- *      <ui-icon class="ui-edit-layer">menu</ui-icon>
- * </ui-button>
- * 
+ * <ui-layout type="row" gap="large">
+ *   <ui-layout type="column" align="start">
+ *      <ui-button class="ui-edit-layer">
+ *          Test Button
+ *      </ui-button>
+ *   </ui-layout>
+ *    <ui-layout type="column" align="start">
+ *      <ui-button class="ui-edit-layer" background="primary-dark">
+ *          <ui-icon class="ui-edit-layer">menu</ui-icon>Test Button
+ *      </ui-button>
+ *   </ui-layout>
+ *   <ui-layout type="column" align="start">
+ *      <ui-button class="ui-edit-layer" background="primary-light">
+ *          Test Button<ui-icon class="ui-edit-layer">menu</ui-icon> 
+ *      </ui-button>
+ *   </ui-layout>
+ *   <ui-layout type="column" align="start">
+ *      <ui-button class="ui-edit-layer" round="fab" background="primary-dark">
+ *          <ui-icon class="ui-edit-layer">menu</ui-icon>
+ *      </ui-button>
+ *   </ui-layout>
+ * </ui-layout>
  */
 
 @Component({
@@ -111,12 +119,14 @@ export class UiButton {
     }
 
     render() {
+        
         return (
             <Host> 
                 <slot></slot>
                 <ui-ripple ref={(e: HTMLUiRippleElement) => this.ripple = e}></ui-ripple>
                 <style>
-                    {UiCommon.getStyle(this.size, this.color, this.background, this.el)}
+                    {UiCommon.getStyles(this)};
+                    {UiCommon.getStyles(this)};;
                 </style>
             </Host>
         );

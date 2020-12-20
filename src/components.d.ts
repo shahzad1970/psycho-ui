@@ -5,7 +5,7 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { UiAlign, UiButtonType, UiColor, UiInputType, UiLayoutType, UiOrientation, UiRounding, UiSize } from "./utils/ui-types";
+import { UiAlign, UiButtonType, UiColor, UiElevation, UiInputType, UiLayoutType, UiOrientation, UiRounding, UiSize } from "./utils/ui-types";
 import { UiIcons } from "./components/ui-icon/icon";
 import { JsonDocsComponent, JsonDocsProp } from "./components/ui-playground/doc";
 export namespace Components {
@@ -280,6 +280,8 @@ export namespace Components {
     interface UiInputRadio {
         "orientation": UiOrientation;
     }
+    interface UiInputText {
+    }
     interface UiLayout {
         /**
           * @description Absolute-size keywords, based on the user's default font size (which is medium).
@@ -294,6 +296,10 @@ export namespace Components {
          */
         "color": UiColor;
         /**
+          * @description Elevation from the page by adding a border
+         */
+        "elevation": UiElevation;
+        /**
           * @description Amount of gap between the row items or column items;
          */
         "gap": UiSize;
@@ -305,6 +311,8 @@ export namespace Components {
           * @description Absolute-size keywords, based on the user's default font size (which is medium).
          */
         "justify": UiAlign;
+        "margin": string;
+        "padding": string;
         /**
           * @description Absolute-size keywords, based on the user's default font size (which is medium).
          */
@@ -317,6 +325,99 @@ export namespace Components {
           * @description Max width of the column or row, should really only be used on a column type layout.  any CSS unit of measurement can be used.
          */
         "width": string;
+    }
+    interface UiModal {
+        /**
+          * @description Background color from the UI Color Palette. When only background is present then background will be color and forground will be either white or black. If color attribute is also present then forground color will be set to color attribute.
+         */
+        "background": UiColor;
+        /**
+          * @description Block background user input them modal is open.
+         */
+        "block": boolean;
+        /**
+          * @description Set forground color to selected palette color.
+         */
+        "color": UiColor;
+        /**
+          * @description Elevation from the page by adding a border
+         */
+        "elevation": UiElevation;
+        /**
+          * @description Absolute-size keywords, based on the user's default font size (which is medium).
+         */
+        "size": UiSize;
+    }
+    interface UiModalBlock {
+        "active": boolean;
+    }
+    interface UiModalBody {
+        /**
+          * @description Background color from the UI Color Palette. When only background is present then background will be color and forground will be either white or black. If color attribute is also present then forground color will be set to color attribute.
+         */
+        "background": UiColor;
+        /**
+          * @description Set forground color to selected palette color.
+         */
+        "color": UiColor;
+        /**
+          * @description Amount of gap between the row items or column items;
+         */
+        "gap": UiSize;
+        /**
+          * @description Absolute-size keywords, based on the user's default font size (which is medium).
+         */
+        "size": UiSize;
+    }
+    interface UiModalFooter {
+        /**
+          * @description Background color from the UI Color Palette. When only background is present then background will be color and forground will be either white or black. If color attribute is also present then forground color will be set to color attribute.
+         */
+        "background": UiColor;
+        /**
+          * @description Set forground color to selected palette color.
+         */
+        "color": UiColor;
+        /**
+          * @description Amount of gap between the row items or column items;
+         */
+        "gap": UiSize;
+        /**
+          * @description Absolute-size keywords, based on the user's default font size (which is medium).
+         */
+        "justify": UiAlign;
+        /**
+          * @description Absolute-size keywords, based on the user's default font size (which is medium).
+         */
+        "size": UiSize;
+    }
+    interface UiModalHeader {
+        /**
+          * @description Background color from the UI Color Palette. When only background is present then background will be color and forground will be either white or black. If color attribute is also present then forground color will be set to color attribute.
+         */
+        "background": UiColor;
+        /**
+          * @description Set forground color to selected palette color.
+         */
+        "color": UiColor;
+        /**
+          * @description Absolute-size keywords, based on the user's default font size (which is medium).
+         */
+        "size": UiSize;
+    }
+    interface UiModalTest {
+        /**
+          * @description Background color from the UI Color Palette. When only background is present then background will be color and forground will be either white or black. If color attribute is also present then forground color will be set to color attribute.
+         */
+        "background": UiColor;
+        /**
+          * @description Set forground color to selected palette color.
+         */
+        "color": UiColor;
+        /**
+          * @description Absolute-size keywords, based on the user's default font size (which is medium).
+         */
+        "size": UiSize;
     }
     interface UiParagraph {
         /**
@@ -398,6 +499,84 @@ export namespace Components {
           * @description Flex box flex, how much to streatch
          */
         "padding": string;
+        /**
+          * @description Absolute-size keywords, based on the user's default font size (which is medium).
+         */
+        "size": UiSize;
+    }
+    interface UiTable {
+        /**
+          * @description Background color from the UI Color Palette. When only background is present then background will be color and forground will be either white or black. If color attribute is also present then forground color will be set to color attribute.
+         */
+        "background": UiColor;
+        /**
+          * @description Set forground color to selected palette color.
+         */
+        "color": UiColor;
+        /**
+          * @description Absolute-size keywords, based on the user's default font size (which is medium).
+         */
+        "size": UiSize;
+    }
+    interface UiTableBody {
+        /**
+          * @description Background color from the UI Color Palette. When only background is present then background will be color and forground will be either white or black. If color attribute is also present then forground color will be set to color attribute.
+         */
+        "background": UiColor;
+        /**
+          * @description Set forground color to selected palette color.
+         */
+        "color": UiColor;
+        /**
+          * @description Hover effect on row hover.
+         */
+        "hover": boolean;
+        /**
+          * @description Absolute-size keywords, based on the user's default font size (which is medium).
+         */
+        "size": UiSize;
+        /**
+          * @description Stripe "odd" or "even" rows, if not present then no stripe
+         */
+        "stripe": 'odd' | 'even' | 'none';
+    }
+    interface UiTableCell {
+        /**
+          * @description Background color from the UI Color Palette. When only background is present then background will be color and forground will be either white or black. If color attribute is also present then forground color will be set to color attribute.
+         */
+        "background": UiColor;
+        /**
+          * @description Set forground color to selected palette color.
+         */
+        "color": UiColor;
+        /**
+          * @description Absolute-size keywords, based on the user's default font size (which is medium).
+         */
+        "size": UiSize;
+    }
+    interface UiTableHead {
+        /**
+          * @description Background color from the UI Color Palette. When only background is present then background will be color and forground will be either white or black. If color attribute is also present then forground color will be set to color attribute.
+         */
+        "background": UiColor;
+        /**
+          * @description Set forground color to selected palette color.
+         */
+        "color": UiColor;
+        /**
+          * @description Absolute-size keywords, based on the user's default font size (which is medium).
+         */
+        "size": UiSize;
+    }
+    interface UiTableRow {
+        /**
+          * @description Background color from the UI Color Palette. When only background is present then background will be color and forground will be either white or black. If color attribute is also present then forground color will be set to color attribute.
+         */
+        "background": UiColor;
+        /**
+          * @description Set forground color to selected palette color.
+         */
+        "color": UiColor;
         /**
           * @description Absolute-size keywords, based on the user's default font size (which is medium).
          */
@@ -509,11 +688,53 @@ declare global {
         prototype: HTMLUiInputRadioElement;
         new (): HTMLUiInputRadioElement;
     };
+    interface HTMLUiInputTextElement extends Components.UiInputText, HTMLStencilElement {
+    }
+    var HTMLUiInputTextElement: {
+        prototype: HTMLUiInputTextElement;
+        new (): HTMLUiInputTextElement;
+    };
     interface HTMLUiLayoutElement extends Components.UiLayout, HTMLStencilElement {
     }
     var HTMLUiLayoutElement: {
         prototype: HTMLUiLayoutElement;
         new (): HTMLUiLayoutElement;
+    };
+    interface HTMLUiModalElement extends Components.UiModal, HTMLStencilElement {
+    }
+    var HTMLUiModalElement: {
+        prototype: HTMLUiModalElement;
+        new (): HTMLUiModalElement;
+    };
+    interface HTMLUiModalBlockElement extends Components.UiModalBlock, HTMLStencilElement {
+    }
+    var HTMLUiModalBlockElement: {
+        prototype: HTMLUiModalBlockElement;
+        new (): HTMLUiModalBlockElement;
+    };
+    interface HTMLUiModalBodyElement extends Components.UiModalBody, HTMLStencilElement {
+    }
+    var HTMLUiModalBodyElement: {
+        prototype: HTMLUiModalBodyElement;
+        new (): HTMLUiModalBodyElement;
+    };
+    interface HTMLUiModalFooterElement extends Components.UiModalFooter, HTMLStencilElement {
+    }
+    var HTMLUiModalFooterElement: {
+        prototype: HTMLUiModalFooterElement;
+        new (): HTMLUiModalFooterElement;
+    };
+    interface HTMLUiModalHeaderElement extends Components.UiModalHeader, HTMLStencilElement {
+    }
+    var HTMLUiModalHeaderElement: {
+        prototype: HTMLUiModalHeaderElement;
+        new (): HTMLUiModalHeaderElement;
+    };
+    interface HTMLUiModalTestElement extends Components.UiModalTest, HTMLStencilElement {
+    }
+    var HTMLUiModalTestElement: {
+        prototype: HTMLUiModalTestElement;
+        new (): HTMLUiModalTestElement;
     };
     interface HTMLUiParagraphElement extends Components.UiParagraph, HTMLStencilElement {
     }
@@ -551,6 +772,36 @@ declare global {
         prototype: HTMLUiRowElement;
         new (): HTMLUiRowElement;
     };
+    interface HTMLUiTableElement extends Components.UiTable, HTMLStencilElement {
+    }
+    var HTMLUiTableElement: {
+        prototype: HTMLUiTableElement;
+        new (): HTMLUiTableElement;
+    };
+    interface HTMLUiTableBodyElement extends Components.UiTableBody, HTMLStencilElement {
+    }
+    var HTMLUiTableBodyElement: {
+        prototype: HTMLUiTableBodyElement;
+        new (): HTMLUiTableBodyElement;
+    };
+    interface HTMLUiTableCellElement extends Components.UiTableCell, HTMLStencilElement {
+    }
+    var HTMLUiTableCellElement: {
+        prototype: HTMLUiTableCellElement;
+        new (): HTMLUiTableCellElement;
+    };
+    interface HTMLUiTableHeadElement extends Components.UiTableHead, HTMLStencilElement {
+    }
+    var HTMLUiTableHeadElement: {
+        prototype: HTMLUiTableHeadElement;
+        new (): HTMLUiTableHeadElement;
+    };
+    interface HTMLUiTableRowElement extends Components.UiTableRow, HTMLStencilElement {
+    }
+    var HTMLUiTableRowElement: {
+        prototype: HTMLUiTableRowElement;
+        new (): HTMLUiTableRowElement;
+    };
     interface HTMLUiTextElement extends Components.UiText, HTMLStencilElement {
     }
     var HTMLUiTextElement: {
@@ -573,13 +824,25 @@ declare global {
         "ui-input-color": HTMLUiInputColorElement;
         "ui-input-option": HTMLUiInputOptionElement;
         "ui-input-radio": HTMLUiInputRadioElement;
+        "ui-input-text": HTMLUiInputTextElement;
         "ui-layout": HTMLUiLayoutElement;
+        "ui-modal": HTMLUiModalElement;
+        "ui-modal-block": HTMLUiModalBlockElement;
+        "ui-modal-body": HTMLUiModalBodyElement;
+        "ui-modal-footer": HTMLUiModalFooterElement;
+        "ui-modal-header": HTMLUiModalHeaderElement;
+        "ui-modal-test": HTMLUiModalTestElement;
         "ui-paragraph": HTMLUiParagraphElement;
         "ui-playground": HTMLUiPlaygroundElement;
         "ui-playground-attrs": HTMLUiPlaygroundAttrsElement;
         "ui-playground-values": HTMLUiPlaygroundValuesElement;
         "ui-ripple": HTMLUiRippleElement;
         "ui-row": HTMLUiRowElement;
+        "ui-table": HTMLUiTableElement;
+        "ui-table-body": HTMLUiTableBodyElement;
+        "ui-table-cell": HTMLUiTableCellElement;
+        "ui-table-head": HTMLUiTableHeadElement;
+        "ui-table-row": HTMLUiTableRowElement;
         "ui-text": HTMLUiTextElement;
     }
 }
@@ -856,6 +1119,8 @@ declare namespace LocalJSX {
     interface UiInputRadio {
         "orientation"?: UiOrientation;
     }
+    interface UiInputText {
+    }
     interface UiLayout {
         /**
           * @description Absolute-size keywords, based on the user's default font size (which is medium).
@@ -870,6 +1135,10 @@ declare namespace LocalJSX {
          */
         "color"?: UiColor;
         /**
+          * @description Elevation from the page by adding a border
+         */
+        "elevation"?: UiElevation;
+        /**
           * @description Amount of gap between the row items or column items;
          */
         "gap"?: UiSize;
@@ -881,6 +1150,8 @@ declare namespace LocalJSX {
           * @description Absolute-size keywords, based on the user's default font size (which is medium).
          */
         "justify"?: UiAlign;
+        "margin"?: string;
+        "padding"?: string;
         /**
           * @description Absolute-size keywords, based on the user's default font size (which is medium).
          */
@@ -893,6 +1164,99 @@ declare namespace LocalJSX {
           * @description Max width of the column or row, should really only be used on a column type layout.  any CSS unit of measurement can be used.
          */
         "width"?: string;
+    }
+    interface UiModal {
+        /**
+          * @description Background color from the UI Color Palette. When only background is present then background will be color and forground will be either white or black. If color attribute is also present then forground color will be set to color attribute.
+         */
+        "background"?: UiColor;
+        /**
+          * @description Block background user input them modal is open.
+         */
+        "block"?: boolean;
+        /**
+          * @description Set forground color to selected palette color.
+         */
+        "color"?: UiColor;
+        /**
+          * @description Elevation from the page by adding a border
+         */
+        "elevation"?: UiElevation;
+        /**
+          * @description Absolute-size keywords, based on the user's default font size (which is medium).
+         */
+        "size"?: UiSize;
+    }
+    interface UiModalBlock {
+        "active"?: boolean;
+    }
+    interface UiModalBody {
+        /**
+          * @description Background color from the UI Color Palette. When only background is present then background will be color and forground will be either white or black. If color attribute is also present then forground color will be set to color attribute.
+         */
+        "background"?: UiColor;
+        /**
+          * @description Set forground color to selected palette color.
+         */
+        "color"?: UiColor;
+        /**
+          * @description Amount of gap between the row items or column items;
+         */
+        "gap"?: UiSize;
+        /**
+          * @description Absolute-size keywords, based on the user's default font size (which is medium).
+         */
+        "size"?: UiSize;
+    }
+    interface UiModalFooter {
+        /**
+          * @description Background color from the UI Color Palette. When only background is present then background will be color and forground will be either white or black. If color attribute is also present then forground color will be set to color attribute.
+         */
+        "background"?: UiColor;
+        /**
+          * @description Set forground color to selected palette color.
+         */
+        "color"?: UiColor;
+        /**
+          * @description Amount of gap between the row items or column items;
+         */
+        "gap"?: UiSize;
+        /**
+          * @description Absolute-size keywords, based on the user's default font size (which is medium).
+         */
+        "justify"?: UiAlign;
+        /**
+          * @description Absolute-size keywords, based on the user's default font size (which is medium).
+         */
+        "size"?: UiSize;
+    }
+    interface UiModalHeader {
+        /**
+          * @description Background color from the UI Color Palette. When only background is present then background will be color and forground will be either white or black. If color attribute is also present then forground color will be set to color attribute.
+         */
+        "background"?: UiColor;
+        /**
+          * @description Set forground color to selected palette color.
+         */
+        "color"?: UiColor;
+        /**
+          * @description Absolute-size keywords, based on the user's default font size (which is medium).
+         */
+        "size"?: UiSize;
+    }
+    interface UiModalTest {
+        /**
+          * @description Background color from the UI Color Palette. When only background is present then background will be color and forground will be either white or black. If color attribute is also present then forground color will be set to color attribute.
+         */
+        "background"?: UiColor;
+        /**
+          * @description Set forground color to selected palette color.
+         */
+        "color"?: UiColor;
+        /**
+          * @description Absolute-size keywords, based on the user's default font size (which is medium).
+         */
+        "size"?: UiSize;
     }
     interface UiParagraph {
         /**
@@ -979,6 +1343,84 @@ declare namespace LocalJSX {
          */
         "size"?: UiSize;
     }
+    interface UiTable {
+        /**
+          * @description Background color from the UI Color Palette. When only background is present then background will be color and forground will be either white or black. If color attribute is also present then forground color will be set to color attribute.
+         */
+        "background"?: UiColor;
+        /**
+          * @description Set forground color to selected palette color.
+         */
+        "color"?: UiColor;
+        /**
+          * @description Absolute-size keywords, based on the user's default font size (which is medium).
+         */
+        "size"?: UiSize;
+    }
+    interface UiTableBody {
+        /**
+          * @description Background color from the UI Color Palette. When only background is present then background will be color and forground will be either white or black. If color attribute is also present then forground color will be set to color attribute.
+         */
+        "background"?: UiColor;
+        /**
+          * @description Set forground color to selected palette color.
+         */
+        "color"?: UiColor;
+        /**
+          * @description Hover effect on row hover.
+         */
+        "hover"?: boolean;
+        /**
+          * @description Absolute-size keywords, based on the user's default font size (which is medium).
+         */
+        "size"?: UiSize;
+        /**
+          * @description Stripe "odd" or "even" rows, if not present then no stripe
+         */
+        "stripe"?: 'odd' | 'even' | 'none';
+    }
+    interface UiTableCell {
+        /**
+          * @description Background color from the UI Color Palette. When only background is present then background will be color and forground will be either white or black. If color attribute is also present then forground color will be set to color attribute.
+         */
+        "background"?: UiColor;
+        /**
+          * @description Set forground color to selected palette color.
+         */
+        "color"?: UiColor;
+        /**
+          * @description Absolute-size keywords, based on the user's default font size (which is medium).
+         */
+        "size"?: UiSize;
+    }
+    interface UiTableHead {
+        /**
+          * @description Background color from the UI Color Palette. When only background is present then background will be color and forground will be either white or black. If color attribute is also present then forground color will be set to color attribute.
+         */
+        "background"?: UiColor;
+        /**
+          * @description Set forground color to selected palette color.
+         */
+        "color"?: UiColor;
+        /**
+          * @description Absolute-size keywords, based on the user's default font size (which is medium).
+         */
+        "size"?: UiSize;
+    }
+    interface UiTableRow {
+        /**
+          * @description Background color from the UI Color Palette. When only background is present then background will be color and forground will be either white or black. If color attribute is also present then forground color will be set to color attribute.
+         */
+        "background"?: UiColor;
+        /**
+          * @description Set forground color to selected palette color.
+         */
+        "color"?: UiColor;
+        /**
+          * @description Absolute-size keywords, based on the user's default font size (which is medium).
+         */
+        "size"?: UiSize;
+    }
     interface UiText {
         /**
           * @description Background color from the UI Color Palette. When only background is present then background will be color and forground will be either white or black. If color attribute is also present then forground color will be set to color attribute.
@@ -1009,13 +1451,25 @@ declare namespace LocalJSX {
         "ui-input-color": UiInputColor;
         "ui-input-option": UiInputOption;
         "ui-input-radio": UiInputRadio;
+        "ui-input-text": UiInputText;
         "ui-layout": UiLayout;
+        "ui-modal": UiModal;
+        "ui-modal-block": UiModalBlock;
+        "ui-modal-body": UiModalBody;
+        "ui-modal-footer": UiModalFooter;
+        "ui-modal-header": UiModalHeader;
+        "ui-modal-test": UiModalTest;
         "ui-paragraph": UiParagraph;
         "ui-playground": UiPlayground;
         "ui-playground-attrs": UiPlaygroundAttrs;
         "ui-playground-values": UiPlaygroundValues;
         "ui-ripple": UiRipple;
         "ui-row": UiRow;
+        "ui-table": UiTable;
+        "ui-table-body": UiTableBody;
+        "ui-table-cell": UiTableCell;
+        "ui-table-head": UiTableHead;
+        "ui-table-row": UiTableRow;
         "ui-text": UiText;
     }
 }
@@ -1038,13 +1492,25 @@ declare module "@stencil/core" {
             "ui-input-color": LocalJSX.UiInputColor & JSXBase.HTMLAttributes<HTMLUiInputColorElement>;
             "ui-input-option": LocalJSX.UiInputOption & JSXBase.HTMLAttributes<HTMLUiInputOptionElement>;
             "ui-input-radio": LocalJSX.UiInputRadio & JSXBase.HTMLAttributes<HTMLUiInputRadioElement>;
+            "ui-input-text": LocalJSX.UiInputText & JSXBase.HTMLAttributes<HTMLUiInputTextElement>;
             "ui-layout": LocalJSX.UiLayout & JSXBase.HTMLAttributes<HTMLUiLayoutElement>;
+            "ui-modal": LocalJSX.UiModal & JSXBase.HTMLAttributes<HTMLUiModalElement>;
+            "ui-modal-block": LocalJSX.UiModalBlock & JSXBase.HTMLAttributes<HTMLUiModalBlockElement>;
+            "ui-modal-body": LocalJSX.UiModalBody & JSXBase.HTMLAttributes<HTMLUiModalBodyElement>;
+            "ui-modal-footer": LocalJSX.UiModalFooter & JSXBase.HTMLAttributes<HTMLUiModalFooterElement>;
+            "ui-modal-header": LocalJSX.UiModalHeader & JSXBase.HTMLAttributes<HTMLUiModalHeaderElement>;
+            "ui-modal-test": LocalJSX.UiModalTest & JSXBase.HTMLAttributes<HTMLUiModalTestElement>;
             "ui-paragraph": LocalJSX.UiParagraph & JSXBase.HTMLAttributes<HTMLUiParagraphElement>;
             "ui-playground": LocalJSX.UiPlayground & JSXBase.HTMLAttributes<HTMLUiPlaygroundElement>;
             "ui-playground-attrs": LocalJSX.UiPlaygroundAttrs & JSXBase.HTMLAttributes<HTMLUiPlaygroundAttrsElement>;
             "ui-playground-values": LocalJSX.UiPlaygroundValues & JSXBase.HTMLAttributes<HTMLUiPlaygroundValuesElement>;
             "ui-ripple": LocalJSX.UiRipple & JSXBase.HTMLAttributes<HTMLUiRippleElement>;
             "ui-row": LocalJSX.UiRow & JSXBase.HTMLAttributes<HTMLUiRowElement>;
+            "ui-table": LocalJSX.UiTable & JSXBase.HTMLAttributes<HTMLUiTableElement>;
+            "ui-table-body": LocalJSX.UiTableBody & JSXBase.HTMLAttributes<HTMLUiTableBodyElement>;
+            "ui-table-cell": LocalJSX.UiTableCell & JSXBase.HTMLAttributes<HTMLUiTableCellElement>;
+            "ui-table-head": LocalJSX.UiTableHead & JSXBase.HTMLAttributes<HTMLUiTableHeadElement>;
+            "ui-table-row": LocalJSX.UiTableRow & JSXBase.HTMLAttributes<HTMLUiTableRowElement>;
             "ui-text": LocalJSX.UiText & JSXBase.HTMLAttributes<HTMLUiTextElement>;
         }
     }

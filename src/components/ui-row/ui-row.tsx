@@ -1,7 +1,58 @@
 import { h, Component, Host, Element, Prop } from '@stencil/core';
 import { UiColor, UiSize, UiAlign } from "../../utils/ui-types";
 import { UiCommon } from "../../utils/ui-common";
-
+/**
+ * @title
+ * UI Table
+ * 
+ * @description
+ * Table is a lightweight and opinionated component for enhancing tabular data.
+ * It offers features like sticky headers, support for narrow viewport widths,
+ * and table styles.
+ * @usage
+ * <ui-table class="ui-edit-layer">
+ *  <ui-table-head class="ui-edit-layer">
+ *   <ui-table-row class="ui-edit-layer">
+ *    <ui-table-cell class="ui-edit-layer">One</ui-table-cell>
+ *    <ui-table-cell class="ui-edit-layer">Two</ui-table-cell>
+ *    <ui-table-cell class="ui-edit-layer">Three</ui-table-cell>
+ *    <ui-table-cell class="ui-edit-layer">Four</ui-table-cell>
+ *    <ui-table-cell class="ui-edit-layer">Five</ui-table-cell>
+ *    <ui-table-cell class="ui-edit-layer">Six</ui-table-cell>
+ *    <ui-table-cell class="ui-edit-layer">Seven</ui-table-cell>
+ *   </ui-table-row>
+ *  </ui-table-head>
+ *  <ui-table-body class="ui-edit-layer" hover>
+ *   <ui-table-row class="ui-edit-layer">
+ *    <ui-table-cell class="ui-edit-layer">One</ui-table-cell>
+ *    <ui-table-cell class="ui-edit-layer">Two</ui-table-cell>
+ *    <ui-table-cell class="ui-edit-layer">Three</ui-table-cell>
+ *    <ui-table-cell class="ui-edit-layer">Four</ui-table-cell>
+ *    <ui-table-cell class="ui-edit-layer">Five</ui-table-cell>
+ *    <ui-table-cell class="ui-edit-layer">Six</ui-table-cell>
+ *    <ui-table-cell class="ui-edit-layer">Seven</ui-table-cell>
+ *   </ui-table-row>
+ *   <ui-table-row class="ui-edit-layer">
+ *    <ui-table-cell class="ui-edit-layer">One</ui-table-cell>
+ *    <ui-table-cell class="ui-edit-layer">Two</ui-table-cell>
+ *    <ui-table-cell class="ui-edit-layer">Three</ui-table-cell>
+ *    <ui-table-cell class="ui-edit-layer">Four</ui-table-cell>
+ *    <ui-table-cell class="ui-edit-layer">Five</ui-table-cell>
+ *    <ui-table-cell class="ui-edit-layer">Six</ui-table-cell>
+ *    <ui-table-cell class="ui-edit-layer">Seven</ui-table-cell>
+ *   </ui-table-row>
+ *   <ui-table-row class="ui-edit-layer">
+ *    <ui-table-cell class="ui-edit-layer">One</ui-table-cell>
+ *    <ui-table-cell class="ui-edit-layer">Two</ui-table-cell>
+ *    <ui-table-cell class="ui-edit-layer">Three</ui-table-cell>
+ *    <ui-table-cell class="ui-edit-layer">Four</ui-table-cell>
+ *    <ui-table-cell class="ui-edit-layer">Five</ui-table-cell>
+ *    <ui-table-cell class="ui-edit-layer">Six</ui-table-cell>
+ *    <ui-table-cell class="ui-edit-layer">Seven</ui-table-cell>
+ *   </ui-table-row>
+ *  </ui-table-body>
+ * </ui-table>
+ */
 @Component({
     tag: 'ui-row',
     styleUrl: 'ui-row.css',
@@ -88,7 +139,7 @@ export class UiRow {
             <Host>
                 <slot></slot>
                 <style>
-                    {UiCommon.getStyle(this.size, this.color, this.background, this.el)}
+                    {UiCommon.getStyles(this)};;
                     {UiCommon.getPosition(this.alignContent, this.justifyContent,
                          this.alignItems, this.flex, this.padding, this.margin,
                           this.gap, this.alignSelf, null, null, null, this.el)}

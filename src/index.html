@@ -8,23 +8,29 @@
 
   <script type="module" src="/build/psycho-ui.esm.js"></script>
   <script nomodule src="/build/psycho-ui.js"></script>
-  <script src="lodash.js"></script>
-</head>
+
+</head>  
 <body>
-  <ui-app background="grey-10">
+  <ui-app>
     <ui-app-header background="dark" src="/static/images/logo.png">front-end framework</ui-app-header>
     <ui-app-navigation open="close"><ui-doc-links></ui-doc-links></ui-app-navigation>
-    <ui-app-body background="grey-20">
-      <ui-grid background="grey-30" gap="1em" auto-fit>
-        <ui-column background="grey-50" flex="1" padding="2em" gap="1em"><div>ldjf</div><div>ldjf</div></ui-column>
-        <ui-column background="grey-50">One</ui-column>
-        <ui-column background="grey-50">One</ui-column>
-        <ui-column background="grey-50">One</ui-column>
-        <ui-column background="grey-50" align-self="end">One</ui-column>
-    </ui-grid>
+    <ui-app-body background="base">
+      <ui-modal background="base">
+         <ui-modal-header>Test modal ljsdlfj  ljsdlf ls f lsjlf sdfslk lsjldf lksflslkdf</ui-modal-header>
+         <ui-modal-body gap="small">
+          <ui-paragraph>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</ui-paragraph>
+          <ui-paragraph>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</ui-paragraph>
+
+         </ui-modal-body>
+  
+          <ui-modal-footer>
+            <ui-button background="base" type="link">OK</ui-button>
+            <ui-button background="primary-light">OK</ui-button>
+            <ui-button background="primary-light">cancel</ui-button>
+          </ui-modal-footer>
+
+      </ui-modal>
   </ui-app>
-  <script src="/static/js/raphael.js"></script>
-  <script src="/static/js/Treant.js"></script>
 
 </body>
 </html>
