@@ -31,7 +31,7 @@
     "chokidar": "^3.4.0",
     "highlight.js": "^9.18.1",
     "install": "0.13.0",
-    "mermaid": "^8.5.1",
+    "mermaid": "^8.11.0",
     "npm": "^7.0.8"
   }
 }
