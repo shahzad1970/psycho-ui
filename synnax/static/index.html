@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>UI TEST</title>
+    <link rel="icon" href="/favicon.png">
+    <link rel="apple-touch-icon" href="/favicon.png">
+    <script src="/ui.js"></script>
+</head>
+
+<body>
+    <ui-app background="grey-10">
+
+        <ui-app-header elevation="xx-small">
+            <ui-button fab round size="large"
+                onclick="setState('ui-app-navigation', 'true')">
+                <ui-icon>menu</ui-icon>
+            </ui-button>
+            <ui-icon size="x-large" color="primary-dark">api</ui-icon>
+            <ui-text bold size="larger" background-color="red">Store Manager</ui-text>
+        </ui-app-header>
+        <ui-app-navigation id="nav" elevation="xx-small" gap="0" size="small" width="20em" open>
+            <ui-button justify="start" gap="x-large" href="/app/doc/ui-app">
+                <ui-icon size="xx-large" color="blue-6">home</ui-icon>
+                App
+            </ui-button>
+            <ui-button justify="start" gap="x-large" href="/app/doc/ui-app-header">
+                <ui-icon size="xx-large" color="blue-6">payment</ui-icon>
+                App Header
+            </ui-button>
+            <ui-button justify="start" gap="x-large" href="/app/doc/ui-app-navigation">
+                <ui-icon size="xx-large" color="blue-6">apps</ui-icon>
+                App Navigation
+            </ui-button>
+            <ui-button justify="start" gap="x-large" href="/app/doc/ui-app-main">
+                <ui-icon size="xx-large" color="blue-6">wysiwyg</ui-icon>
+                App Main
+            </ui-button>
+            <ui-button justify="start" gap="x-large" href="/app/doc/ui-badge" ripple>
+                <ui-icon size="xx-large" color="blue-6">badge</ui-icon>
+                Badge
+            </ui-button>
+            <ui-button justify="start" gap="x-large" href="/app/doc/ui-button">
+                <ui-icon size="xx-large" color="blue-6">smart_button</ui-icon>
+                Button
+            </ui-button>
+
+            <ui-button justify="start" gap="x-large" href="/app/doc/ui-icon">
+                <ui-icon size="xx-large" color="blue-6">image</ui-icon>
+                Icon
+            </ui-button>
+            <ui-button justify="start" gap="x-large" href="/app/doc/ui-input">
+                <ui-icon size="xx-large" color="blue-6">keyboard</ui-icon>
+                Input
+            </ui-button>
+            <ui-button justify="start" gap="x-large" href="/app/doc/ui-spacer">
+                <ui-icon size="xx-large" color="blue-6">format_line_spacing</ui-icon>
+                Spacer
+            </ui-button>
+            <ui-button justify="start" gap="x-large" href="/app/doc/ui-text" ripple>
+                <ui-icon size="xx-large" color="blue-6">format_size</ui-icon>
+                Text
+            </ui-button>
+
+        </ui-app-navigation>
+        <ui-app-main> 
+            <ui-flex row gap="small">
+                <ui-modal top>
+                    <ui-card background="grey-9" width="400px" elevation="large" rounded>
+                        <ui-card-header bordered>
+                            <ui-icon>menu</ui-icon>
+                            <ui-text bold flex="1">Card Title</ui-text>
+                            <ui-button fab round><ui-icon>close</ui-icon></ui-button>
+                        </ui-card-header>
+                        <ui-card-body>
+                            <ui-text size="x-large" bold paragraph>
+                                Heading in modal
+                            </ui-text>
+                            <ui-text paragraph indent>
+                                The QCard component is a great way to display important pieces of grouped content. 
+                                This pattern is quickly emerging as a core design pattern for Apps, website previews and email content. 
+                                It assists the viewer by containing and organizing information, while also setting up predictable expectations.
+                            </ui-text>
+                            <ui-text paragraph>
+                                With so much content to display at once, and often so little screen real-estate, 
+                                Cards have fast become the design pattern of choice for many companies, including the likes of Google and Twitter.
+                            </ui-text>
+                            <ui-text paragraph>
+                                The QCard component is intentionally lightweight and essentially a containing element that is capable of “hosting” 
+                                any other component that is appropriate.
+                            </ui-text>
+                        </ui-card-body>
+                        <ui-card-footer bordered>
+                            <ui-button background="danger">Cancel</ui-button>
+                            <ui-button background="primary-dark">Submit</ui-button>
+                        </ui-card-footer>
+                    </ui-card>
+                </ui-modal>
+            </ui-flex> 
+        </ui-app-main>
+
+
+    </ui-app>
+</body>
+
+</html>
